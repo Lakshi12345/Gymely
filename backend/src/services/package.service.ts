@@ -1,5 +1,5 @@
 import Package from "../models/Package";
-export const createPackage = async (packageData : any ,gymId : String)=>{
+export const createPackage = async (packageData : any ,gymId : string)=>{
 
     const exitspackages = await Package.findOne({packageName: packageData.packageName,});
 
@@ -38,7 +38,7 @@ export const createPackage = async (packageData : any ,gymId : String)=>{
     };
 }
 
-export  const packageGet = async (gym : String)=> {
+export  const packageGet = async (gym : string)=> {
     const packages = await Package.find({gymId : gym,});
     return {
         success : true,
@@ -46,7 +46,7 @@ export  const packageGet = async (gym : String)=> {
     }
 }
 
-export  const packageDelete =  async (id: String, gymId : String)=> {
+export  const packageDelete =  async (id: string, gymId : string)=> {
     const existPackages = await Package.findOneAndDelete({_id: id, gymId: gymId});
 
     if (!existPackages) {
@@ -55,7 +55,7 @@ export  const packageDelete =  async (id: String, gymId : String)=> {
     return existPackages;
 }
 
-export  const getPackageSingle = async (id:String, gymId : String)=>{
+export  const getPackageSingle = async (id:string, gymId : string)=>{
 
     const result  = await Package.findOne({_id: id, gymId: gymId});
     if(!result){
@@ -64,7 +64,7 @@ export  const getPackageSingle = async (id:String, gymId : String)=>{
     return result;
 }
 
-export  const packageUpdate = async (id: String, gymId: String, packageData: any)=>{
+export  const packageUpdate = async (id: string, gymId: string, packageData: any)=>{
     const result = await Package.findOneAndUpdate({_id: id, gymId: gymId},{$set :{...packageData}},{new : true});
     if(!result){
         throw new Error("Package not Found !");

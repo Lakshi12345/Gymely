@@ -1,6 +1,6 @@
 
 import Service from "../models/Service";
-export const createService = async (packageData : any ,gymId : String)=>{
+export const createService = async (packageData : any ,gymId : string)=>{
 
     const exitspackages = await Service.findOne({name: packageData.name,});
 
@@ -21,7 +21,7 @@ export const createService = async (packageData : any ,gymId : String)=>{
     };
 }
 
-export  const getServices = async (gym : String)=> {
+export  const getServices = async (gym : string)=> {
     const packages = await Service.find({gymId : gym,});
     return {
         success : true,
@@ -29,7 +29,7 @@ export  const getServices = async (gym : String)=> {
     }
 }
 
-export  const serviceDelete =  async (id: String, gymId : String)=> {
+export  const serviceDelete =  async (id: string, gymId : string)=> {
     const existPackages = await Service.findOneAndDelete({_id: id, gymId: gymId});
 
     if (!existPackages) {
