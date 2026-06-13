@@ -134,7 +134,7 @@ export  const getInvoice  = async (gymID : string, id: string)=>{
     if(!bill){
         throw new Error("Invoice Not Found");
     }
-
-    return await generateInvoice(bill);
+    const gymDetails = { };
+    return await generateInvoice(bill, gymDetails);
 
 }
