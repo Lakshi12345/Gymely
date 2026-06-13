@@ -1,0 +1,94 @@
+import {Request , Response} from "express";
+
+import {createService, getServices, serviceDelete} from "../services/service.service";
+
+
+export const serviceAdd = async (req : Request, res : Response)=>{
+    try {
+        // return res.json(req.user);
+        // const {email, password}  = req.body;
+        const response   =  await createService(req.body,req.user.email);
+        return res.status(200).json({
+            status : true,
+            data : response,
+        });
+
+    }catch (error : any){
+        return res
+            .status(400)
+            .json({
+                success: false,
+                error: error.message,
+            });
+    }
+}
+
+export  const  servicesGet = async (req: Request, res:  Response)=>{
+    try {
+        const  packages = await getServices(req.user.email);
+        return res.status(200).json(packages);
+    }catch (error:any){
+        return res.json({
+            status : false,
+            message : error.response?.data,
+        })
+    }
+}
+
+export const deleteService = async (req: Request, res: Response)=>{
+    try{
+        const {id} = req.params;
+        const cursor  = await serviceDelete(id, req.user.email);
+
+        return res.status(200).json({
+            success : true,
+            message : "Service Delete successfully",
+            data : cursor,
+        })
+
+    }catch (error : any){
+        return res.json({
+            status : false,
+            message : error.message,
+        })
+    }
+}
+//
+// export const getSinglePackage  = async (req: Request, res:Response)=>{
+//     try {
+//
+//         const {id} = req.params;
+//         const response = await getPackageSingle(id, req.user.email);
+//         return res.status(200).json({
+//             status : true,
+//             message : "Data Fetch Successfully !",
+//             data : response
+//         })
+//
+//     }catch (error : any){
+//         return res.status(400).json({
+//             status : false,
+//             message : error.message
+//         })
+//     }
+// }
+//
+// export const updatePackage = async (req: Request, res: Response)=>{
+//     try{
+//         const {id} = req.params;
+//         const response = await packageUpdate(id , req.user.email, req.body);
+//         return  res.status(200).json({
+//             status : true,
+//             message : "Data Fetched Successfully",
+//             data : response,
+//         })
+//
+//     }catch (error : any){
+//         return res.status(400).json({
+//             status : false,
+//             error : error.response?.message,
+//         })
+//     }
+// }
+//
+
