@@ -56,7 +56,7 @@ export const getBillings = async (req : Request, res : Response)=>{
 
 export  const viewBill =  async (req : Request, res : Response)=>{
    try {
-       const {id} = req.params;
+       const {id} = req.params as any;
        const response = await getInvoice(req.user.email, id);
        return res.status(200).json({
            status : true,
