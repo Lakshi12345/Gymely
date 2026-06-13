@@ -86,11 +86,36 @@ export const getMember  = async (gymId : string)=>{
 }
 
 export const getBills   = async (gymId : string)=>{
-    const response =  await Transaction.find({gymId : gymId}).lean();;
+    const response =  await Transaction.find({gymId : gymId}).lean();
 
-    const formatDate = (date?: Date)=>{
-        return date ? new Date(date).toLocaleDateString("en-GB") : null
-    };
+    // const formatDate = (date?: Date)=>{
+    //     return date ? new Date(date).toLocaleDateString("en-GB") : null
+    // };
+    const formatDate =
+        (
+            date?:
+                Date
+                |
+                null
+        ) => {
+
+            return date
+
+                ?
+
+                new Date(
+                    date
+                )
+
+                    .toLocaleDateString(
+                        "en-GB"
+                    )
+
+                :
+
+                null;
+
+        };
 
     return response.map((bill)=>({
         ...bill,

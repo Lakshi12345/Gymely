@@ -39,7 +39,7 @@ export  const  getPackage = async (req: Request, res:  Response)=>{
 
 export const deletePackage = async (req: Request, res: Response)=>{
     try{
-        const {id} = req.params;
+        const {id} = req.params as any;
         const cursor  = await packageDelete(id, req.user.email);
 
         return res.status(200).json({
@@ -59,7 +59,7 @@ export const deletePackage = async (req: Request, res: Response)=>{
 export const getSinglePackage  = async (req: Request, res:Response)=>{
     try {
 
-        const {id} = req.params;
+        const {id} = req.params as any;
         const response = await getPackageSingle(id, req.user.email);
         return res.status(200).json({
             status : true,
@@ -77,7 +77,7 @@ export const getSinglePackage  = async (req: Request, res:Response)=>{
 
 export const updatePackage = async (req: Request, res: Response)=>{
     try{
-        const {id} = req.params;
+        const {id} = req.params as any;
         const response = await packageUpdate(id , req.user.email, req.body);
         return  res.status(200).json({
             status : true,

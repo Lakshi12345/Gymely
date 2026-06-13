@@ -37,7 +37,7 @@ export  const  servicesGet = async (req: Request, res:  Response)=>{
 
 export const deleteService = async (req: Request, res: Response)=>{
     try{
-        const {id} = req.params;
+        const {id} = req.params as any;
         const cursor  = await serviceDelete(id, req.user.email);
 
         return res.status(200).json({

@@ -147,8 +147,7 @@ export const generateInvoice =
 
             .text(
 
-                gymDetails
-                .gymName,
+                gymDetails.gymName,
 
                 320,
 
