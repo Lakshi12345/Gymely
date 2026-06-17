@@ -1,11 +1,9 @@
-
 import Service from "../models/Service";
-export const createService = async (packageData : any ,gymId : string)=>{
+export const createService = async (packageData: any, gymId: string) => {
+    const exitspackages = await Service.findOne({ name: packageData.name });
 
-    const exitspackages = await Service.findOne({name: packageData.name,});
-
-    if(exitspackages){
-        throw new Error("Package name is already exists !");
+    if (exitspackages) {
+        throw new Error("Service name is already exists !");
     }
 
     const formattedData = {
@@ -13,30 +11,30 @@ export const createService = async (packageData : any ,gymId : string)=>{
         type: packageData.type,
         gymId,
     };
-    const packages  = await Service.create(formattedData);
+    const packages = await Service.create(formattedData);
     return {
-        success : true,
-        message : "Package Created Successfully",
-        data : packages,
+        success: true,
+        message: "Service Created Successfully",
+        data: packages,
     };
-}
+};
 
-export  const getServices = async (gym : string)=> {
-    const packages = await Service.find({gymId : gym,});
+export const getServices = async (gym: string) => {
+    const packages = await Service.find({ gymId: gym });
     return {
-        success : true,
-        data : packages
-    }
-}
+        success: true,
+        data: packages,
+    };
+};
 
-export  const serviceDelete =  async (id: string, gymId : string)=> {
-    const existPackages = await Service.findOneAndDelete({_id: id, gymId: gymId});
+export const serviceDelete = async (id: string, gymId: string) => {
+    const existPackages = await Service.findOneAndDelete({ _id: id, gymId: gymId });
 
     if (!existPackages) {
         throw new Error("Service does not exist !");
     }
     return existPackages;
-}
+};
 //
 // export  const getPackageSingle = async (id:String, gymId : String)=>{
 //
@@ -55,4 +53,3 @@ export  const serviceDelete =  async (id: string, gymId : string)=> {
 //
 //     return result ;
 // }
-

@@ -12,15 +12,45 @@ const packageSchema = new Schema(
             required : true,
 
         },
-        pType : {
-            type : String,
-            required : true,
-            trim : true,
+
+        minimumSalePercent : {
+            type : Number,
         },
+
+        services : [
+
+            {
+
+                name : {
+
+                    type : String,
+
+                    required : true
+
+                },
+
+                session : {
+
+                    type : Number,
+
+                    required : true
+
+                }
+
+            }
+
+        ],
+
         amount: {
             type : Number,
             required : true,
         },
+
+        isIncludeGst: {
+            type : String,
+            required : true,
+        },
+
 
         gymId: {
             type: String,

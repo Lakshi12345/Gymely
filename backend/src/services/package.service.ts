@@ -23,8 +23,10 @@ export const createPackage = async (packageData : any ,gymId : string)=>{
                 packageData.amount
             ),
 
-        pType:
-        packageData.pType,
+        services : packageData.sessionData,
+
+        minimumSalePercent : packageData.minimumSalePercent,
+        isIncludeGst : packageData.isIncludeGst,
 
         gymId,
     };
@@ -65,6 +67,9 @@ export  const getPackageSingle = async (id:string, gymId : string)=>{
 }
 
 export  const packageUpdate = async (id: string, gymId: string, packageData: any)=>{
+
+
+
     const result = await Package.findOneAndUpdate({_id: id, gymId: gymId},{$set :{...packageData}},{new : true});
     if(!result){
         throw new Error("Package not Found !");

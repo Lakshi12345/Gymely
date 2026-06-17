@@ -12,18 +12,6 @@ import {faPlusCircle} from "@fortawesome/free-solid-svg-icons";
 
 function PackageAdd(){
 
-    const handleSelectChange = (value: string) => {
-        console.log("Selected value:", value);
-    };
-    const [showPassword, setShowPassword] = useState(false);
-
-    const options = [
-        { value: "marketing", label: "Marketing" },
-        { value: "template", label: "Template" },
-        { value: "development", label: "Development" },
-    ];
-
-
     const [services, setServices]  = useState([]);
     const [selectedService, setSelectedService] = useState(['Gym']);
     const [formData, setFormData] = useState([]);
@@ -97,13 +85,25 @@ function PackageAdd(){
         console.log(sessionData);
     }
     const handleAddPakckageClick = async (e:React.FormEvent)=>{
-        e.preventDefault();
 
-        let finalData = {
-            ...formData,
-            sessionData
+        e.preventDefault();
+        try {
+
+            let finalData = {
+                ...formData,
+                sessionData,
+                isIncludeGst : selectGstType,
+            }
+            console.log(finalData);
+
+            const response = await api.post('/package/packageAdd', finalData);
+            console.log(response.data);
+            // setShowSuccessModal(true);
+            // console.log(formData);
+        }catch (error : any){
+            // toast.error(error.response?.data?.error || "Something went wrong !");
+            console.log(error.response?.data);
         }
-        console.log(finalData);
     }
 
     return(
@@ -146,7 +146,7 @@ function PackageAdd(){
                           {
                               selectedService.map((list)=>(
                                   <div>
-                                      <Label htmlFor="packageName">{list} Session : </Label>
+                                      <Label htmlFor={list}>{list} Session : </Label>
                                       <Input
                                           onChange={onSessionChange}
                                           type="text" id={list} name={list}  placeholder="30"/>

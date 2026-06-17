@@ -8,6 +8,8 @@ import { ScrollToTop } from "../components/common/ScrollToTop";
 import AppLayout from "../layout/AppLayout";
 import PackageAdd from "../pages/packages/packageAdd.tsx";
 import Services from "../pages/settings/services.tsx";
+import PackageAll from "../pages/packages/packageAll.tsx";
+import PackageEdit from "../pages/packages/packageEdit.tsx";
 
 function AppRoutes() {
 
@@ -57,6 +59,23 @@ function AppRoutes() {
                         element={
                             <PrivateRoute>
                                 <Services />
+                            </PrivateRoute>
+                        }
+                    />
+
+                    <Route
+                        path="/dashboard/PackageAll"
+                        element={
+                            <PrivateRoute>
+                                <PackageAll />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/dashboard/PackageEdit/:id"
+                        element={
+                            <PrivateRoute>
+                                <PackageEdit />
                             </PrivateRoute>
                         }
                     />

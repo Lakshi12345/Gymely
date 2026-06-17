@@ -29,7 +29,7 @@ export const sidebarMenu = [
             },
             {
                 title: "Packages List",
-                path: "/packageAll",
+                path: "/packageAll.tsx",
             },
         ],
     },
