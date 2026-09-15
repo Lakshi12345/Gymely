@@ -1,7 +1,6 @@
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
-import ComponentCard from "../../components/common/ComponentCard";
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "../../components/ui/table";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import api from "../../services/api.ts";
 import Button from "../../components/ui/button/Button.tsx";
 import { Modal } from "../../components/ui/modal";
@@ -9,20 +8,26 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router";
 import useDevice from "../../hooks/useDevice.ts";
 import PackageMobileView from "./PackageMobileView.tsx";
+import ComponentCard from "../../components/common/ComponentCard.tsx";
+import Loader from "../../components/common/Loader.tsx";
 export default function PackageAll() {
     const navigate = useNavigate();
     useEffect(() => {
         fetchPackages();
     }, []);
     const [packages, setPackges] = useState<any[]>([]);
+    const [preLoader, setPreLoader] = useState(false);
 
     const fetchPackages = async () => {
+        setPreLoader(true);
         try {
             const response = await api.get("/package/getallPackages");
             console.log(response.data);
             setPackges(response.data.data);
+            setPreLoader(false);
         } catch (error) {
             console.log(error);
+            setPreLoader(false);
         }
     };
 
@@ -32,6 +37,7 @@ export default function PackageAll() {
 
     const handleDelete = async () => {
         console.log(selectedPackage);
+        setPreLoader(true);
         try {
             const response = await api.delete(`/package/deletePackage/${selectedPackage._id}`);
             // alert(response.data.message);
@@ -39,8 +45,10 @@ export default function PackageAll() {
             // alert(packageName);
             await fetchPackages();
             setDeleteModal(false);
+            setPreLoader(false);
         } catch (error: any) {
             console.log(error.response?.data);
+            setPreLoader(false);
         }
     };
     const { isMobile } = useDevice();
@@ -52,6 +60,7 @@ export default function PackageAll() {
 
     return (
         <>
+            <Loader loading={preLoader} text="Loading Bills..." />
             <PageBreadcrumb pageTitle="All Packages" />
             <div className="space-y-6">
                 <ComponentCard title="Package Information">
@@ -78,6 +87,9 @@ export default function PackageAll() {
                                             </TableCell>
                                             <TableCell className="text-theme-xs px-5 py-3 text-start font-medium text-gray-500 dark:text-gray-400">
                                                 Amount
+                                            </TableCell>
+                                            <TableCell className="text-theme-xs px-5 py-3 text-start font-medium text-gray-500 dark:text-gray-400">
+                                                Package Type
                                             </TableCell>
                                             <TableCell className="text-theme-xs px-5 py-3 text-start font-medium text-gray-500 dark:text-gray-400">
                                                 Services
@@ -109,6 +121,9 @@ export default function PackageAll() {
                                                 </TableCell>
                                                 <TableCell className="text-theme-sm px-4 py-3 text-start text-gray-500 dark:text-gray-400">
                                                     {pack.amount}
+                                                </TableCell>
+                                                <TableCell className="text-theme-sm px-4 py-3 text-start text-gray-500 dark:text-gray-400">
+                                                    {pack.packageType}
                                                 </TableCell>
 
                                                 <TableCell className="text-theme-sm px-4 py-3 text-start text-gray-500 dark:text-gray-400">

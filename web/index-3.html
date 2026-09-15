@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from themes.aksharwebtech.com/aigenix/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Aug 2026 11:19:00 GMT -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Aigenix AI Chatbot - Deploy intelligent conversational agents for support, sales, and onboarding across every channel." />
+  <title>Aigenix - AI Chatbot</title>
+  <link rel="preconnect" href="../../fonts.googleapis.com/index.html" />
+  <link rel="preconnect" href="../../fonts.gstatic.com/index.html" crossorigin />
+  <link
+    href="../../fonts.googleapis.com/css28251?family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/aos.css" />
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body class="ai-chatbot-body">
+
+  <!-- Preloader -->
+  <div id="ai-loader">
+    <div class="loader-matrix"></div>
+    <div class="loader-content">
+      <div class="loader-glitch" data-text="AIGENIX // ENGINE">
+        <img src="assets/images/logo.png" alt="Aigenix" width="140" height="36" />
+      </div>
+      <div class="loader-status">
+        <span class="status-tag">INITIALIZING CHAT CORE</span>
+        <div class="loader-bar-wrap">
+          <div class="loader-bar"></div>
+        </div>
+        <div class="loader-metrics">
+          <span class="metric-pct">00%</span>
+          <span class="metric-sync">BOT_SYNC_ACTIVE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-transition"></div>
+  <div id="scroll-progress"></div>
+  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+  <!-- Navigation Header -->
+  <header class="bot-header">
+
+    <!-- Top Bar -->
+    <div class="bot-topbar">
+      <div class="bot-container">
+        <div class="bot-topbar_inner">
+          <ul class="bot-topbar_contact">
+            <li>
+              <a href="tel:+18005291037">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                +1 800 529 10 37
+              </a>
+            </li>
+            <li>
+              <a href="mailto:support@aigenix.io">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                support@aigenix.io
+              </a>
+            </li>
+          </ul>
+          <ul class="bot-topbar_social" aria-label="Social links">
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
+            <li><a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <div class="bot-container">
+      <div class="bot-header_row">
+
+        <!-- Logo -->
+        <a href="index-3.html" class="bot-nav_logo">
+          <img src="assets/images/logo.png" alt="Aigenix" class="bot-nav_logo-img" width="120" height="30" />
+        </a>
+
+        <!-- Navigation Menu -->
+        <nav class="bot-nav_menu" id="bot-nav-menu" aria-label="Main navigation">
+
+          <!-- Mobile Drawer Header -->
+          <div class="bot-drawer_top">
+            <a href="index-3.html" class="bot-drawer_logo">
+              <img src="assets/images/logo.png" alt="Aigenix" width="112" height="28" />
+            </a>
+            <button class="bot-nav_close" id="bot-nav-close" type="button" aria-label="Close menu">
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="bot-nav_pill">
+            <ul class="bot-nav_list">
+
+              <!-- Home Dropdown -->
+              <li class="bot-nav_item bot-nav_item--active">
+                <span class="bot-nav_link" role="button" tabindex="0">
+                  Home <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </span>
+                <ul class="bot-dropdown">
+                  <li><a class="bot-dropdown_link" href="index.html">AI Agent</a></li>
+                  <li><a class="bot-dropdown_link" href="index-1.html">AI Startup</a></li>
+                  <li><a class="bot-dropdown_link" href="index-2.html">AI SaaS</a></li>
+                  <li><a class="bot-dropdown_link bot-dropdown_link--active" href="index-3.html">AI Chatbot</a></li>
+                </ul>
+              </li>
+
+              <!-- Company Dropdown -->
+              <li class="bot-nav_item">
+                <span class="bot-nav_link" role="button" tabindex="0">
+                  Company <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </span>
+                <ul class="bot-dropdown">
+                  <li><a class="bot-dropdown_link" href="about.html">About Us</a></li>
+                  <li><a class="bot-dropdown_link" href="team.html">Our Team</a></li>
+                  <li><a class="bot-dropdown_link" href="testimonials.html">Testimonials</a></li>
+                  <li><a class="bot-dropdown_link" href="faq.html">FAQ</a></li>
+                </ul>
+              </li>
+
+              <!-- Portfolio Dropdown -->
+              <li class="bot-nav_item">
+                <span class="bot-nav_link" role="button" tabindex="0">
+                  Portfolio <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </span>
+                <ul class="bot-dropdown">
+                  <li><a class="bot-dropdown_link" href="portfolio.html">Portfolio</a></li>
+                  <li><a class="bot-dropdown_link" href="portfolio-details.html">Portfolio Details</a></li>
+                </ul>
+              </li>
+
+              <!-- Blog Dropdown -->
+              <li class="bot-nav_item">
+                <span class="bot-nav_link" role="button" tabindex="0">
+                  Blog <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </span>
+                <ul class="bot-dropdown">
+                  <li><a class="bot-dropdown_link" href="blog.html">Blog</a></li>
+                  <li><a class="bot-dropdown_link" href="blog-details.html">Blog Details</a></li>
+                </ul>
+              </li>
+
+              <!-- Pages Mega Dropdown -->
+              <li class="bot-nav_item">
+                <span class="bot-nav_link" role="button" tabindex="0">
+                  Pages <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </span>
+                <ul class="bot-dropdown bot-dropdown--mega">
+                  <li><a class="bot-dropdown_link" href="services.html">Services</a></li>
+                  <li><a class="bot-dropdown_link" href="service-details.html">Service Details</a></li>
+                  <li><a class="bot-dropdown_link" href="pricing.html">Pricing</a></li>
+                  <li><a class="bot-dropdown_link" href="team-details.html">Team Details</a></li>
+                  <li><a class="bot-dropdown_link" href="login.html">Login</a></li>
+                  <li><a class="bot-dropdown_link" href="register.html">Register</a></li>
+                  <li><a class="bot-dropdown_link" href="coming-soon.html">Coming Soon</a></li>
+                  <li><a class="bot-dropdown_link" href="404.html">404 Error</a></li>
+                </ul>
+              </li>
+
+              <li class="bot-nav_item">
+                <a class="bot-nav_link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Mobile Drawer Footer -->
+          <div class="bot-drawer_foot">
+            <a href="contact.html" class="btn-primary bot-drawer_cta">
+              Get in Touch <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </nav>
+
+        <!-- Desktop Actions -->
+        <div class="bot-nav_actions">
+          <button class="bot-nav_toggle" id="bot-nav-toggle" type="button" aria-label="Toggle navigation"
+            aria-expanded="false" aria-controls="bot-nav-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <a href="contact.html" class="btn-primary bot-nav_cta">
+            Get in Touch <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="bot-hero" aria-label="Hero">
+      <div class="bot-hero_bg" aria-hidden="true">
+        <span class="bot-hero_glow bot-hero_glow--lime"></span>
+        <span class="bot-hero_glow bot-hero_glow--teal"></span>
+        <span class="bot-hero_glow bot-hero_glow--soft"></span>
+      </div>
+
+      <div class="bot-container">
+        <div class="row align-items-center g-4 g-xl-5">
+
+          <!-- Hero Content -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+            <div class="bot-hero_content">
+              <h1 class="bot-hero_title" data-aos="fade-up" data-aos-duration="550" data-aos-delay="140">
+                Elevate engagement with our
+                <span class="bot-hero_word bot-hero_word--teal">Intelligent</span>
+                <span class="bot-hero_word bot-hero_word--lime">Chatbot</span>
+                Service
+              </h1>
+
+              <form class="bot-hero_form" id="bot-hero-form" action="https://themes.aksharwebtech.com/aigenix/register.html" method="get" novalidate
+                data-aos="fade-up" data-aos-duration="550" data-aos-delay="220">
+                <label class="visually-hidden" for="bot-hero-email">Email address</label>
+                <input type="email" id="bot-hero-email" name="email" class="bot-hero_input"
+                  placeholder="Enter your email" required autocomplete="email" />
+                <button type="submit" class="btn-primary bot-hero_submit">
+                  Sign up <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                </button>
+              </form>
+
+              <ul class="bot-hero_perks" aria-label="Plan benefits" data-aos="fade-up" data-aos-duration="550"
+                data-aos-delay="300">
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  Free 14-day trial
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  No credit card required
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  Live on every channel
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Hero Visual -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-duration="550" data-aos-delay="200">
+            <div class="bot-hero_visual" aria-hidden="true">
+              <div class="bot-robot">
+                <div class="bot-robot_head">
+                  <div class="bot-robot_face">
+                    <span class="bot-robot_eye bot-robot_eye--l"></span>
+                    <span class="bot-robot_eye bot-robot_eye--r"></span>
+                    <span class="bot-robot_mouth"></span>
+                  </div>
+                </div>
+                <div class="bot-robot_body">
+                  <span class="bot-robot_core"></span>
+                </div>
+                <span class="bot-robot_arm bot-robot_arm--l"></span>
+                <span class="bot-robot_arm bot-robot_arm--r"></span>
+                <span class="bot-robot_shadow"></span>
+              </div>
+
+              <div class="bot-hero_bubble bot-hero_bubble--1">
+                <i class="fa-solid fa-robot" aria-hidden="true"></i>
+                <p>Hello! How can I help you today?</p>
+              </div>
+              <div class="bot-hero_bubble bot-hero_bubble--2">
+                <p>24/7 instant replies</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Trusted Logos -->
+    <section class="bot-trust" aria-label="Trusted by" data-aos="fade-up" data-aos-duration="550">
+      <div class="bot-container">
+        <p class="bot-trust_label" data-aos="fade-up" data-aos-duration="550" data-aos-delay="120">
+          Trusted by teams shipping AI chat at scale
+        </p>
+      </div>
+      <div class="bot-trust_marquee" data-aos="fade-up" data-aos-duration="550" data-aos-delay="200">
+        <div class="bot-trust_track">
+          <div class="bot-trust_group">
+            <span class="bot-trust_logo"><i class="fa-solid fa-comments" aria-hidden="true"></i> DialogAI</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-bolt" aria-hidden="true"></i> VoltOps</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-cloud" aria-hidden="true"></i> Nimbus</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-cube" aria-hidden="true"></i> Stackline</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Querybase</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-microchip" aria-hidden="true"></i> Corelytics</span>
+          </div>
+          <div class="bot-trust_group" aria-hidden="true">
+            <span class="bot-trust_logo"><i class="fa-solid fa-comments" aria-hidden="true"></i> DialogAI</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-bolt" aria-hidden="true"></i> VoltOps</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-cloud" aria-hidden="true"></i> Nimbus</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-cube" aria-hidden="true"></i> Stackline</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Querybase</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-microchip" aria-hidden="true"></i> Corelytics</span>
+          </div>
+          <div class="bot-trust_group" aria-hidden="true">
+            <span class="bot-trust_logo"><i class="fa-solid fa-comments" aria-hidden="true"></i> DialogAI</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-bolt" aria-hidden="true"></i> VoltOps</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-cloud" aria-hidden="true"></i> Nimbus</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-cube" aria-hidden="true"></i> Stackline</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Querybase</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-microchip" aria-hidden="true"></i> Corelytics</span>
+          </div>
+          <div class="bot-trust_group" aria-hidden="true">
+            <span class="bot-trust_logo"><i class="fa-solid fa-comments" aria-hidden="true"></i> DialogAI</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-bolt" aria-hidden="true"></i> VoltOps</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-cloud" aria-hidden="true"></i> Nimbus</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-cube" aria-hidden="true"></i> Stackline</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Querybase</span>
+            <span class="bot-trust_logo"><i class="fa-solid fa-microchip" aria-hidden="true"></i> Corelytics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bot-features" id="features" aria-label="Chatbot features" data-aos="fade-up"
+      data-aos-duration="550">
+      <div class="bot-features_curve" aria-hidden="true"></div>
+
+      <div class="bot-container">
+        <header class="bot-features_intro" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+          <span class="bot-features_kicker" data-aos="fade-up" data-aos-duration="550" data-aos-delay="120">
+            <span class="bot-features_kicker-dot" aria-hidden="true"></span>
+            Why teams choose Aigenix
+          </span>
+          <h2 class="bot-features_title" data-aos="fade-up" data-aos-duration="550" data-aos-delay="180">
+            Built for conversations that
+            <span class="bot-hero_word bot-hero_word--lime">convert</span>
+            and
+            <span class="bot-hero_word bot-hero_word--teal">resolve</span>
+          </h2>
+          <p class="bot-features_desc" data-aos="fade-up" data-aos-duration="550" data-aos-delay="260">
+            Six core capabilities - engineered for speed, accuracy, and seamless handoffs across every
+            support and sales touchpoint.
+          </p>
+        </header>
+
+        <div class="bot-features_deck">
+          <div class="bot-features_spine" aria-hidden="true"></div>
+
+          <!-- Lane 01 -->
+          <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700">
+            <div class="bot-features_node"><span>01</span></div>
+            <div class="bot-features_tile">
+              <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                <span class="bot-features_art-core"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>
+              </div>
+              <div class="bot-features_copy">
+                <h3 class="bot-features_copy-title">24/7 Instant Replies</h3>
+                <p class="bot-features_copy-text">
+                  Never lose a lead at 2 AM. Your bot responds in under 1.2 seconds - every timezone,
+                  every day of the year.
+                </p>
+                <ul class="bot-features_tags">
+                  <li>Always-on</li>
+                  <li>&lt;1.2s avg</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Lane 02 -->
+          <article class="bot-features_lane bot-features_lane--flip" data-aos="fade-up" data-aos-duration="700"
+            data-aos-delay="60">
+            <div class="bot-features_node"><span>02</span></div>
+            <div class="bot-features_tile">
+              <div class="bot-features_art bot-features_art--orbit" aria-hidden="true">
+                <div class="bot-features_art-stage">
+                  <span class="bot-features_art-orbit"></span>
+                  <span class="bot-features_art-sat bot-features_art-sat--1"><i class="fa-solid fa-comment"
+                      aria-hidden="true"></i></span>
+                  <span class="bot-features_art-sat bot-features_art-sat--2"><i class="fa-brands fa-whatsapp"
+                      aria-hidden="true"></i></span>
+                  <span class="bot-features_art-sat bot-features_art-sat--3"><i class="fa-solid fa-envelope"
+                      aria-hidden="true"></i></span>
+                  <span class="bot-features_art-sat bot-features_art-sat--4"><i class="fa-brands fa-slack"
+                      aria-hidden="true"></i></span>
+                  <span class="bot-features_art-core"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i></span>
+                </div>
+              </div>
+              <div class="bot-features_copy">
+                <h3 class="bot-features_copy-title">Omnichannel Inbox</h3>
+                <p class="bot-features_copy-text">
+                  Web, WhatsApp, email, and Slack in one unified thread - same context, same brain,
+                  zero repetition.
+                </p>
+                <ul class="bot-features_tags">
+                  <li>40+ channels</li>
+                  <li>Unified history</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Lane 03 -->
+          <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">
+            <div class="bot-features_node"><span>03</span></div>
+            <div class="bot-features_tile">
+              <div class="bot-features_art bot-features_art--relay" aria-hidden="true">
+                <span class="bot-features_art-agent bot-features_art-agent--bot"><i class="fa-solid fa-robot"
+                    aria-hidden="true"></i></span>
+                <span class="bot-features_art-path"></span>
+                <span class="bot-features_art-agent bot-features_art-agent--human"><i class="fa-solid fa-user"
+                    aria-hidden="true"></i></span>
+              </div>
+              <div class="bot-features_copy">
+                <h3 class="bot-features_copy-title">Smart Human Handoff</h3>
+                <p class="bot-features_copy-text">
+                  Escalate with full transcript, sentiment score, and customer profile - agents pick up
+                  exactly where the bot left off.
+                </p>
+                <ul class="bot-features_tags">
+                  <li>Live takeover</li>
+                  <li>Sentiment tags</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Lane 04 -->
+          <article class="bot-features_lane bot-features_lane--flip" data-aos="fade-up" data-aos-duration="700"
+            data-aos-delay="100">
+            <div class="bot-features_node"><span>04</span></div>
+            <div class="bot-features_tile">
+              <div class="bot-features_art bot-features_art--docs" aria-hidden="true">
+                <div class="bot-features_art-stage">
+                  <span class="bot-features_art-doc bot-features_art-doc--1"></span>
+                  <span class="bot-features_art-doc bot-features_art-doc--2"></span>
+                  <span class="bot-features_art-doc bot-features_art-doc--3"></span>
+                  <span class="bot-features_art-beam"></span>
+                  <span class="bot-features_art-core bot-features_art-core--sm"><i class="fa-solid fa-brain"
+                      aria-hidden="true"></i></span>
+                </div>
+              </div>
+              <div class="bot-features_copy">
+                <h3 class="bot-features_copy-title">Custom Knowledge Training</h3>
+                <p class="bot-features_copy-text">
+                  Ingest docs, FAQs, and help-center articles. Answers stay on-brand, accurate, and
+                  grounded in your data.
+                </p>
+                <ul class="bot-features_tags">
+                  <li>RAG-ready</li>
+                  <li>Auto-sync</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Lane 05 -->
+          <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700" data-aos-delay="120">
+            <div class="bot-features_node"><span>05</span></div>
+            <div class="bot-features_tile">
+              <div class="bot-features_art bot-features_art--chart" aria-hidden="true">
+                <span class="bot-features_art-bar" style="--h: 42%"></span>
+                <span class="bot-features_art-bar" style="--h: 68%"></span>
+                <span class="bot-features_art-bar" style="--h: 55%"></span>
+                <span class="bot-features_art-bar" style="--h: 88%"></span>
+                <span class="bot-features_art-bar" style="--h: 72%"></span>
+                <span class="bot-features_art-chart-line"></span>
+              </div>
+              <div class="bot-features_copy">
+                <h3 class="bot-features_copy-title">Conversation Analytics</h3>
+                <p class="bot-features_copy-text">
+                  Track resolution rates, drop-offs, and CSAT in real time - optimize flows with
+                  conversation-level insights.
+                </p>
+                <ul class="bot-features_tags">
+                  <li>98% resolved</li>
+                  <li>Live dashboards</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Lane 06 -->
+          <article class="bot-features_lane bot-features_lane--flip" data-aos="fade-up" data-aos-duration="700"
+            data-aos-delay="140">
+            <div class="bot-features_node"><span>06</span></div>
+            <div class="bot-features_tile">
+              <div class="bot-features_art bot-features_art--globe" aria-hidden="true">
+                <span class="bot-features_art-globe"></span>
+                <span class="bot-features_art-lang bot-features_art-lang--1">EN</span>
+                <span class="bot-features_art-lang bot-features_art-lang--2">ES</span>
+                <span class="bot-features_art-lang bot-features_art-lang--3">FR</span>
+                <span class="bot-features_art-lang bot-features_art-lang--4">DE</span>
+              </div>
+              <div class="bot-features_copy">
+                <h3 class="bot-features_copy-title">Multilingual Support</h3>
+                <p class="bot-features_copy-text">
+                  Detect language automatically and reply in 50+ locales - native quality without
+                  extra configuration.
+                </p>
+                <ul class="bot-features_tags">
+                  <li>50+ languages</li>
+                  <li>Auto-detect</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <footer class="bot-features_foot" data-aos="fade-up" data-aos-duration="700" data-aos-delay="160">
+          <ul class="bot-features_foot-stats" aria-label="Platform stats">
+            <li>
+              <strong>12k+</strong>
+              <span>Bots deployed</span>
+            </li>
+            <li>
+              <strong>4.9/5</strong>
+              <span>User rating</span>
+            </li>
+            <li>
+              <strong>99.9%</strong>
+              <span>Uptime SLA</span>
+            </li>
+          </ul>
+          <a href="services.html" class="btn-primary bot-features_foot-btn">
+            See all capabilities <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </footer>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="bot-hiw" id="process" aria-label="How it works" data-aos="fade-up" data-aos-duration="550">
+      <div class="bot-hiw_dots bot-hiw_dots--left" aria-hidden="true"></div>
+      <div class="bot-hiw_dots bot-hiw_dots--right" aria-hidden="true"></div>
+
+      <div class="bot-container">
+        <header class="bot-hiw_intro" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+          <span class="bot-hiw_badge" data-aos="fade-up" data-aos-duration="550" data-aos-delay="120">
+            <i class="fa-solid fa-route" aria-hidden="true"></i>
+            How It Works
+          </span>
+          <h2 class="bot-hiw_title" data-aos="fade-up" data-aos-duration="550" data-aos-delay="180">
+            Launch your intelligent chatbot in
+            <span class="bot-hero_word bot-hero_word--lime">three simple</span>
+            <span class="bot-hero_word bot-hero_word--teal">steps</span>
+          </h2>
+          <p class="bot-hiw_desc" data-aos="fade-up" data-aos-duration="550" data-aos-delay="260">
+            From first connection to live conversations - Aigenix gets your AI agent running in under an hour.
+            No complex setup, no engineering sprint required.
+          </p>
+        </header>
+
+        <div class="bot-hiw_grid">
+          <article class="bot-hiw_card" data-aos="fade-up" data-aos-duration="550" data-aos-delay="140">
+            <div class="bot-hiw_card-body">
+              <div class="bot-hiw_card-icon" aria-hidden="true">
+                <i class="fa-solid fa-plug"></i>
+              </div>
+              <h3 class="bot-hiw_card-title">Connect Your Channels</h3>
+              <p class="bot-hiw_card-text">
+                Link web chat, WhatsApp, email, and Slack in one dashboard. Your bot meets customers wherever they
+                already are.
+              </p>
+            </div>
+            <span class="bot-hiw_card-step">01</span>
+          </article>
+
+          <article class="bot-hiw_card bot-hiw_card--featured" data-aos="fade-up" data-aos-duration="550"
+            data-aos-delay="220">
+            <div class="bot-hiw_card-body">
+              <div class="bot-hiw_card-icon" aria-hidden="true">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <h3 class="bot-hiw_card-title">Train on Your Data</h3>
+              <p class="bot-hiw_card-text">
+                Upload docs, FAQs, and help-center articles. Aigenix learns your tone, policies, and product knowledge
+                automatically.
+              </p>
+            </div>
+            <span class="bot-hiw_card-step">02</span>
+          </article>
+
+          <article class="bot-hiw_card" data-aos="fade-up" data-aos-duration="550" data-aos-delay="300">
+            <div class="bot-hiw_card-body">
+              <div class="bot-hiw_card-icon" aria-hidden="true">
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+              <h3 class="bot-hiw_card-title">Go Live &amp; Optimize</h3>
+              <p class="bot-hiw_card-text">
+                Deploy with one click, then refine flows using real conversation analytics, CSAT scores, and resolution
+                data.
+              </p>
+            </div>
+            <span class="bot-hiw_card-step">03</span>
+          </article>
+        </div>
+
+        <footer class="bot-hiw_foot" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+          <p>
+            We help businesses design, build, and deploy intelligent chatbots that drive real results.
+            <a href="contact.html">Contact Now</a>
+          </p>
+        </footer>
+      </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section class="bot-integ" id="integrations" aria-label="Integrations" data-aos="fade-up" data-aos-duration="550">
+      <div class="bot-integ_glow bot-integ_glow--lime" aria-hidden="true"></div>
+      <div class="bot-integ_glow bot-integ_glow--teal" aria-hidden="true"></div>
+
+      <div class="bot-container">
+        <header class="bot-integ_head" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+          <span class="bot-integ_kicker" data-aos="fade-up" data-aos-duration="550" data-aos-delay="120">
+            <i class="fa-solid fa-link" aria-hidden="true"></i>
+            Integrations
+          </span>
+          <h2 class="bot-integ_title" data-aos="fade-up" data-aos-duration="550" data-aos-delay="180">
+            Connect every channel your
+            <span class="bot-hero_word bot-hero_word--teal">customers</span>
+            already use
+          </h2>
+          <p class="bot-integ_desc" data-aos="fade-up" data-aos-duration="550" data-aos-delay="260">
+            Plug Aigenix into chat, CRM, and ops tools in minutes - unified inbox, synced contacts,
+            and webhook events without custom glue code.
+          </p>
+        </header>
+
+        <div class="bot-integ_bridge-wrap">
+          <svg class="bot-integ_flow" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs></defs>
+            <g class="bot-integ_flow-lines"></g>
+          </svg>
+
+          <div class="bot-integ_bridge" data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">
+            <div class="bot-integ_side bot-integ_side--left" aria-label="Messaging channels">
+              <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="bot-integ_link">
+                <span class="bot-integ_link-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+                <span class="bot-integ_link-meta">
+                  <strong>WhatsApp</strong>
+                  <span>Messaging</span>
+                </span>
+              </a>
+              <a href="https://slack.com/" target="_blank" rel="noopener noreferrer" class="bot-integ_link">
+                <span class="bot-integ_link-icon"><i class="fa-brands fa-slack" aria-hidden="true"></i></span>
+                <span class="bot-integ_link-meta">
+                  <strong>Slack</strong>
+                  <span>Team chat</span>
+                </span>
+              </a>
+              <a href="contact.html" class="bot-integ_link">
+                <span class="bot-integ_link-icon"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i></span>
+                <span class="bot-integ_link-meta">
+                  <strong>Web Chat</strong>
+                  <span>On-site widget</span>
+                </span>
+              </a>
+              <a href="mailto:info@aksharwebtech.com" class="bot-integ_link">
+                <span class="bot-integ_link-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                <span class="bot-integ_link-meta">
+                  <strong>Email</strong>
+                  <span>Inbox sync</span>
+                </span>
+              </a>
+            </div>
+
+            <div class="bot-integ_hub" aria-hidden="true">
+              <span class="bot-integ_hub-ring bot-integ_hub-ring--1"></span>
+              <span class="bot-integ_hub-ring bot-integ_hub-ring--2"></span>
+              <div class="bot-integ_hub-core">
+                <i class="fa-solid fa-robot" aria-hidden="true"></i>
+                <strong>Aigenix Hub</strong>
+                <span>40+ connectors</span>
+              </div>
+            </div>
+
+            <div class="bot-integ_side bot-integ_side--right" aria-label="CRM and support tools">
+              <a href="https://www.hubspot.com/" target="_blank" rel="noopener noreferrer" class="bot-integ_link">
+                <span class="bot-integ_link-icon"><i class="fa-brands fa-hubspot" aria-hidden="true"></i></span>
+                <span class="bot-integ_link-meta">
+                  <strong>HubSpot</strong>
+                  <span>CRM</span>
+                </span>
+              </a>
+              <a href="https://www.salesforce.com/" target="_blank" rel="noopener noreferrer" class="bot-integ_link">
+                <span class="bot-integ_link-icon"><i class="fa-brands fa-salesforce" aria-hidden="true"></i></span>
+                <span class="bot-integ_link-meta">
+                  <strong>Salesforce</strong>
+                  <span>CRM</span>
+                </span>
+              </a>
+              <a href="https://www.zendesk.com/" target="_blank" rel="noopener noreferrer" class="bot-integ_link">
+                <span class="bot-integ_link-icon"><i class="fa-solid fa-headset" aria-hidden="true"></i></span>
+                <span class="bot-integ_link-meta">
+                  <strong>Zendesk</strong>
+                  <span>Support</span>
+                </span>
+              </a>
+              <a href="https://www.intercom.com/" target="_blank" rel="noopener noreferrer" class="bot-integ_link">
+                <span class="bot-integ_link-icon"><i class="fa-solid fa-message" aria-hidden="true"></i></span>
+                <span class="bot-integ_link-meta">
+                  <strong>Intercom</strong>
+                  <span>Support</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bot-integ_belt" data-aos="fade-up" data-aos-duration="700" data-aos-delay="140"
+          aria-label="More integrations">
+          <span class="bot-integ_belt-label">Also connects with</span>
+          <ul class="bot-integ_belt-list">
+            <li><a href="https://stripe.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-stripe-s" aria-hidden="true"></i> Stripe</a></li>
+            <li><a href="https://zapier.com/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Zapier</a></li>
+            <li><a href="https://www.shopify.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-shopify" aria-hidden="true"></i> Shopify</a></li>
+            <li><a href="https://wordpress.org/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-wordpress" aria-hidden="true"></i> WordPress</a>
+            </li>
+            <li><a href="https://discord.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord" aria-hidden="true"></i> Discord</a></li>
+            <li><a href="https://telegram.org/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram</a></li>
+          </ul>
+        </div>
+
+        <div class="bot-integ_dev" data-aos="fade-up" data-aos-duration="700" data-aos-delay="180">
+          <div class="bot-integ_dev-code" aria-label="Webhook example">
+            <div class="bot-integ_dev-bar">
+              <span></span><span></span><span></span>
+              <em>webhook.aigenix.io</em>
+            </div>
+            <pre><code><span class="bot-integ_dev-method">POST</span> /v1/chat/events
+{
+  <span class="bot-integ_dev-key">"event"</span>: <span class="bot-integ_dev-str">"message.received"</span>,
+  <span class="bot-integ_dev-key">"channel"</span>: <span class="bot-integ_dev-str">"whatsapp"</span>
+}</code></pre>
+          </div>
+          <div class="bot-integ_dev-copy">
+            <h3 class="bot-integ_dev-title">REST API &amp; webhooks</h3>
+            <p>Build custom flows with scoped API keys, real-time events, and SDKs for Node, Python, and PHP.</p>
+            <div class="bot-integ_dev-actions">
+              <a href="services.html" class="btn-primary bot-integ_dev-btn">
+                View API docs <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+              </a>
+              <a href="contact.html" class="btn-ghost bot-integ_dev-btn">
+                Request integration
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="bot-price" id="pricing" aria-label="Pricing" data-aos="fade-up" data-aos-duration="550">
+      <div class="bot-price_curve" aria-hidden="true"></div>
+      <div class="bot-price_glow bot-price_glow--lime" aria-hidden="true"></div>
+      <div class="bot-price_glow bot-price_glow--teal" aria-hidden="true"></div>
+
+      <div class="bot-container">
+        <div class="bot-price_layout">
+          <header class="bot-price_intro" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+            <span class="bot-price_kicker" data-aos="fade-up" data-aos-duration="550" data-aos-delay="120">
+              <i class="fa-solid fa-tags" aria-hidden="true"></i>
+              Pricing
+            </span>
+            <h2 class="bot-price_title" data-aos="fade-up" data-aos-duration="550" data-aos-delay="180">
+              Only pay for what you
+              <span class="bot-hero_word bot-hero_word--lime">use</span>
+            </h2>
+            <p class="bot-price_desc" data-aos="fade-up" data-aos-duration="550" data-aos-delay="260">
+              Launch your AI chatbot on a free tier, then scale conversations, channels, and team seats
+              as your support volume grows - no surprise overages or per-message traps.
+            </p>
+            <p class="bot-price_desc" data-aos="fade-up" data-aos-duration="550" data-aos-delay="300">
+              Every plan includes secure hosting, webhook events, and our core NLP engine. Upgrade when
+              you need more bots, channels, or advanced analytics.
+            </p>
+            <ul class="bot-price_highlights" aria-label="Included on every plan" data-aos="fade-up"
+              data-aos-duration="550" data-aos-delay="340">
+              <li>
+                <span class="bot-price_check" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                Omnichannel inbox
+              </li>
+              <li>
+                <span class="bot-price_check" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                Custom knowledge training
+              </li>
+              <li>
+                <span class="bot-price_check" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                Human handoff &amp; analytics
+              </li>
+            </ul>
+          </header>
+
+          <div class="bot-price_tiers">
+            <article class="bot-price_tier" data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">
+              <div class="bot-price_tier-info">
+                <h3 class="bot-price_plan">Starter</h3>
+                <p class="bot-price_plan-note">Great for solo founders &amp; small sites</p>
+              </div>
+              <ul class="bot-price_tier-feats">
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> 1 AI chatbot</li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> 1,000 conversations / mo</li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Web chat widget</li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Basic analytics</li>
+              </ul>
+              <div class="bot-price_tier-action">
+                <p class="bot-price_amount">Free</p>
+                <a href="register.html" class="btn-ghost bot-price_btn">
+                  Get started <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <article class="bot-price_tier bot-price_tier--featured" data-aos="fade-up" data-aos-duration="700"
+              data-aos-delay="140">
+              <span class="bot-price_badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Recommended</span>
+              <div class="bot-price_tier-info">
+                <h3 class="bot-price_plan">Growth</h3>
+                <p class="bot-price_plan-note">14-day free trial · cancel anytime</p>
+              </div>
+              <ul class="bot-price_tier-feats">
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> 5 AI chatbots</li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Unlimited conversations</li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> All channels + CRM sync</li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Priority support &amp; SLA</li>
+              </ul>
+              <div class="bot-price_tier-action">
+                <p class="bot-price_amount"><span class="bot-price_currency">$</span>49<span
+                    class="bot-price_period">/mo</span></p>
+                <a href="register.html" class="btn-primary bot-price_btn">
+                  Get started <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <article class="bot-price_tier" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+              <div class="bot-price_tier-info">
+                <h3 class="bot-price_plan">Enterprise</h3>
+                <p class="bot-price_plan-note">For teams with security &amp; scale needs</p>
+              </div>
+              <ul class="bot-price_tier-feats">
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Unlimited AI chatbots</li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> SSO, SAML &amp; RBAC</li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Dedicated success manager</li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Custom integrations &amp; VPC</li>
+              </ul>
+              <div class="bot-price_tier-action">
+                <p class="bot-price_amount bot-price_amount--custom">Custom</p>
+                <a href="contact.html" class="btn-ghost bot-price_btn">
+                  Contact sales <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="bot-price_exit" aria-hidden="true"></div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bot-ts" id="testimonials" aria-label="Testimonials" data-aos="fade-up" data-aos-duration="550">
+      <div class="bot-ts_grid" aria-hidden="true"></div>
+      <div class="bot-ts_glow bot-ts_glow--lime" aria-hidden="true"></div>
+      <div class="bot-ts_glow bot-ts_glow--teal" aria-hidden="true"></div>
+
+      <div class="bot-container">
+        <header class="bot-ts_head" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+          <span class="bot-ts_badge" data-aos="fade-up" data-aos-duration="550" data-aos-delay="120">
+            <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
+            Testimonials
+          </span>
+          <h2 class="bot-ts_title" data-aos="fade-up" data-aos-duration="550" data-aos-delay="180">
+            What do our
+            <span class="bot-hero_word bot-hero_word--teal">clients</span>
+            say?
+          </h2>
+        </header>
+
+        <div class="bot-ts_stage" data-aos="fade-up" data-aos-duration="650" data-aos-delay="200">
+          <div class="swiper bot-ts_swiper" aria-label="Customer testimonials carousel">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <article class="bot-ts_card">
+                  <span class="bot-ts_quote" aria-hidden="true"><i class="fa-solid fa-quote-left"></i></span>
+                  <blockquote class="bot-ts_text">
+                    Aigenix cut our first-response time by 62% in the first month. The bot handles routine
+                    billing and account questions so our team can focus on complex escalations.
+                  </blockquote>
+                  <footer class="bot-ts_author">
+                    <cite class="bot-ts_name">Sarah Chen</cite>
+                    <span class="bot-ts_role">VP Support, Stackline</span>
+                  </footer>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="bot-ts_card">
+                  <span class="bot-ts_quote" aria-hidden="true"><i class="fa-solid fa-quote-left"></i></span>
+                  <blockquote class="bot-ts_text">
+                    We went from signup to a live web chatbot in under a day. The webhook integrations
+                    plugged straight into our CRM without a custom engineering sprint.
+                  </blockquote>
+                  <footer class="bot-ts_author">
+                    <cite class="bot-ts_name">Marcus Reid</cite>
+                    <span class="bot-ts_role">CTO, Querybase</span>
+                  </footer>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="bot-ts_card">
+                  <span class="bot-ts_quote" aria-hidden="true"><i class="fa-solid fa-quote-left"></i></span>
+                  <blockquote class="bot-ts_text">
+                    Handoffs to human agents feel seamless - context, sentiment, and transcript travel with
+                    every conversation. Our CSAT jumped 18 points after rollout.
+                  </blockquote>
+                  <footer class="bot-ts_author">
+                    <cite class="bot-ts_name">Elena Voss</cite>
+                    <span class="bot-ts_role">Head of CX, VoltOps</span>
+                  </footer>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="bot-ts_card">
+                  <span class="bot-ts_quote" aria-hidden="true"><i class="fa-solid fa-quote-left"></i></span>
+                  <blockquote class="bot-ts_text">
+                    One bot across WhatsApp, email, and our site - finally a single inbox for every channel.
+                    Support tickets dropped 38% while lead capture went up.
+                  </blockquote>
+                  <footer class="bot-ts_author">
+                    <cite class="bot-ts_name">James Okonkwo</cite>
+                    <span class="bot-ts_role">Founder, Nimbus</span>
+                  </footer>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="bot-ts_pagination" aria-label="Testimonial slides"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bot-footer" id="footer">
+    <div class="bot-container">
+
+      <!-- Footer Top Bar -->
+      <div class="bot-ft_top" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+        <a href="index-3.html" class="bot-ft_logo">
+          <img src="assets/images/logo.png" alt="Aigenix" width="112" height="28" />
+        </a>
+        <div class="bot-ft_contacts">
+          <a href="tel:+18005291037" class="bot-ft_contact">
+            <span class="bot-ft_contact-icon" aria-hidden="true">
+              <i class="fa-solid fa-phone"></i>
+            </span>
+            <span class="bot-ft_contact-text">
+              <strong>+1 800 529 10 37</strong>
+              <span>Speak with our team</span>
+            </span>
+          </a>
+          <a href="mailto:support@aigenix.io" class="bot-ft_contact">
+            <span class="bot-ft_contact-icon" aria-hidden="true">
+              <i class="fa-solid fa-comments"></i>
+            </span>
+            <span class="bot-ft_contact-text">
+              <strong>support@aigenix.io</strong>
+              <span>Chat with our team</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="bot-ft_divider" aria-hidden="true"></div>
+
+      <!-- Footer Main -->
+      <div class="bot-ft_main">
+        <div class="row g-4 g-xl-5 align-items-start">
+          <div class="col-12 col-lg-5" data-aos="fade-up" data-aos-duration="700">
+            <div class="bot-ft_newsletter">
+              <h2 class="bot-ft_newsletter-title">Our newsletter delivers fresh updates to your inbox</h2>
+              <p class="bot-ft_newsletter-desc">A weekly digest of latest news, articles and resources on AI chatbots.
+              </p>
+              <form class="bot-ft_form" action="#" method="post" aria-label="Newsletter signup">
+                <label class="visually-hidden" for="bot-ft-email">Email address</label>
+                <input id="bot-ft-email" type="email" name="email" placeholder="Enter email address." required
+                  autocomplete="email" />
+                <button type="submit" class="btn-primary bot-ft_submit">Subscribe</button>
+              </form>
+              <div class="bot-ft_socials">
+                <span class="bot-ft_socials-label">Follow us :</span>
+                <ul class="bot-ft_socials-list" aria-label="Social links">
+                  <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                  </li>
+                  <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                  </li>
+                  <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+                  </li>
+                  <li><a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="bot-ft_nav" data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">
+              <div class="row g-4 g-lg-5">
+                <div class="col-6 col-md-4">
+                  <div class="bot-ft_col">
+                    <h6 class="bot-ft_col-title">Pages</h6>
+                    <ul class="bot-ft_col-links">
+                      <li><a href="about.html">Who We Are</a></li>
+                      <li><a href="services.html">Our Service</a></li>
+                      <li><a href="pricing.html">Affordable Pricing</a></li>
+                      <li><a href="team.html">Our Members</a></li>
+                      <li><a href="contact.html">Explore Career</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="bot-ft_col">
+                    <h6 class="bot-ft_col-title">Company</h6>
+                    <ul class="bot-ft_col-links">
+                      <li><a href="blog.html">Our Blog</a></li>
+                      <li><a href="portfolio.html">Portfolio</a></li>
+                      <li><a href="portfolio-details.html">Case Studies</a></li>
+                      <li><a href="testimonials.html">Testimonials</a></li>
+                      <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="bot-ft_col">
+                    <h6 class="bot-ft_col-title">Connects</h6>
+                    <ul class="bot-ft_col-links">
+                      <li><a href="terms.html">Terms of service</a></li>
+                      <li><a href="privacy.html">Privacy policy</a></li>
+                      <li><a href="contact.html">Contact us</a></li>
+                      <li><a href="cookies.html">Cookie Policy</a></li>
+                      <li><a href="register.html">Get Started</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bot-ft_divider bot-ft_divider--bottom" aria-hidden="true"></div>
+
+      <!-- Footer Bottom -->
+      <div class="bot-ft_bottom" data-aos="fade-up" data-aos-duration="550" data-aos-delay="300">
+        <p class="bot-ft_copy">&copy; Copyright 2026 Aigenix. All Rights Reserved</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" id="back-to-top" class="bot-ft_topbtn" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+
+<!-- Mirrored from themes.aksharwebtech.com/aigenix/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Aug 2026 11:19:00 GMT -->
+</html>

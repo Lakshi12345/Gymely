@@ -1,72 +1,176 @@
-import mongoose, {Schema} from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
-const membershipsSchema = new Schema({
-    name : {
-        type : String,
-        required : true,
-        trim : true,
-
-    },
-    mobile : {
-        type: Number,
-        required : true,
-        trim : true ,
-    },
-    planName : {
-        type: String,
-        trim : true ,
-    },
-        cost : {
-        type: Number,
-        required : true ,
-    },
-        discount : {
-        type: Number,
-    },
-        totalAmount : {
-        type: Number,
-    },
-        currentInstallment : {
-            type: Number,
-        },
-        remaining : {
-            type: Number,
-        },
-        online : {
-            type: Number,
-        },
-        cash : {
-            type: Number,
-        },
-        cheque : {
-            type: Number,
-        },
-        startDate : {
-            type: Date,
-        },
-        expiryDate : {
-            type: Date,
-        },
-        paymentDate : {
-            type: Date,
-        },
-        nextPaymentDate : {
-            type: Date,
-        },
-        gymId : {
-            type : String,
-        },
-    },
-
+const membershipsSchema = new Schema(
     {
-        timestamps : true,
+        // Member
+        name: {
+            type: String,
+            required: true,
+            trim: true,
+        },
+
+        mobile: {
+            type: String,
+            required: true,
+            trim: true,
+        },
+
+        UID: {
+            type: Number,
+            required: true,
+            index: true,
+        },
+
+        gymId: {
+            type: String,
+            required: true,
+            index: true,
+        },
+
+        billNumber: {
+            type: Number,
+            default: null,
+        },
+        planName: {
+            type: String,
+            trim: true,
+            default: null,
+        },
+        packageType: {
+            type: String,
+            default: null,
+        },
+        purpose: {
+            type: String,
+            default: null,
+        },
+        registrationAmount: {
+            type: Number,
+            default: 0,
+        },
+        cost: {
+            type: Number,
+            required: true,
+        },
+        totalPayable: {
+            type: Number,
+            default: 0,
+        },
+        totalAmount: {
+            type: Number,
+            default: 0,
+        },
+        taxAmount: {
+            type: Number,
+            default: 0,
+        },
+        convenience: {
+            type: Number,
+            default: 0,
+        },
+        discount: {
+            type: Number,
+            default: 0,
+        },
+        paidAmount: {
+            type: Number,
+            default: 0,
+        },
+        remaining: {
+            type: Number,
+            default: 0,
+        },
+
+        taxType: {
+            type: String,
+            default: null,
+        },
+
+        // Membership dates
+        startDate: {
+            type: Date,
+            default: null,
+        },
+        expiryDate: {
+            type: Date,
+            default: null,
+        },
+        paymentDate: {
+            type: Date,
+            default: null,
+        },
+        nextPaymentDate: {
+            type: Date,
+            default: null,
+        },
+
+        updateTime: {
+            type: Date,
+            default: null,
+        },
+        // Sessions
+        totalSessions: {
+            type: Number,
+            default: 0,
+        },
+
+        pendingSessions: {
+            type: Number,
+            default: 0,
+        },
+
+        completedSessions: {
+            type: Number,
+            default: 0,
+        },
+
+        // Services
+        services: [
+            {
+                name: {
+                    type: String,
+                    trim: true,
+                },
+
+                sessions: {
+                    type: Number,
+                    default: 0,
+                },
+            },
+        ],
+
+        // Group
+        workoutgroup: {
+            type: String,
+            default: null,
+        },
+
+        // Staff
+        assignedTrainer: {
+            type: String,
+            default: null,
+        },
+
+        soldBy: {
+            type: String,
+            default: null,
+        },
+
+        operator: {
+            type: String,
+            default: null,
+        },
+
+        remarks: {
+            type: String,
+            default: "",
+        },
+    },
+    {
+        timestamps: true,
     }
-
 );
 
-const Memberships = mongoose.model(
-    "Memberships",
-    membershipsSchema
-);
+const Memberships = mongoose.model("Memberships", membershipsSchema);
 
 export default Memberships;

@@ -1,6 +1,6 @@
 import Service from "../models/Service";
 export const createService = async (packageData: any, gymId: string) => {
-    const exitspackages = await Service.findOne({ name: packageData.name });
+    const exitspackages = await Service.findOne({ name: packageData.name, gymId: gymId });
 
     if (exitspackages) {
         throw new Error("Service name is already exists !");

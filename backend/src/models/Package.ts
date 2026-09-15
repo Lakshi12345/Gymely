@@ -2,70 +2,62 @@ import mongoose, { Schema } from "mongoose";
 
 const packageSchema = new Schema(
     {
-        packageName : {
+        packageName: {
             type: String,
-            required : true,
-            trim : true
+            required: true,
+            trim: true,
         },
-        duration : {
+        duration: {
             type: Number,
-            required : true,
-
+            required: true,
         },
 
-        minimumSalePercent : {
-            type : Number,
+        minimumSalePercent: {
+            type: Number,
         },
 
-        services : [
-
+        services: [
             {
+                name: {
+                    type: String,
 
-                name : {
-
-                    type : String,
-
-                    required : true
-
+                    required: true,
                 },
 
-                session : {
+                session: {
+                    type: Number,
 
-                    type : Number,
-
-                    required : true
-
-                }
-
-            }
-
+                    required: true,
+                },
+            },
         ],
 
         amount: {
-            type : Number,
-            required : true,
+            type: Number,
+            required: true,
         },
 
         isIncludeGst: {
-            type : String,
-            required : true,
+            type: String,
+            required: true,
         },
 
+        packageType: {
+            type: String,
+            required: true,
+        },
 
         gymId: {
             type: String,
             ref: "User",
             required: true,
-        }
+        },
     },
     {
-        timestamps : true,
+        timestamps: true,
     }
 );
 
-const Package = mongoose.model(
-    "Packages",
-    packageSchema
-);
+const Package = mongoose.model("Packages", packageSchema);
 
 export default Package;

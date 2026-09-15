@@ -21,7 +21,7 @@ export default function AuthLayout({
                 <img
                   width={231}
                   height={48}
-                  src="/images/logo/auth-logo.svg"
+                  src="/img/ChatGPT Image Aug 12, 2026, 05_42_00 PM.png"
                   alt="Logo"
                 />
               </Link>

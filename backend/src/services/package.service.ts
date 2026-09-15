@@ -1,80 +1,81 @@
 import Package from "../models/Package";
-export const createPackage = async (packageData : any ,gymId : string)=>{
+export const createPackage = async (packageData: any, gymId: string) => {
+    const exitspackages = await Package.findOne({
+        packageName: packageData.packageName,
+        gymId,
+    });
 
-    const exitspackages = await Package.findOne({packageName: packageData.packageName,});
-
-    if(exitspackages){
+    if (exitspackages) {
         throw new Error("Package name is already exists !");
     }
 
     const formattedData = {
+        packageName: packageData.packageName,
 
-        packageName:
+        duration: Number(packageData.duration),
 
-        packageData.packageName,
+        amount: Number(packageData.amount),
 
-        duration:
-            Number(
-                packageData.duration
-            ),
+        services: packageData.services,
 
-        amount:
-            Number(
-                packageData.amount
-            ),
+        packageType: packageData.packageType,
 
-        services : packageData.sessionData,
+        minimumSalePercent: packageData.minimumSalePercent,
 
-        minimumSalePercent : packageData.minimumSalePercent,
-        isIncludeGst : packageData.isIncludeGst,
+        isIncludeGst: packageData.isIncludeGst,
 
         gymId,
     };
 
-    const packages  = await Package.create(formattedData);
+    const packages = await Package.create(formattedData);
 
     return {
-        success : true,
-        message : "Package Created Successfully",
-        data : packages,
+        success: true,
+        message: "Package Created Successfully",
+        data: packages,
     };
-}
+};
 
-export  const packageGet = async (gym : string)=> {
-    const packages = await Package.find({gymId : gym,});
+export const packageGet = async (gym: string) => {
+    const packages = await Package.find({ gymId: gym });
+
+    const data = packages.map((pkg) => ({
+        ...pkg.toObject(),
+        taxIncluded: pkg.isIncludeGst === "YES",
+    }));
+
     return {
-        success : true,
-        data : packages
-    }
-}
+        success: true,
+        data: data,
+    };
+};
 
-export  const packageDelete =  async (id: string, gymId : string)=> {
-    const existPackages = await Package.findOneAndDelete({_id: id, gymId: gymId});
+export const packageDelete = async (id: string, gymId: string) => {
+    const existPackages = await Package.findOneAndDelete({ _id: id, gymId: gymId });
 
     if (!existPackages) {
         throw new Error("Packages does not exist !");
     }
     return existPackages;
-}
+};
 
-export  const getPackageSingle = async (id:string, gymId : string)=>{
-
-    const result  = await Package.findOne({_id: id, gymId: gymId});
-    if(!result){
+export const getPackageSingle = async (id: string, gymId: string) => {
+    const result = await Package.findOne({ _id: id, gymId: gymId });
+    if (!result) {
         throw new Error("Package not found !");
     }
     return result;
-}
+};
 
-export  const packageUpdate = async (id: string, gymId: string, packageData: any)=>{
-
-
-
-    const result = await Package.findOneAndUpdate({_id: id, gymId: gymId},{$set :{...packageData}},{new : true});
-    if(!result){
+export const packageUpdate = async (id: string, gymId: string, packageData: any) => {
+    const result = await Package.findOneAndUpdate(
+        { _id: id, gymId: gymId },
+        { $set: { ...packageData } },
+        { new: true }
+    );
+    if (!result) {
         throw new Error("Package not Found !");
     }
 
-    return result ;
-}
-
+    return result;
+};

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from themes.aksharwebtech.com/aigenix/portfolio-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Aug 2026 11:19:06 GMT -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Aigenix Case Study - Deep dive into a production AI deployment with metrics, architecture, and outcomes." />
+  <!-- Title -->
+  <title>Aigenix - Case Study Details</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="../../fonts.googleapis.com/index.html" />
+  <link rel="preconnect" href="../../fonts.gstatic.com/index.html" crossorigin />
+  <link
+    href="../../fonts.googleapis.com/css28251?family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+    rel="stylesheet" />
+  <!-- CSS -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/aos.css" />
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body class="about-page">
+  <!-- Loader -->
+  <div id="ai-loader">
+    <div class="loader-matrix"></div>
+    <div class="loader-content">
+      <div class="loader-glitch" data-text="AIGENIX // ENGINE"><img src="assets/images/logo.png" alt="Aigenix" /></div>
+      <div class="loader-status">
+        <span class="status-tag">INITIALIZING NEURAL CORE</span>
+        <div class="loader-bar-wrap">
+          <div class="loader-bar"></div>
+        </div>
+        <div class="loader-metrics">
+          <span class="metric-pct">00%</span>
+          <span class="metric-sync">SYS_SYNC_ACTIVE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="page-transition"></div>
+  <div id="scroll-progress"></div>
+  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-shell">
+        <div class="nav-container">
+          <a class="nav-logo" href="index.html">
+            <img src="assets/images/logo.png" alt="Aigenix" />
+          </a>
+          <ul class="nav-menu">
+            <li class="menu-item">
+              <span class="nav-link">Home <i class="fas fa-chevron-down"></i></span>
+              <ul class="dropdown-panel">
+                <li><a class="dropdown-link" href="index.html">AI Agent</a></li>
+                <li><a class="dropdown-link" href="index-1.html">AI Startup</a></li>
+                <li><a class="dropdown-link" href="index-2.html">AI SaaS</a></li>
+                <li><a class="dropdown-link" href="index-3.html">AI Chatbot</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <span class="nav-link">Company <i class="fas fa-chevron-down"></i></span>
+              <ul class="dropdown-panel">
+                <li><a class="dropdown-link" href="about.html">About Us</a></li>
+                <li><a class="dropdown-link" href="team.html">Our Team</a></li>
+                <li><a class="dropdown-link" href="testimonials.html">Testimonials</a></li>
+                <li><a class="dropdown-link" href="faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <span class="nav-link">Portfolio <i class="fas fa-chevron-down"></i></span>
+              <ul class="dropdown-panel">
+                <li><a class="dropdown-link" href="portfolio.html">Portfolio</a></li>
+                <li><a class="dropdown-link" href="portfolio-details.html">Portfolio Details</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <span class="nav-link">Blog <i class="fas fa-chevron-down"></i></span>
+              <ul class="dropdown-panel">
+                <li><a class="dropdown-link" href="blog.html">Blog</a></li>
+                <li><a class="dropdown-link" href="blog-details.html">Blog Details</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <span class="nav-link">Pages <i class="fas fa-chevron-down"></i></span>
+              <ul class="dropdown-panel mega-panel">
+                <li><a class="dropdown-link" href="services.html">Services</a></li>
+                <li><a class="dropdown-link" href="service-details.html">Service Details</a></li>
+                <li><a class="dropdown-link" href="pricing.html">Pricing</a></li>
+                <li><a class="dropdown-link" href="team-details.html">Team Details</a></li>
+                <li><a class="dropdown-link" href="login.html">Login</a></li>
+                <li><a class="dropdown-link" href="register.html">Register</a></li>
+                <li><a class="dropdown-link" href="coming-soon.html">Coming Soon</a></li>
+                <li><a class="dropdown-link" href="404.html">404 Error</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <div class="nav-actions">
+            <a class="btn-ghost" href="login.html"><i class="fas fa-right-to-bracket"></i> Log in</a>
+            <a class="btn-primary nav-cta" href="register.html"><i class="fas fa-bolt"></i> Get Started</a>
+          </div>
+          <!-- Mobile menu toggle -->
+          <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Inner Hero Section (Breadcrumbs) -->
+  <section class="inner-hero mlr-40 radius-25 position-relative">
+    <div class="inner-hero-grid-bg"></div>
+    <div class="inner-hero-glow"></div>
+    <div class="container position-relative z-index-2 ptb-100 text-center">
+      <div class="aig-badge mb-3" data-aos="fade-up" data-aos-duration="550">
+        <span class="dot"></span> SWARM_OPS
+      </div>
+      <h1 class="inner-hero-title mb-3" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+        Consensus <span class="text-highlight-primary">Hash Ring V3</span>
+      </h1>
+      <ul class="breadcrumb-list d-flex align-items-center justify-content-center gap-2" data-aos="fade-up"
+        data-aos-duration="550" data-aos-delay="200">
+        <li><a href="index.html">Home</a></li>
+        <li><span class="divider">/</span></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><span class="divider">/</span></li>
+        <li class="active">Details</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Case Study Details Section -->
+  <section class="portfolio-details-section aig-section mlr-40 radius-25" data-aos="fade-up" data-aos-duration="550">
+    <div class="light-bg-pattern"></div>
+    <div class="container">
+      <!-- Section 1: Executive Brief & Specs Split -->
+      <div class="row mb-5">
+        <div class="col-lg-8 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="550" data-aos-delay="100">
+          <div class="details-text-block h-100">
+            <span class="aig-badge" data-aos="fade-up" data-aos-duration="550" data-aos-delay="140"><span
+                class="dot"></span> EXECUTIVE_BRIEF</span>
+            <h2 class="stream-section-title mb-4" data-aos="fade-up" data-aos-duration="550" data-aos-delay="200">
+              Decentralized Edge Consensus</h2>
+            <p class="stream-desc" data-aos="fade-up" data-aos-duration="550" data-aos-delay="280">
+              Traditional cloud networks experience latency bottlenecks when managing transaction weights across
+              globally distributed devices.
+              Aigenix deployed the <strong>Consensus Hash Ring V3</strong> protocol to achieve peer-to-peer sync without
+              centralized database overhead.
+              By utilizing a hash ring structure, edge nodes coordinate state updates directly, bypassing server relays
+              and maintaining 100% operational uptime.
+            </p>
+            <div class="tech-highlight-box p-4 mt-4" data-aos="fade-up" data-aos-duration="550" data-aos-delay="360">
+              <i class="fas fa-quote-left text-highlight-primary mb-3"></i>
+              <p class="highlight-quote mb-0">
+                "The Consensus Hash Ring V3 reduced aerospace node latency from 140ms down to a fraction of a
+                millisecond, completely resolving our distributed edge collision conflicts."
+              </p>
+              <span class="quote-author mt-3 d-block">- Dr. Alexander Vance, AeroSpace Labs Director</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4" data-aos="fade-left" data-aos-duration="650" data-aos-delay="200">
+          <div class="client-specs-card portfolio-card p-4 h-100" data-aos="fade-up" data-aos-duration="550"
+            data-aos-delay="260">
+            <!-- Glassmorphic Highlights -->
+            <div class="card-glow-effect"></div>
+            <div class="card-corner top-left"></div>
+            <div class="card-corner top-right"></div>
+            <div class="card-corner bottom-left"></div>
+            <div class="card-corner bottom-right"></div>
+            <h4 class="specs-card-title mb-4"><i class="fas fa-list-check text-highlight-primary me-2"></i> DEPLOYMENT
+              DATA</h4>
+            <div class="specs-list">
+              <div class="spec-row">
+                <span class="spec-label">CLIENT_ID</span>
+                <span class="spec-value">AEROSPACE LABS</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">DEPLOY_DATE</span>
+                <span class="spec-value">JUNE 2026</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">CORE_NODES</span>
+                <span class="spec-value">128 EDGE INSTANCES</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">PROTOCOLS</span>
+                <span class="spec-value">mTLS + QUANTUM CIPHER</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">DEFLECTION</span>
+                <span class="spec-value text-success">100% OPERATIONAL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Section 2: Deployed AI Agents Grid -->
+      <div class="details-agents-section mb-5" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+        <span class="aig-badge mb-3" data-aos="fade-up" data-aos-duration="550" data-aos-delay="120"><span
+            class="dot"></span> DEPLOYED_AGENTS</span>
+        <h3 class="stream-section-title mb-4" data-aos="fade-up" data-aos-duration="550" data-aos-delay="180">Active
+          Swarm Agent Core</h3>
+        <div class="row g-4">
+          <!-- Agent 1: Strategy -->
+          <div class="col-md-6 col-lg-3">
+            <div class="agent-grid-card portfolio-card p-4 text-center" data-aos="fade-up" data-aos-duration="550"
+              data-aos-delay="150">
+              <div class="agent-icon-wrap mb-3"><i class="fas fa-chess-knight"></i></div>
+              <h4 class="agent-card-name">Agent Strategy</h4>
+              <p class="agent-card-desc">Autonomous discovery & market intelligence advisory.</p>
+              <div class="agent-mini-specs mt-3 mb-3 text-start">
+                <div class="mini-spec-row"><span>MODEL:</span> <strong>Gemini 1.5</strong></div>
+                <span class="status-pill active"><span class="f-dot animate-pulse"></span> RUNNING</span>
+              </div>
+              <!-- SVG Radial Gauge -->
+              <div class="radial-gauge-wrap mx-auto">
+                <svg width="50" height="50" viewBox="0 0 36 36" class="circular-chart">
+                  <path class="circle-bg"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                    stroke="rgba(3, 70, 81, 0.05)" stroke-width="2.5"></path>
+                  <path class="circle" stroke-dasharray="92, 100"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                    stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round"></path>
+                </svg>
+                <span class="gauge-pct">92%</span>
+              </div>
+              <span class="gauge-label mt-2 d-block">RESOURCE LOAD</span>
+            </div>
+          </div>
+          <!-- Agent 2: Operations -->
+          <div class="col-md-6 col-lg-3">
+            <div class="agent-grid-card portfolio-card p-4 text-center" data-aos="fade-up" data-aos-duration="550"
+              data-aos-delay="220">
+              <div class="agent-icon-wrap mb-3"><i class="fas fa-gears"></i></div>
+              <h4 class="agent-card-name">Agent Operations</h4>
+              <p class="agent-card-desc">Continuous workflow optimization & pipeline execution.</p>
+              <div class="agent-mini-specs mt-3 mb-3 text-start">
+                <div class="mini-spec-row"><span>MODEL:</span> <strong>Claude 3.5</strong></div>
+                <span class="status-pill active"><span class="f-dot animate-pulse"></span> RUNNING</span>
+              </div>
+              <!-- SVG Radial Gauge -->
+              <div class="radial-gauge-wrap mx-auto">
+                <svg width="50" height="50" viewBox="0 0 36 36" class="circular-chart">
+                  <path class="circle-bg"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                    stroke="rgba(3, 70, 81, 0.05)" stroke-width="2.5"></path>
+                  <path class="circle" stroke-dasharray="74, 100"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                    stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round"></path>
+                </svg>
+                <span class="gauge-pct">74%</span>
+              </div>
+              <span class="gauge-label mt-2 d-block">RESOURCE LOAD</span>
+            </div>
+          </div>
+          <!-- Agent 3: Knowledge -->
+          <div class="col-md-6 col-lg-3">
+            <div class="agent-grid-card portfolio-card p-4 text-center" data-aos="fade-up" data-aos-duration="550"
+              data-aos-delay="290">
+              <div class="agent-icon-wrap mb-3"><i class="fas fa-database"></i></div>
+              <h4 class="agent-card-name">Agent Knowledge</h4>
+              <p class="agent-card-desc">RAG contextual database lookup & semantic parsing.</p>
+              <div class="agent-mini-specs mt-3 mb-3 text-start">
+                <div class="mini-spec-row"><span>MODEL:</span> <strong>GPT-4o Engine</strong></div>
+                <span class="status-pill active"><span class="f-dot animate-pulse"></span> RUNNING</span>
+              </div>
+              <!-- SVG Radial Gauge -->
+              <div class="radial-gauge-wrap mx-auto">
+                <svg width="50" height="50" viewBox="0 0 36 36" class="circular-chart">
+                  <path class="circle-bg"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                    stroke="rgba(3, 70, 81, 0.05)" stroke-width="2.5"></path>
+                  <path class="circle" stroke-dasharray="86, 100"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                    stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round"></path>
+                </svg>
+                <span class="gauge-pct">86%</span>
+              </div>
+              <span class="gauge-label mt-2 d-block">RESOURCE LOAD</span>
+            </div>
+          </div>
+          <!-- Agent 4: Compliance -->
+          <div class="col-md-6 col-lg-3">
+            <div class="agent-grid-card portfolio-card p-4 text-center" data-aos="fade-up" data-aos-duration="550"
+              data-aos-delay="360">
+              <div class="agent-icon-wrap mb-3"><i class="fas fa-shield-halved"></i></div>
+              <h4 class="agent-card-name">Agent Compliance</h4>
+              <p class="agent-card-desc">Algorithmic alignment audits & security gates checks.</p>
+              <div class="agent-mini-specs mt-3 mb-3 text-start">
+                <div class="mini-spec-row"><span>MODEL:</span> <strong>Llama 3 70B</strong></div>
+                <span class="status-pill active"><span class="f-dot animate-pulse"></span> RUNNING</span>
+              </div>
+              <!-- SVG Radial Gauge -->
+              <div class="radial-gauge-wrap mx-auto">
+                <svg width="50" height="50" viewBox="0 0 36 36" class="circular-chart">
+                  <path class="circle-bg"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                    stroke="rgba(3, 70, 81, 0.05)" stroke-width="2.5"></path>
+                  <path class="circle" stroke-dasharray="40, 100"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                    stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round"></path>
+                </svg>
+                <span class="gauge-pct">40%</span>
+              </div>
+              <span class="gauge-label mt-2 d-block">RESOURCE LOAD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Section 4: ROI & Impact Projector -->
+      <div class="details-bench-block mb-5" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+        <span class="aig-badge mb-3" data-aos="fade-up" data-aos-duration="550" data-aos-delay="120"><span
+            class="dot"></span> IMPACT_PROJECTOR</span>
+        <h3 class="stream-section-title mb-4" data-aos="fade-up" data-aos-duration="550" data-aos-delay="180">Agentic
+          Automation Value Calculator</h3>
+        <div class="details-metrics-panel portfolio-card p-5" data-aos="fade-up" data-aos-duration="550"
+          data-aos-delay="260">
+          <!-- Interactive Slider -->
+          <div class="roi-slider-container mb-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="slider-label">WEEKLY AUTOMATED TASKS</span>
+              <span class="slider-value" id="roi-slider-readout">10,000 runs</span>
+            </div>
+            <input type="range" class="roi-range-input w-100" id="roi-range" min="1000" max="50000" step="1000"
+              value="10000" aria-label="Weekly automated tasks" />
+            <div class="slider-ticks d-flex justify-content-between mt-2">
+              <span>1k</span>
+              <span>10k</span>
+              <span>20k</span>
+              <span>30k</span>
+              <span>40k</span>
+              <span>50k</span>
+            </div>
+          </div>
+          <!-- ROI metrics grid -->
+          <div class="row">
+            <div class="col-sm-6 mb-4 mb-sm-0 divider-right">
+              <span class="metric-sec-label">MONTHLY_COST_DEFLECTION</span>
+              <div class="metric-sec-value text-success" id="roi-cost-val">$2,400</div>
+              <p class="metric-sec-desc mt-2 mb-0">Projected savings calculated against average human operational costs.
+              </p>
+            </div>
+            <div class="col-sm-6 ps-sm-4">
+              <span class="metric-sec-label">WEEKLY_HOURS_REALLOCATED</span>
+              <div class="metric-sec-value text-highlight-secondary" id="roi-hours-val">120h</div>
+              <p class="metric-sec-desc mt-2 mb-0">Time returned to engineering cores by offloading routing processes.
+              </p>
+            </div>
+          </div>
+          <hr class="metric-sep my-4" />
+          <div class="row">
+            <div class="col-sm-6 mb-4 mb-sm-0 divider-right">
+              <span class="metric-sec-label">AGENTS_COLLABORATIVE_DENSITY</span>
+              <div class="metric-sec-value">4 Node-Agents</div>
+              <p class="metric-sec-desc mt-2 mb-0">Synchronized agents sharing vector context via consensus pipelines.
+              </p>
+            </div>
+            <div class="col-sm-6 ps-sm-4">
+              <span class="metric-sec-label">COGNITIVE_EFFICIENCY_INDEX</span>
+              <div class="metric-sec-value text-success" id="roi-efficiency-val">92.4%</div>
+              <p class="metric-sec-desc mt-2 mb-0">Average execution sync efficiency score across the Swarm core.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Section 5: Implementation Roadmap Stepper -->
+      <div class="details-stepper-block mb-4" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+        <span class="aig-badge mb-3" data-aos="fade-up" data-aos-duration="550" data-aos-delay="120"><span
+            class="dot"></span> ROADMAP</span>
+        <h3 class="stream-section-title mb-4" data-aos="fade-up" data-aos-duration="550" data-aos-delay="180">
+          Deployment Lifecycle</h3>
+        <div class="details-timeline-wrap mt-4">
+          <!-- Step 1 -->
+          <div class="timeline-step d-flex gap-4 mb-4" data-aos="fade-up" data-aos-duration="550" data-aos-delay="140">
+            <div class="step-badge-wrap">
+              <span class="step-index-badge">01</span>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-content-card p-4">
+              <h4 class="step-card-title mb-2">Discovery & Knowledge Map</h4>
+              <p class="step-card-desc mb-0">Our cognitive systems scan the client's internal documents, database
+                models, and active SaaS pipelines to create a RAG knowledge architecture.</p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="timeline-step d-flex gap-4 mb-4" data-aos="fade-up" data-aos-duration="550" data-aos-delay="220">
+            <div class="step-badge-wrap">
+              <span class="step-index-badge">02</span>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-content-card p-4">
+              <h4 class="step-card-title mb-2">Agent Fine-Tuning & Align</h4>
+              <p class="step-card-desc mb-0">We custom fine-tune and align the LLM agent model parameters on specific
+                corporate compliance codes to ensure zero governance deflections.</p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="timeline-step d-flex gap-4 mb-4" data-aos="fade-up" data-aos-duration="550" data-aos-delay="300">
+            <div class="step-badge-wrap">
+              <span class="step-index-badge">03</span>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-content-card p-4">
+              <h4 class="step-card-title mb-2">Swarm Orchestration Loop</h4>
+              <p class="step-card-desc mb-0">Agent modules are tied together in a continuous, stateful execution
+                pipeline with peer-to-peer data validation checkpoints.</p>
+            </div>
+          </div>
+          <!-- Step 4 -->
+          <div class="timeline-step d-flex gap-4" data-aos="fade-up" data-aos-duration="550" data-aos-delay="380">
+            <div class="step-badge-wrap">
+              <span class="step-index-badge">04</span>
+            </div>
+            <div class="step-content-card p-4">
+              <h4 class="step-card-title mb-2">Edge Optimizations & Scale</h4>
+              <p class="step-card-desc mb-0">We compile node pipelines, deploy them to edge proxies, and scale active
+                processing units dynamically to match transaction overheads.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer id="cyber-footer" class="mlr-40 radius-25">
+    <div class="footer-neon-line" aria-hidden="true"></div>
+    <div class="footer-matrix-bg" aria-hidden="true"></div>
+    <div class="footer-glow-aurora" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+          <a class="nav-logo" href="index.html">
+            <img src="assets/images/logo.png" alt="Aigenix" />
+          </a>
+          <p class="footer-desc">Next-generation autonomous AI node matrix infrastructure. Processing and scaling
+            intelligence at the edge of thought.</p>
+          <div class="footer-status-pills">
+            <span class="f-pill"><span class="f-dot animate-pulse"></span> ALL SYSTEMS OPERATIONAL</span>
+            <span class="f-pill code-version">v1.0</span>
+          </div>
+        </div>
+        <!-- Links -->
+        <div class="footer-col" data-aos="fade-up" data-aos-duration="550" data-aos-delay="150">
+          <h6 class="footer-col-title">Core Engine</h6>
+          <ul class="footer-links">
+            <li><a class="footer-link" href="index.html">AI Agent</a></li>
+            <li><a class="footer-link" href="index-1.html">AI Startup</a></li>
+            <li><a class="footer-link" href="index-2.html">AI SaaS</a></li>
+            <li><a class="footer-link" href="index-3.html">AI Chatbot</a></li>
+          </ul>
+        </div>
+        <!-- Links -->
+        <div class="footer-col" data-aos="fade-up" data-aos-duration="550" data-aos-delay="200">
+          <h6 class="footer-col-title">Node Intelligence</h6>
+          <ul class="footer-links">
+            <li><a class="footer-link" href="services.html">Services</a></li>
+            <li><a class="footer-link" href="about.html">About Us</a></li>
+            <li><a class="footer-link" href="blog.html">Blog</a></li>
+            <li><a class="footer-link" href="faq.html">FAQ</a></li>
+            <li><a class="footer-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter-col" data-aos="fade-up" data-aos-duration="550" data-aos-delay="250">
+          <h6 class="footer-col-title">Core Synchronization</h6>
+          <p class="newsletter-desc">Subscribe to direct intelligence updates straight from our core servers.</p>
+          <form class="footer-terminal-form" onsubmit="event.preventDefault();">
+            <div class="terminal-input-wrap">
+              <span class="terminal-prompt">&gt;</span>
+              <input type="email" placeholder="ENTER_EMAIL_ADDR..." required aria-label="Newsletter input" />
+              <button type="submit" class="terminal-submit-btn" aria-label="Submit email">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </form>
+          <div class="footer-socials">
+            <a class="social-btn" href="javascript:void(0)" target="_blank" rel="noopener noreferrer"
+              aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a class="social-btn" href="javascript:void(0)" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="social-btn" href="javascript:void(0)" target="_blank" rel="noopener noreferrer"
+              aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a class="social-btn" href="javascript:void(0)" target="_blank" rel="noopener noreferrer"
+              aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <!--- Copyright -->
+      <div class="footer-bottom" data-aos="fade-up" data-aos-duration="550" data-aos-delay="300">
+        <span class="copyright-text">&copy; 2026 AIGENIX INC. SYSTEM CHASSIS IS DESIGNED WITH SECURE AI
+          INFRASTRUCTURE.</span>
+        <div class="footer-bottom-links">
+          <a class="footer-bottom-link" href="privacy.html">PRIVACY_CORE</a>
+          <a class="footer-bottom-link" href="terms.html">TERMS_OF_SERVICE</a>
+          <a class="footer-bottom-link" href="cookies.html">COOKIE_STORAGE</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Back to Top">
+    <i class="fas fa-chevron-up"></i>
+    <svg class="progress-ring" width="48" height="48">
+      <circle class="progress-ring_circle" stroke="var(--primary)" stroke-width="3" fill="transparent" r="21" cx="24"
+        cy="24" />
+    </svg>
+  </button>
+
+  <!--- Scripts -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/three.min.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+
+<!-- Mirrored from themes.aksharwebtech.com/aigenix/portfolio-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Aug 2026 11:19:06 GMT -->
+</html>

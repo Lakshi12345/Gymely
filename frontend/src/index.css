@@ -173,6 +173,11 @@ layer(base);
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}
+
 @layer base {
   *,
   ::after,

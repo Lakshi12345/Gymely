@@ -1,0 +1,492 @@
+import {
+    ArrowUpRight,
+    BadgeIndianRupee,
+    TrendingUp,
+    UserPlus,
+    Users,
+    Wallet,
+} from "lucide-react";
+
+const cards = [
+    {
+        title: "Total Customers",
+        value: "2,486",
+        growth: "+12%",
+        icon: Users,
+    },
+    {
+        title: "New Customers",
+        value: "184",
+        growth: "+18%",
+        icon: UserPlus,
+    },
+    {
+        title: "Revenue",
+        value: "₹8.4L",
+        growth: "+15%",
+        icon: BadgeIndianRupee,
+    },
+    {
+        title: "Retention",
+        value: "92%",
+        growth: "+6%",
+        icon: TrendingUp,
+    },
+];
+
+export default function CustomerSales() {
+    return (
+        <div className="space-y-6">
+            {/* HERO */}
+
+            <div className="rounded-3xl bg-gradient-to-r from-cyan-600 via-sky-600 to-blue-700 p-8 text-white shadow-xl">
+                <div className="flex items-center justify-between">
+                    <div>
+                        <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/20">
+                            <Wallet size={30} />
+                        </div>
+
+                        <h1 className="text-4xl font-bold">Customer Sales</h1>
+
+                        <p className="mt-3 max-w-2xl text-blue-100">
+                            Monitor customer revenue, retention, renewals, outstanding payments, and
+                            customer lifetime value.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* FILTERS */}
+
+            <div className="rounded-3xl border border-gray-200 bg-white p-6">
+                <div className="grid grid-cols-12 gap-4">
+                    <input
+                        placeholder="Search customer"
+                        className="col-span-12 rounded-2xl border p-3 lg:col-span-4"
+                    />
+
+                    <input
+                        type="date"
+                        className="col-span-12 rounded-2xl border p-3 lg:col-span-3"
+                    />
+
+                    <select className="col-span-12 rounded-2xl border p-3 lg:col-span-2">
+                        <option>All Packages</option>
+                        <option>Gold</option>
+                        <option>Silver</option>
+                        <option>Premium</option>
+                    </select>
+
+                    <button className="col-span-12 rounded-2xl bg-blue-600 p-3 font-semibold text-white lg:col-span-3">
+                        Export Report
+                    </button>
+                </div>
+            </div>
+
+            {/* KPI SECTION */}
+
+            <div className="grid grid-cols-12 gap-6">
+                {cards.map((card, index) => {
+                    const Icon = card.icon;
+
+                    return (
+                        <div key={index} className="col-span-12 md:col-span-6 xl:col-span-3">
+                            <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+                                <div className="flex items-center justify-between">
+                                    <div>
+                                        <p className="text-sm text-gray-500">{card.title}</p>
+
+                                        <h2 className="mt-3 text-4xl font-bold">{card.value}</h2>
+
+                                        <div className="mt-3 flex items-center gap-2">
+                                            <ArrowUpRight size={16} className="text-green-600" />
+
+                                            <span className="font-medium text-green-600">
+                                                {card.growth}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div className="rounded-2xl bg-blue-50 p-4">
+                                        <Icon size={28} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+            {/* =====================================================
+            ================= CUSTOMER REVENUE ====================
+            ===================================================== */}
+
+            <div className="grid grid-cols-12 gap-6">
+                <div className="col-span-12 xl:col-span-8">
+                    <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <div className="mb-8">
+                            <h2 className="text-2xl font-bold">Customer Revenue Analysis</h2>
+
+                            <p className="mt-2 text-sm text-gray-500">
+                                Revenue generated by customers across different periods.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
+                            <div className="rounded-2xl bg-gray-50 p-5">
+                                <p className="text-sm text-gray-500">Today</p>
+
+                                <h3 className="mt-3 text-3xl font-bold">₹18,500</h3>
+                            </div>
+
+                            <div className="rounded-2xl bg-gray-50 p-5">
+                                <p className="text-sm text-gray-500">Weekly</p>
+
+                                <h3 className="mt-3 text-3xl font-bold">₹1.42L</h3>
+                            </div>
+
+                            <div className="rounded-2xl bg-gray-50 p-5">
+                                <p className="text-sm text-gray-500">Monthly</p>
+
+                                <h3 className="mt-3 text-3xl font-bold">₹8.4L</h3>
+                            </div>
+
+                            <div className="rounded-2xl bg-gray-50 p-5">
+                                <p className="text-sm text-gray-500">Yearly</p>
+
+                                <h3 className="mt-3 text-3xl font-bold">₹96L</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* TOP CUSTOMERS */}
+
+                <div className="col-span-12 xl:col-span-4">
+                    <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <h2 className="mb-8 text-2xl font-bold">Top Customers</h2>
+
+                        <div className="space-y-4">
+                            {[
+                                {
+                                    name: "Rahul Sharma",
+                                    amount: "₹42,000",
+                                },
+                                {
+                                    name: "Aman Kumar",
+                                    amount: "₹38,000",
+                                },
+                                {
+                                    name: "Priya Singh",
+                                    amount: "₹34,000",
+                                },
+                                {
+                                    name: "Rohit Das",
+                                    amount: "₹29,000",
+                                },
+                            ].map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="flex items-center justify-between rounded-2xl border border-gray-100 p-4"
+                                >
+                                    <span>{item.name}</span>
+
+                                    <span className="font-bold">{item.amount}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* =====================================================
+            ==================== CUSTOMER TYPES ===================
+            ===================================================== */}
+
+            <div className="grid grid-cols-12 gap-6">
+                <div className="col-span-12 lg:col-span-6">
+                    <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <h2 className="mb-8 text-2xl font-bold">New Customers</h2>
+
+                        <div className="space-y-4">
+                            {[
+                                "Gold Membership",
+                                "Premium Membership",
+                                "Personal Training",
+                                "Transformation Program",
+                            ].map((item, index) => (
+                                <div key={index} className="rounded-2xl bg-blue-50 p-5">
+                                    {item}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* REPEAT CUSTOMERS */}
+
+                <div className="col-span-12 lg:col-span-6">
+                    <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <h2 className="mb-8 text-2xl font-bold">Repeat Customers</h2>
+
+                        <div className="space-y-5">
+                            {[
+                                {
+                                    name: "Rahul Sharma",
+                                    value: "92%",
+                                },
+                                {
+                                    name: "Priya Singh",
+                                    value: "88%",
+                                },
+                                {
+                                    name: "Aman Kumar",
+                                    value: "82%",
+                                },
+                                {
+                                    name: "Rohit Das",
+                                    value: "74%",
+                                },
+                            ].map((item, index) => (
+                                <div key={index}>
+                                    <div className="mb-3 flex justify-between">
+                                        <span>{item.name}</span>
+
+                                        <span>{item.value}</span>
+                                    </div>
+
+                                    <div className="h-3 rounded-full bg-gray-100">
+                                        <div
+                                            className="h-3 rounded-full bg-blue-500"
+                                            style={{
+                                                width: item.value,
+                                            }}
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* =====================================================
+            ================= CUSTOMER SEGMENTATION ===============
+            ===================================================== */}
+
+            <div className="grid grid-cols-12 gap-6">
+                <div className="col-span-12 lg:col-span-6">
+                    <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <h2 className="mb-8 text-2xl font-bold">Customer Segmentation</h2>
+
+                        <div className="space-y-5">
+                            {[
+                                {
+                                    category: "Premium Members",
+                                    count: "642",
+                                    percentage: "82%",
+                                },
+                                {
+                                    category: "Gold Members",
+                                    count: "428",
+                                    percentage: "68%",
+                                },
+                                {
+                                    category: "Silver Members",
+                                    count: "314",
+                                    percentage: "54%",
+                                },
+                                {
+                                    category: "Basic Members",
+                                    count: "176",
+                                    percentage: "32%",
+                                },
+                            ].map((item, index) => (
+                                <div key={index}>
+                                    <div className="mb-3 flex justify-between">
+                                        <span>{item.category}</span>
+
+                                        <span>{item.count}</span>
+                                    </div>
+
+                                    <div className="h-3 rounded-full bg-gray-100">
+                                        <div
+                                            className="h-3 rounded-full bg-cyan-500"
+                                            style={{
+                                                width: item.percentage,
+                                            }}
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* RETENTION ANALYSIS */}
+
+                <div className="col-span-12 lg:col-span-6">
+                    <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <h2 className="mb-8 text-2xl font-bold">Retention Analysis</h2>
+
+                        <div className="space-y-4">
+                            {[
+                                {
+                                    month: "January",
+                                    value: "88%",
+                                },
+                                {
+                                    month: "February",
+                                    value: "91%",
+                                },
+                                {
+                                    month: "March",
+                                    value: "94%",
+                                },
+                                {
+                                    month: "April",
+                                    value: "92%",
+                                },
+                            ].map((item, index) => (
+                                <div key={index} className="rounded-2xl border border-gray-100 p-5">
+                                    <div className="flex justify-between">
+                                        <span>{item.month}</span>
+
+                                        <span className="font-bold">{item.value}</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* =====================================================
+            ==================== PAYMENT HISTORY ==================
+            ===================================================== */}
+
+            <div className="grid grid-cols-12 gap-6">
+                <div className="col-span-12 xl:col-span-7">
+                    <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <h2 className="mb-8 text-2xl font-bold">Payment History</h2>
+
+                        <div className="space-y-4">
+                            {[
+                                {
+                                    name: "Rahul Sharma",
+                                    package: "Gold Membership",
+                                    amount: "₹12,000",
+                                },
+                                {
+                                    name: "Priya Singh",
+                                    package: "Premium Membership",
+                                    amount: "₹18,000",
+                                },
+                                {
+                                    name: "Aman Kumar",
+                                    package: "PT Program",
+                                    amount: "₹8,000",
+                                },
+                                {
+                                    name: "Rohit Das",
+                                    package: "Transformation Plan",
+                                    amount: "₹15,000",
+                                },
+                            ].map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="flex items-center justify-between rounded-2xl border border-gray-100 p-5"
+                                >
+                                    <div>
+                                        <h3 className="font-semibold">{item.name}</h3>
+
+                                        <p className="text-sm text-gray-500">{item.package}</p>
+                                    </div>
+
+                                    <span className="font-bold">{item.amount}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* OUTSTANDING PAYMENTS */}
+
+                <div className="col-span-12 xl:col-span-5">
+                    <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <h2 className="mb-8 text-2xl font-bold">Outstanding Payments</h2>
+
+                        <div className="space-y-5">
+                            {[
+                                {
+                                    period: "0–7 Days",
+                                    amount: "₹12K",
+                                },
+                                {
+                                    period: "8–15 Days",
+                                    amount: "₹24K",
+                                },
+                                {
+                                    period: "16–30 Days",
+                                    amount: "₹16K",
+                                },
+                                {
+                                    period: "30+ Days",
+                                    amount: "₹8K",
+                                },
+                            ].map((item, index) => (
+                                <div key={index} className="rounded-2xl bg-red-50 p-5">
+                                    <div className="flex justify-between">
+                                        <span>{item.period}</span>
+
+                                        <span className="font-bold">{item.amount}</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* =====================================================
+            ======================= AI INSIGHTS ===================
+            ===================================================== */}
+
+            <div className="rounded-3xl bg-gradient-to-r from-cyan-600 via-sky-600 to-blue-700 p-8 text-white shadow-xl">
+                <h2 className="mb-8 text-3xl font-bold">AI Customer Insights</h2>
+
+                <div className="grid grid-cols-12 gap-5">
+                    <div className="col-span-12 md:col-span-6 xl:col-span-3">
+                        <div className="rounded-2xl bg-white/10 p-5">
+                            <h3>Highest Spending</h3>
+
+                            <p className="mt-3 text-xl font-bold">Rahul Sharma</p>
+                        </div>
+                    </div>
+
+                    <div className="col-span-12 md:col-span-6 xl:col-span-3">
+                        <div className="rounded-2xl bg-white/10 p-5">
+                            <h3>Highest Retention</h3>
+
+                            <p className="mt-3 text-xl font-bold">Premium Members</p>
+                        </div>
+                    </div>
+
+                    <div className="col-span-12 md:col-span-6 xl:col-span-3">
+                        <div className="rounded-2xl bg-white/10 p-5">
+                            <h3>Risk Alert</h3>
+
+                            <p className="mt-3 text-xl font-bold">Renewals Falling</p>
+                        </div>
+                    </div>
+
+                    <div className="col-span-12 md:col-span-6 xl:col-span-3">
+                        <div className="rounded-2xl bg-white/10 p-5">
+                            <h3>Recommendation</h3>
+
+                            <p className="mt-3 text-xl font-bold">Increase Upselling</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
