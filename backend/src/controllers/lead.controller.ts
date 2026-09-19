@@ -7,9 +7,19 @@ import {
     leadFollowupReport,
     leadGet,
 } from "../services/lead.service";
+
+const getParamString = (value: string | string[] | undefined): string => {
+    if (Array.isArray(value)) {
+        return value[0] ?? "";
+    }
+
+    return value ?? "";
+};
+
 export const leadAdd = async (req: Request, res: Response) => {
     try {
         const response = await addLead(req.user.email, req.body);
+
         return res.status(200).json({
             status: true,
             message: "Lead Added Successfully!",
@@ -26,6 +36,7 @@ export const leadAdd = async (req: Request, res: Response) => {
 export const getLead = async (req: Request, res: Response) => {
     try {
         const response = await leadGet(req.user.email);
+
         return res.status(200).json({
             status: true,
             data: response,
@@ -37,9 +48,20 @@ export const getLead = async (req: Request, res: Response) => {
         });
     }
 };
+
 export const getLeadProfile = async (req: Request, res: Response) => {
     try {
-        const response = await getleadprofile(req.user.email, req.params.id);
+        const leadId = getParamString(req.params.id);
+
+        if (!leadId) {
+            return res.status(400).json({
+                status: false,
+                error: "Lead ID is required",
+            });
+        }
+
+        const response = await getleadprofile(req.user.email, leadId);
+
         return res.status(200).json({
             status: true,
             data: response,
@@ -51,9 +73,19 @@ export const getLeadProfile = async (req: Request, res: Response) => {
         });
     }
 };
+
 export const deleteLead = async (req: Request, res: Response) => {
     try {
-        const response = await leadDelete(req.user.email, req.params.id);
+        const leadId = getParamString(req.params.id);
+
+        if (!leadId) {
+            return res.status(400).json({
+                status: false,
+                error: "Lead ID is required",
+            });
+        }
+
+        const response = await leadDelete(req.user.email, leadId);
 
         return res.status(200).json({
             status: true,
@@ -84,7 +116,10 @@ export const addLeadFollowup = async (req: Request, res: Response) => {
     }
 };
 
-export const getLeadFollowupReport = async (req: Request, res: Response) => {
+export const getLeadFollowupReport = async (
+    req: Request,
+    res: Response
+) => {
     try {
         const response = await leadFollowupReport(
             req.user.email,

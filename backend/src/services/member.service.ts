@@ -581,12 +581,12 @@ export const getAllMemberService = async (gymId: string, filters: MemberFilters 
         selectedFilter === "active"
             ? "ACTIVE"
             : selectedFilter === "expiring"
-              ? "EXPIRING"
-              : selectedFilter === "expired"
-                ? "EXPIRED"
-                : selectedFilter === "freeze"
-                  ? "FREEZE"
-                  : "";
+                ? "EXPIRING"
+                : selectedFilter === "expired"
+                    ? "EXPIRED"
+                    : selectedFilter === "freeze"
+                        ? "FREEZE"
+                        : "";
 
     const statusFilter = explicitStatus || quickStatus;
 
@@ -774,7 +774,7 @@ const formatDate = (date: any) => {
     return `${day}/${month}/${year}`;
 };
 
-export const getTransactionsAllold = async (gymId: string) => {
+export const getTransactionsAll = async (gymId: string) => {
     const transactions = await Transaction.find({
         gymId,
     })
@@ -951,7 +951,7 @@ export const getMemberById = async (gymId: string, memberId: string) => {
     // Get latest membership for this member
     const membership: any = await Memberships.findOne({
         gymId,
-        UID: String(member.UID),
+        UID: Number(member.UID),
         packageType: "Base",
     })
         .sort({ createdAt: -1 })
@@ -1706,7 +1706,7 @@ export const importMembersFromCSVold = async (gymId: string, fileBuffer: Buffer)
             "ExpiryDate",
         ];
 
-        const firstRow = rows[0];
+        const firstRow = rows[0] as Record<string, unknown>;
 
         const missingHeaders = requiredHeaders.filter((header) => !(header in firstRow));
 
@@ -1904,7 +1904,7 @@ export const importMembersFromCSV = async (gymId: string, fileBuffer: Buffer) =>
             "PaymentDate",
         ];
 
-        const firstRow = rows[0];
+        const firstRow = rows[0] as Record<string, unknown>;
 
         const missingHeaders = requiredHeaders.filter((header) => !(header in firstRow));
 
@@ -2838,26 +2838,26 @@ export const getAllTransactionsService = async (
     const statistics =
         statisticsResult.length > 0
             ? {
-                  total: Number(statisticsResult[0].total) || 0,
+                total: Number(statisticsResult[0].total) || 0,
 
-                  cash: Number(statisticsResult[0].cash) || 0,
+                cash: Number(statisticsResult[0].cash) || 0,
 
-                  card: Number(statisticsResult[0].card) || 0,
+                card: Number(statisticsResult[0].card) || 0,
 
-                  upi: Number(statisticsResult[0].upi) || 0,
+                upi: Number(statisticsResult[0].upi) || 0,
 
-                  cheque: Number(statisticsResult[0].cheque) || 0,
+                cheque: Number(statisticsResult[0].cheque) || 0,
 
-                  pending: Number(statisticsResult[0].pending) || 0,
-              }
+                pending: Number(statisticsResult[0].pending) || 0,
+            }
             : {
-                  total: 0,
-                  cash: 0,
-                  card: 0,
-                  upi: 0,
-                  cheque: 0,
-                  pending: 0,
-              };
+                total: 0,
+                cash: 0,
+                card: 0,
+                upi: 0,
+                cheque: 0,
+                pending: 0,
+            };
 
     return {
         data: transactions,
