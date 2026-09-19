@@ -8,9 +8,43 @@ import {
     deleteStaff,
 } from "../services/staff.service";
 
-export const staffAdd = async (req: Request, res: Response) => {
+/**
+ * Convert Express route parameter to a string.
+ *
+ * Express can type route parameters as:
+ * string | string[] | undefined
+ */
+const getParamString = (
+    value: string | string[] | undefined
+): string => {
+    if (Array.isArray(value)) {
+        return value[0] ?? "";
+    }
+
+    return value ?? "";
+};
+
+/**
+ * Add Staff
+ */
+export const staffAdd = async (
+    req: Request,
+    res: Response
+) => {
     try {
-        const response = await addStaff(req.user.email, req.body);
+        const email = req.user?.email;
+
+        if (!email) {
+            return res.status(401).json({
+                status: false,
+                error: "Unauthorized",
+            });
+        }
+
+        const response = await addStaff(
+            email,
+            req.body
+        );
 
         return res.status(200).json({
             status: true,
@@ -18,52 +52,124 @@ export const staffAdd = async (req: Request, res: Response) => {
             data: response,
         });
     } catch (error: any) {
+        console.error("Add staff error:", error);
+
         return res.status(400).json({
             status: false,
-            error: error.message,
+            error: error.message || "Failed to add staff",
         });
     }
 };
 
-export const getStaff = async (req: Request, res: Response) => {
+/**
+ * Get Staff List
+ */
+export const getStaff = async (
+    req: Request,
+    res: Response
+) => {
     try {
-        const response = await staffList(req.user.email);
+        const email = req.user?.email;
+
+        if (!email) {
+            return res.status(401).json({
+                status: false,
+                error: "Unauthorized",
+            });
+        }
+
+        const response = await staffList(email);
 
         return res.status(200).json({
             status: true,
             data: response,
         });
     } catch (error: any) {
+        console.error("Get staff list error:", error);
+
         return res.status(400).json({
             status: false,
-            error: error.message,
+            error: error.message || "Failed to get staff list",
         });
     }
 };
 
-export const getStaffSingle = async (req: Request, res: Response) => {
+/**
+ * Get Single Staff
+ */
+export const getStaffSingle = async (
+    req: Request,
+    res: Response
+) => {
     try {
-        const { id } = req.params;
+        const email = req.user?.email;
 
-        const response = await getSingleStaff(id, req.user.email);
+        if (!email) {
+            return res.status(401).json({
+                status: false,
+                error: "Unauthorized",
+            });
+        }
+
+        const id = getParamString(req.params.id);
+
+        if (!id) {
+            return res.status(400).json({
+                status: false,
+                error: "Staff ID is required",
+            });
+        }
+
+        const response = await getSingleStaff(
+            id,
+            email
+        );
 
         return res.status(200).json({
             status: true,
             data: response,
         });
     } catch (error: any) {
+        console.error("Get single staff error:", error);
+
         return res.status(400).json({
             status: false,
-            error: error.message,
+            error: error.message || "Failed to get staff",
         });
     }
 };
 
-export const staffEdit = async (req: Request, res: Response) => {
+/**
+ * Edit Staff
+ */
+export const staffEdit = async (
+    req: Request,
+    res: Response
+) => {
     try {
-        const { id } = req.params;
+        const email = req.user?.email;
 
-        const response = await editStaff(id, req.user.email, req.body);
+        if (!email) {
+            return res.status(401).json({
+                status: false,
+                error: "Unauthorized",
+            });
+        }
+
+        const id = getParamString(req.params.id);
+
+        if (!id) {
+            return res.status(400).json({
+                status: false,
+                error: "Staff ID is required",
+            });
+        }
+
+        const response = await editStaff(
+            id,
+            email,
+            req.body
+        );
 
         return res.status(200).json({
             status: true,
@@ -71,18 +177,45 @@ export const staffEdit = async (req: Request, res: Response) => {
             data: response,
         });
     } catch (error: any) {
+        console.error("Edit staff error:", error);
+
         return res.status(400).json({
             status: false,
-            error: error.message,
+            error: error.message || "Failed to update staff",
         });
     }
 };
 
-export const staffDelete = async (req: Request, res: Response) => {
+/**
+ * Delete Staff
+ */
+export const staffDelete = async (
+    req: Request,
+    res: Response
+) => {
     try {
-        const { id } = req.params;
+        const email = req.user?.email;
 
-        const response = await deleteStaff(id, req.user.email);
+        if (!email) {
+            return res.status(401).json({
+                status: false,
+                error: "Unauthorized",
+            });
+        }
+
+        const id = getParamString(req.params.id);
+
+        if (!id) {
+            return res.status(400).json({
+                status: false,
+                error: "Staff ID is required",
+            });
+        }
+
+        const response = await deleteStaff(
+            id,
+            email
+        );
 
         return res.status(200).json({
             status: true,
@@ -90,9 +223,11 @@ export const staffDelete = async (req: Request, res: Response) => {
             data: response,
         });
     } catch (error: any) {
+        console.error("Delete staff error:", error);
+
         return res.status(400).json({
             status: false,
-            error: error.message,
+            error: error.message || "Failed to delete staff",
         });
     }
 };

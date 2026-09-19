@@ -12,19 +12,41 @@ class ZeptoProvider {
             },
 
             to: payload.to.map((item) => ({
-                email_address: item,
+                email_address: {
+                    address: typeof item === "string" ? item : item.address,
+                    name:
+                        typeof item === "string"
+                            ? item
+                            : item.name || item.address,
+                },
             })),
 
             cc: payload.cc?.map((item) => ({
-                email_address: item,
+                email_address: {
+                    address: typeof item === "string" ? item : item.address,
+                    name:
+                        typeof item === "string"
+                            ? item
+                            : item.name || item.address,
+                },
             })),
 
             bcc: payload.bcc?.map((item) => ({
-                email_address: item,
+                email_address: {
+                    address: typeof item === "string" ? item : item.address,
+                    name:
+                        typeof item === "string"
+                            ? item
+                            : item.name || item.address,
+                },
             })),
 
             reply_to: payload.replyTo?.map((item) => ({
-                email_address: item,
+                address: typeof item === "string" ? item : item.address,
+                name:
+                    typeof item === "string"
+                        ? item
+                        : item.name || item.address,
             })),
 
             subject: payload.subject,

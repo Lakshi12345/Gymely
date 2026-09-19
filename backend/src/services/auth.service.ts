@@ -3,6 +3,9 @@ import { generateToken } from "../utils/jwt";
 import bcrypt from "bcryptjs";
 import Operator from "../models/Operators";
 
+/**
+ * Generate a unique Gymely gym code.
+ */
 const generateGymCode = async (): Promise<string> => {
     let gymcode = "";
 
@@ -19,25 +22,58 @@ const generateGymCode = async (): Promise<string> => {
     } while (true);
 };
 
+/**
+ * Convert subscription expiry date to the string format
+ * expected by generateToken().
+ *
+ * MongoDB/Mongoose can return Date | null.
+ */
+const getExpiryDateString = (
+    expiryDate: Date | string | null | undefined
+): string => {
+    if (!expiryDate) {
+        return "";
+    }
+
+    if (expiryDate instanceof Date) {
+        return expiryDate.toISOString();
+    }
+
+    return String(expiryDate);
+};
+
+/**
+ * Register Gym Owner
+ */
 export const registerUser = async (userData: any) => {
-    const existingUsers = await User.findOne({ email: userData.email });
+    const existingUsers = await User.findOne({
+        email: userData.email,
+    });
 
     if (existingUsers) {
         throw new Error("Email is already exist !");
     }
 
-    const hashedPassword = await bcrypt.hash(userData.password, 10);
+    const hashedPassword = await bcrypt.hash(
+        userData.password,
+        10
+    );
 
     const gymcode = await generateGymCode();
 
     const startDate = new Date();
 
     const expiryDate = new Date(startDate);
-    expiryDate.setDate(expiryDate.getDate() + 7);
+
+    expiryDate.setDate(
+        expiryDate.getDate() + 7
+    );
 
     const user = await User.create({
         ...userData,
+
         gymcode,
+
         password: hashedPassword,
 
         subscription: {
@@ -48,8 +84,8 @@ export const registerUser = async (userData: any) => {
             tax: 0,
             total: 0,
             payable: 0,
-            startDate: startDate,
-            expiryDate: expiryDate,
+            startDate,
+            expiryDate,
             status: "active",
         },
     });
@@ -61,7 +97,9 @@ export const registerUser = async (userData: any) => {
         user.name,
         user.branding?.gymLogo || "",
         user.subscription?.plan || "",
-        user.subscription?.expiryDate || null
+        getExpiryDateString(
+            user.subscription?.expiryDate
+        )
     );
 
     return {
@@ -74,8 +112,12 @@ export const registerUser = async (userData: any) => {
     };
 };
 
+/**
+ * Get all users
+ */
 export const getUsers = async () => {
     const users = await User.find();
+
     return {
         success: true,
         message: "Data Fetch Successfully",
@@ -83,16 +125,24 @@ export const getUsers = async () => {
     };
 };
 
-export const userLoginOld = async (email: string, password: string) => {
+/**
+ * Old User Login
+ */
+export const userLoginOld = async (
+    email: string,
+    password: string
+) => {
     const user = await User.findOne({ email });
-    // console.log(user);
+
     if (!user) {
         throw new Error("User not found");
     }
 
-    const isValidPassword = await bcrypt.compare(password, user.password);
-    // const isValidPassword = password === user.data.password;
-    console.log(password);
+    const isValidPassword = await bcrypt.compare(
+        password,
+        user.password
+    );
+
     if (!isValidPassword) {
         throw new Error("Invalid Credentials !");
     }
@@ -103,7 +153,9 @@ export const userLoginOld = async (email: string, password: string) => {
         user.name,
         user.branding?.gymLogo || "",
         user.subscription?.plan || "",
-        user.subscription?.expiryDate || null
+        getExpiryDateString(
+            user.subscription?.expiryDate
+        )
     );
 
     return {
@@ -116,7 +168,13 @@ export const userLoginOld = async (email: string, password: string) => {
     };
 };
 
-export const userLogin = async (email: string, password: string) => {
+/**
+ * User / Operator Login
+ */
+export const userLogin = async (
+    email: string,
+    password: string
+) => {
     // =====================================================
     // 1. CHECK GYM OWNER / USER LOGIN
     // =====================================================
@@ -124,7 +182,10 @@ export const userLogin = async (email: string, password: string) => {
     const user = await User.findOne({ email });
 
     if (user) {
-        const isValidPassword = await bcrypt.compare(password, user.password);
+        const isValidPassword = await bcrypt.compare(
+            password,
+            user.password
+        );
 
         if (!isValidPassword) {
             throw new Error("Invalid Credentials !");
@@ -137,7 +198,9 @@ export const userLogin = async (email: string, password: string) => {
             "owner",
             user.branding?.gymLogo || "",
             user.subscription?.plan || "",
-            user.subscription?.expiryDate || null
+            getExpiryDateString(
+                user.subscription?.expiryDate
+            )
         );
 
         return {
@@ -161,14 +224,17 @@ export const userLogin = async (email: string, password: string) => {
         throw new Error("User not found");
     }
 
-    // const isValidOperatorPassword = await bcrypt.compare(password, operator.password);
-    const isValidOperatorPassword = password === operator.password;
+    const isValidOperatorPassword =
+        password === operator.password;
+
     if (!isValidOperatorPassword) {
         throw new Error("Invalid Credentials !");
     }
 
     if (operator.status !== "active") {
-        throw new Error("Operator account is inactive");
+        throw new Error(
+            "Operator account is inactive"
+        );
     }
 
     // =====================================================
@@ -194,7 +260,9 @@ export const userLogin = async (email: string, password: string) => {
         operator.name,
         gymUser.branding?.gymLogo || "",
         gymUser.subscription?.plan || "",
-        gymUser.subscription?.expiryDate || null
+        getExpiryDateString(
+            gymUser.subscription?.expiryDate
+        )
     );
 
     // =====================================================
@@ -213,51 +281,91 @@ export const userLogin = async (email: string, password: string) => {
     };
 };
 
-export const importGymoryxGym = async (oldGym: any) => {
+/**
+ * Import old Gymoryx gym data.
+ */
+export const importGymoryxGym = async (
+    oldGym: any
+) => {
     const existingGym = await User.findOne({
-        $or: [{ email: oldGym.email }, { gymcode: oldGym.gymcode }],
+        $or: [
+            { email: oldGym.email },
+            { gymcode: oldGym.gymcode },
+        ],
     });
 
     if (existingGym) {
-        throw new Error(`Gym already exists: ${oldGym.email}`);
+        throw new Error(
+            `Gym already exists: ${oldGym.email}`
+        );
     }
 
-    const hashedPassword = await bcrypt.hash(oldGym.password, 10);
+    const hashedPassword = await bcrypt.hash(
+        oldGym.password,
+        10
+    );
 
     const gymcode = await generateGymCode();
 
     const user = await User.create({
         name: oldGym.name || "",
+
         email: oldGym.email || "",
+
         mobile: oldGym.mobile || "",
+
         password: hashedPassword,
 
         gymcode,
 
         address: oldGym.address || "",
+
         geoAddress: oldGym.geoAddress || "",
 
-        latitude: oldGym.geoLat != null ? Number(oldGym.geoLat) : null,
+        latitude:
+            oldGym.geoLat != null
+                ? Number(oldGym.geoLat)
+                : null,
 
-        longitude: oldGym.geoLng != null ? Number(oldGym.geoLng) : null,
+        longitude:
+            oldGym.geoLng != null
+                ? Number(oldGym.geoLng)
+                : null,
 
-        referralCode: oldGym.referralCode || "",
+        referralCode:
+            oldGym.referralCode || "",
 
         branding: {
             gymLogo: oldGym.gympic || "",
+
             invoiceLogo: oldGym.rectgym || "",
-            watermark: oldGym.watermarkgym || "",
-            theme: oldGym.themestatus === "whiteTheme" ? "light" : "dark",
+
+            watermark:
+                oldGym.watermarkgym || "",
+
+            theme:
+                oldGym.themestatus === "whiteTheme"
+                    ? "light"
+                    : "dark",
         },
 
         business: {
-            gstNumber: oldGym.gymgstin || "",
+            gstNumber:
+                oldGym.gymgstin || "",
 
-            taxType: oldGym.TaxType || "none",
+            taxType:
+                oldGym.TaxType || "none",
 
-            taxPercentage: Number(oldGym.gymcgst || 0) + Number(oldGym.gymsgst || 0),
+            taxPercentage:
+                Number(oldGym.gymcgst || 0) +
+                Number(oldGym.gymsgst || 0),
 
-            showGST: String(oldGym.showGST || oldGym.showGst || "").toLowerCase() === "yes",
+            showGST:
+                String(
+                    oldGym.showGST ||
+                    oldGym.showGst ||
+                    ""
+                ).toLowerCase() === "yes",
 
             currency: "INR",
 
@@ -266,51 +374,111 @@ export const importGymoryxGym = async (oldGym: any) => {
 
         subscription: {
             planId: "",
+
             plan: "Trial",
+
             cost: 0,
+
             discount: 0,
+
             tax: 0,
+
             total: 0,
+
             payable: 0,
+
             startDate: new Date(),
-            expiryDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+
+            expiryDate: new Date(
+                Date.now() +
+                7 *
+                24 *
+                60 *
+                60 *
+                1000
+            ),
+
             status: "active",
         },
 
         credits: {
-            sms: Number(oldGym.smsCredit || oldGym.orxsmscredits || 0),
+            sms: Number(
+                oldGym.smsCredit ||
+                oldGym.orxsmscredits ||
+                0
+            ),
 
-            whatsapp: Number(oldGym.waCredit || 0),
+            whatsapp: Number(
+                oldGym.waCredit || 0
+            ),
 
-            email: Number(oldGym.mailCredit || 0),
+            email: Number(
+                oldGym.mailCredit || 0
+            ),
         },
 
         automation: {
-            sms: Array.isArray(oldGym.SMSAutoSetup) ? oldGym.SMSAutoSetup : [],
+            sms: Array.isArray(
+                oldGym.SMSAutoSetup
+            )
+                ? oldGym.SMSAutoSetup
+                : [],
 
-            whatsapp: Array.isArray(oldGym.waAutoSetup) ? oldGym.waAutoSetup : [],
+            whatsapp: Array.isArray(
+                oldGym.waAutoSetup
+            )
+                ? oldGym.waAutoSetup
+                : [],
 
-            email: Array.isArray(oldGym.emailAutoSetup) ? oldGym.emailAutoSetup : [],
+            email: Array.isArray(
+                oldGym.emailAutoSetup
+            )
+                ? oldGym.emailAutoSetup
+                : [],
         },
 
         features: {
-            whatsapp: Number(oldGym.waCredit || 0) > 0,
+            whatsapp:
+                Number(
+                    oldGym.waCredit || 0
+                ) > 0,
 
-            sms: Number(oldGym.smsCredit || oldGym.orxsmscredits || 0) > 0,
+            sms:
+                Number(
+                    oldGym.smsCredit ||
+                    oldGym.orxsmscredits ||
+                    0
+                ) > 0,
 
-            email: Number(oldGym.mailCredit || 0) > 0,
+            email:
+                Number(
+                    oldGym.mailCredit || 0
+                ) > 0,
 
-            faceAttendance: oldGym.faceAttendace === "enabled",
+            faceAttendance:
+                oldGym.faceAttendace ===
+                "enabled",
 
-            biometricAttendance: oldGym.biometricAttendace === "enabled",
+            biometricAttendance:
+                oldGym.biometricAttendace ===
+                "enabled",
 
-            digitalMarketing: Number(oldGym.digitalMarketing || 0) > 0,
+            digitalMarketing:
+                Number(
+                    oldGym.digitalMarketing || 0
+                ) > 0,
 
-            gymWebsite: oldGym.gymWebsite === "enabled",
+            gymWebsite:
+                oldGym.gymWebsite ===
+                "enabled",
 
-            customerApp: oldGym.customerApp === "enabled",
+            customerApp:
+                oldGym.customerApp ===
+                "enabled",
 
-            staffApp: oldGym.staffApp === "enabled",
+            staffApp:
+                oldGym.staffApp ===
+                "enabled",
         },
 
         status: "active",
