@@ -10,6 +10,25 @@ import {
     updateGeneralSettingsService,
 } from "../services/settings.service";
 
+/**
+ * Convert Express route parameter to a guaranteed string.
+ *
+ * Express can type req.params values as:
+ * string | string[]
+ */
+const getParamString = (
+    value: string | string[] | undefined
+): string => {
+    if (Array.isArray(value)) {
+        return value[0] ?? "";
+    }
+
+    return value ?? "";
+};
+
+/**
+ * Get all settings
+ */
 export const getSettings = async (req: Request, res: Response) => {
     try {
         const email = req.user?.email;
@@ -37,49 +56,84 @@ export const getSettings = async (req: Request, res: Response) => {
     }
 };
 
+/**
+ * Get all settings data
+ */
 export const getAllSettings = async (email: string) => {
-    // const [user, business, staffRoles, expenseLabels, coupons, qrCodes] = await Promise.all([
     const [user, staffRoles] = await Promise.all([
         getGeneralSettings(email),
-        // getBusinessSettings(email),
         staffRoleList(email),
-        // getExpenseLabels(email),
-        // getCoupons(email),
-        // getQRCodes(email),
     ]);
 
     return {
         general: user,
-        // branding: user?.data,
-        // business,
         staffRoles,
-        // expenseLabels,
-        // cashbackCoupons: coupons,
-        // qrCodes,
     };
 };
 
-export const getStaffRoles = async (req: Request, res: Response) => {
+/**
+ * Get staff roles
+ */
+export const getStaffRoles = async (
+    req: Request,
+    res: Response
+) => {
     try {
-        const response = await staffRoleList(req.user.email);
+        const email = req.user?.email;
+
+        if (!email) {
+            return res.status(401).json({
+                status: false,
+                error: "Unauthorized",
+            });
+        }
+
+        const response = await staffRoleList(email);
 
         return res.status(200).json({
             status: true,
             data: response,
         });
     } catch (error: any) {
+        console.error("Get staff roles error:", error);
+
         return res.status(400).json({
             status: false,
-            error: error.message,
+            error: error.message || "Failed to get staff roles",
         });
     }
 };
 
-export const addStaffRole = async (req: Request, res: Response) => {
+/**
+ * Add staff role
+ */
+export const addStaffRole = async (
+    req: Request,
+    res: Response
+) => {
     try {
+        const email = req.user?.email;
+
+        if (!email) {
+            return res.status(401).json({
+                status: false,
+                error: "Unauthorized",
+            });
+        }
+
         const { name } = req.body;
 
-        const response = await staffRoleAdd(req.user.email, name);
+        if (!name || !String(name).trim()) {
+            return res.status(400).json({
+                status: false,
+                error: "Staff role name is required",
+            });
+        }
+
+        const response = await staffRoleAdd(
+            email,
+            String(name).trim()
+        );
 
         return res.status(200).json({
             status: true,
@@ -87,19 +141,54 @@ export const addStaffRole = async (req: Request, res: Response) => {
             data: response,
         });
     } catch (error: any) {
+        console.error("Add staff role error:", error);
+
         return res.status(400).json({
             status: false,
-            error: error.message,
+            error: error.message || "Failed to add staff role",
         });
     }
 };
 
-export const editStaffRole = async (req: Request, res: Response) => {
+/**
+ * Edit staff role
+ */
+export const editStaffRole = async (
+    req: Request,
+    res: Response
+) => {
     try {
-        const { id } = req.params;
+        const email = req.user?.email;
+
+        if (!email) {
+            return res.status(401).json({
+                status: false,
+                error: "Unauthorized",
+            });
+        }
+
+        const id = getParamString(req.params.id);
         const { name } = req.body;
 
-        const response = await staffRoleEdit(id, req.user.email, name);
+        if (!id) {
+            return res.status(400).json({
+                status: false,
+                error: "Staff role ID is required",
+            });
+        }
+
+        if (!name || !String(name).trim()) {
+            return res.status(400).json({
+                status: false,
+                error: "Staff role name is required",
+            });
+        }
+
+        const response = await staffRoleEdit(
+            id,
+            email,
+            String(name).trim()
+        );
 
         return res.status(200).json({
             status: true,
@@ -107,18 +196,45 @@ export const editStaffRole = async (req: Request, res: Response) => {
             data: response,
         });
     } catch (error: any) {
+        console.error("Edit staff role error:", error);
+
         return res.status(400).json({
             status: false,
-            error: error.message,
+            error: error.message || "Failed to update staff role",
         });
     }
 };
 
-export const deleteStaffRole = async (req: Request, res: Response) => {
+/**
+ * Delete staff role
+ */
+export const deleteStaffRole = async (
+    req: Request,
+    res: Response
+) => {
     try {
-        const { id } = req.params;
+        const email = req.user?.email;
 
-        const response = await staffRoleDelete(id, req.user.email);
+        if (!email) {
+            return res.status(401).json({
+                status: false,
+                error: "Unauthorized",
+            });
+        }
+
+        const id = getParamString(req.params.id);
+
+        if (!id) {
+            return res.status(400).json({
+                status: false,
+                error: "Staff role ID is required",
+            });
+        }
+
+        const response = await staffRoleDelete(
+            id,
+            email
+        );
 
         return res.status(200).json({
             status: true,
@@ -126,16 +242,36 @@ export const deleteStaffRole = async (req: Request, res: Response) => {
             data: response,
         });
     } catch (error: any) {
+        console.error("Delete staff role error:", error);
+
         return res.status(400).json({
             status: false,
-            error: error.message,
+            error: error.message || "Failed to delete staff role",
         });
     }
 };
 
-export const updateBillingSettings = async (req: Request, res: Response) => {
+/**
+ * Update billing settings
+ */
+export const updateBillingSettings = async (
+    req: Request,
+    res: Response
+) => {
     try {
-        const response = await updateBilling(req.user.email, req.body);
+        const email = req.user?.email;
+
+        if (!email) {
+            return res.status(401).json({
+                success: false,
+                error: "Unauthorized",
+            });
+        }
+
+        const response = await updateBilling(
+            email,
+            req.body
+        );
 
         return res.status(200).json({
             success: true,
@@ -143,16 +279,36 @@ export const updateBillingSettings = async (req: Request, res: Response) => {
             data: response,
         });
     } catch (error: any) {
+        console.error("Update billing settings error:", error);
+
         return res.status(400).json({
             success: false,
-            error: error.message,
+            error: error.message || "Failed to update billing settings",
         });
     }
 };
 
-export const updateGeneralSettings = async (req: Request, res: Response) => {
+/**
+ * Update general settings
+ */
+export const updateGeneralSettings = async (
+    req: Request,
+    res: Response
+) => {
     try {
-        const response = await updateGeneralSettingsService(req.user.email, req.body);
+        const email = req.user?.email;
+
+        if (!email) {
+            return res.status(401).json({
+                success: false,
+                error: "Unauthorized",
+            });
+        }
+
+        const response = await updateGeneralSettingsService(
+            email,
+            req.body
+        );
 
         return res.status(200).json({
             success: true,
@@ -160,9 +316,11 @@ export const updateGeneralSettings = async (req: Request, res: Response) => {
             data: response,
         });
     } catch (error: any) {
+        console.error("Update general settings error:", error);
+
         return res.status(400).json({
             success: false,
-            error: error.message,
+            error: error.message || "Failed to update general settings",
         });
     }
 };

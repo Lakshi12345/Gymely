@@ -277,7 +277,16 @@ export const memberView = async (req: Request, res: Response) => {
             });
         }
 
-        const member = await getMemberById(gymId, id);
+        const memberId = Array.isArray(id) ? id[0] : id;
+
+        if (!memberId) {
+            return res.status(400).json({
+                status: false,
+                error: "Member ID is required",
+            });
+        }
+
+        const member = await getMemberById(gymId, memberId);
 
         return res.status(200).json({
             status: true,
