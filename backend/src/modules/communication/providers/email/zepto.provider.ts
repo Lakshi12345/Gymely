@@ -11,9 +11,14 @@ class ZeptoProvider {
                 name: process.env.ZEPTO_FROM_NAME!,
             },
 
+            // To
             to: payload.to.map((item) => ({
                 email_address: {
-                    address: typeof item === "string" ? item : item.address,
+                    address:
+                        typeof item === "string"
+                            ? item
+                            : item.address,
+
                     name:
                         typeof item === "string"
                             ? item
@@ -21,33 +26,63 @@ class ZeptoProvider {
                 },
             })),
 
-            cc: payload.cc?.map((item) => ({
-                email_address: {
-                    address: typeof item === "string" ? item : item.address,
-                    name:
-                        typeof item === "string"
-                            ? item
-                            : item.name || item.address,
-                },
-            })),
+            // CC
+            ...(payload.cc?.length
+                ? {
+                    cc: payload.cc.map((item) => ({
+                        email_address: {
+                            address:
+                                typeof item === "string"
+                                    ? item
+                                    : item.address,
 
-            bcc: payload.bcc?.map((item) => ({
-                email_address: {
-                    address: typeof item === "string" ? item : item.address,
-                    name:
-                        typeof item === "string"
-                            ? item
-                            : item.name || item.address,
-                },
-            })),
+                            name:
+                                typeof item === "string"
+                                    ? item
+                                    : item.name ||
+                                    item.address,
+                        },
+                    })),
+                }
+                : {}),
 
-            reply_to: payload.replyTo?.map((item) => ({
-                address: typeof item === "string" ? item : item.address,
-                name:
-                    typeof item === "string"
-                        ? item
-                        : item.name || item.address,
-            })),
+            // BCC
+            ...(payload.bcc?.length
+                ? {
+                    bcc: payload.bcc.map((item) => ({
+                        email_address: {
+                            address:
+                                typeof item === "string"
+                                    ? item
+                                    : item.address,
+
+                            name:
+                                typeof item === "string"
+                                    ? item
+                                    : item.name ||
+                                    item.address,
+                        },
+                    })),
+                }
+                : {}),
+
+            // Reply-To
+            ...(payload.replyTo?.length
+                ? {
+                    reply_to: payload.replyTo.map((item) => ({
+                        address:
+                            typeof item === "string"
+                                ? item
+                                : item.address,
+
+                        name:
+                            typeof item === "string"
+                                ? item
+                                : item.name ||
+                                item.address,
+                    })),
+                }
+                : {}),
 
             subject: payload.subject,
 
@@ -56,8 +91,6 @@ class ZeptoProvider {
             textbody: payload.text,
 
             attachments: payload.attachments,
-
-            headers: payload.headers,
         });
     }
 }

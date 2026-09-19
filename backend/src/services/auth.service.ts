@@ -10,11 +10,15 @@ const generateGymCode = async (): Promise<string> => {
     let gymcode = "";
 
     do {
-        const randomNumber = Math.floor(1000 + Math.random() * 9000);
+        const randomNumber = Math.floor(
+            1000 + Math.random() * 9000
+        );
 
         gymcode = `gmly${randomNumber}`;
 
-        const existingGym = await User.findOne({ gymcode });
+        const existingGym = await User.findOne({
+            gymcode,
+        });
 
         if (!existingGym) {
             return gymcode;
@@ -25,8 +29,6 @@ const generateGymCode = async (): Promise<string> => {
 /**
  * Convert subscription expiry date to the string format
  * expected by generateToken().
- *
- * MongoDB/Mongoose can return Date | null.
  */
 const getExpiryDateString = (
     expiryDate: Date | string | null | undefined
@@ -95,6 +97,7 @@ export const registerUser = async (userData: any) => {
         user._id.toString(),
         user.email,
         user.name,
+        "owner",
         user.branding?.gymLogo || "",
         user.subscription?.plan || "",
         getExpiryDateString(
@@ -151,6 +154,7 @@ export const userLoginOld = async (
         user._id.toString(),
         user.email,
         user.name,
+        "owner",
         user.branding?.gymLogo || "",
         user.subscription?.plan || "",
         getExpiryDateString(
