@@ -1,0 +1,2745 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description"
+            content="Gymely is the operating system for gym growth. Manage members, memberships, leads, payments, staff, workouts, automation and your entire gym from one powerful platform." />
+
+    <meta name="keywords"
+            content="gym management software, gym software, gym management system, fitness management software, gym CRM, gym billing software, Gymely" />
+
+    <title>Gymely - The Operating System for Gym Growth</title>
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="../../fonts.googleapis.com/index.html" />
+    <link rel="preconnect" href="../../fonts.gstatic.com/index.html" crossorigin />
+    <link
+            href="../../fonts.googleapis.com/css28251?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300..700&display=swap"
+            rel="stylesheet" />
+
+    <!-- CSS -->
+
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/aos.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+        /* =========================================================
+           GYMELY PREMIUM OVERRIDES
+           Keeps the existing Aigenix template system while adding
+           Gymely's white/dark alternating visual rhythm.
+        ========================================================== */
+
+        body.ai-startup-body {
+            background: #07090d;
+        }
+
+        .gymely-core-section {
+            background: #080a0f !important;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gymely-light-section {
+            background: #ffffff !important;
+            color: #101318;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gymely-light-section .bp-light-header {
+            position: relative;
+            z-index: 2;
+        }
+
+        .gymely-light-kicker,
+        .gymely-card-number,
+        .gymely-feature-kicker {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        .gymely-light-kicker {
+            display: inline-block;
+            margin-bottom: 14px;
+            color: #64748b;
+        }
+
+        .gymely-card-number {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: #64748b;
+        }
+
+        .gymely-light-feature-card {
+            min-height: 290px;
+            justify-content: space-between;
+        }
+
+        .gymely-light-points {
+            list-style: none;
+            margin: 24px 0 0;
+            padding: 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .gymely-light-points li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            line-height: 1.55;
+            color: #475569;
+        }
+
+        .gymely-light-points i {
+            margin-top: 3px;
+            color: var(--primary, #7c3aed);
+        }
+
+        .gymely-feature-kicker {
+            display: block;
+            margin-bottom: 9px;
+            color: rgba(255,255,255,.42);
+        }
+
+        .gymely-core-section .bot-features_copy-text {
+            max-width: 650px;
+        }
+
+        .gymely-feature-points {
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0,1fr));
+            gap: 8px 14px !important;
+            margin-top: 18px !important;
+            padding: 0 !important;
+            list-style: none !important;
+        }
+
+        .gymely-feature-points li {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            font-size: 12px;
+            line-height: 1.45;
+            color: rgba(255,255,255,.66);
+        }
+
+        .gymely-feature-points li i {
+            color: var(--primary, #a3e635);
+            margin-top: 3px;
+            flex: 0 0 auto;
+        }
+
+        .gymely-core-section .bot-features_tile {
+            min-height: 290px;
+        }
+
+        .gymely-core-section .bot-features_art {
+            flex: 0 0 250px;
+        }
+
+        @media (max-width: 991px) {
+            .gymely-feature-points {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gymely-core-section .bot-features_art {
+                flex-basis: 190px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .gymely-feature-points {
+                grid-template-columns: 1fr;
+            }
+
+            .gymely-core-section .bot-features_art {
+                flex-basis: 150px;
+            }
+
+            .gymely-light-feature-card {
+                min-height: auto;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="ai-startup-body">
+
+<!-- Loader -->
+
+<div id="ai-loader">
+    <div class="loader-matrix"></div>
+
+
+    <div class="loader-content">
+        <div class="loader-glitch" data-text="GYMELY // SYSTEM">
+            <img src="assets/images/logo1.png" alt="Gymely" />
+        </div>
+
+        <div class="loader-status">
+            <span class="status-tag">INITIALIZING GYMELY CORE</span>
+
+            <div class="loader-bar-wrap">
+                <div class="loader-bar"></div>
+            </div>
+
+            <div class="loader-metrics">
+                <span class="metric-pct">00%</span>
+                <span class="metric-sync">GYM_SYSTEM_ACTIVE</span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div id="page-transition"></div>
+<div id="scroll-progress"></div>
+<div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+<!-- Navigation Header -->
+
+<header class="ais-header">
+    <div class="ais-nav-container">
+        <div class="ais-nav-shell">
+
+
+            <!-- Logo -->
+            <div class="ais-nav-logo">
+                <a href="/" class="ais-logo-link">
+                    <img src="assets/images/logo1.png" alt="Gymely" class="ais-logo-img" />
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="ais-nav-menu" id="ais-nav-menu">
+                <ul class="ais-nav-list">
+
+                    <li class="ais-nav-item">
+                        <a class="ais-nav-link" href="/">Home</a>
+                    </li>
+
+                    <li class="ais-nav-item">
+                        <a class="ais-nav-link" href="#about">About</a>
+                    </li>
+
+                    <li class="ais-nav-item">
+                        <a class="ais-nav-link" href="#features">Features</a>
+                    </li>
+
+                    <li class="ais-nav-item">
+                        <a class="ais-nav-link" href="#process">How It Works</a>
+                    </li>
+
+                    <li class="ais-nav-item">
+                        <a class="ais-nav-link" href="#platform-overview">Platform</a>
+                    </li>
+
+                    <li class="ais-nav-item">
+                        <a class="ais-nav-link" href="#faq">FAQ</a>
+                    </li>
+
+                    <li class="ais-nav-item">
+                        <a class="ais-nav-link" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="ais-header-right">
+
+                <div class="ais-nav-actions">
+                    <a href="/login" class="btn-primary">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        Login
+                    </a>
+                </div>
+
+                <button class="ais-nav-toggle"
+                        id="ais-nav-toggle"
+                        aria-label="Toggle navigation"
+                        aria-expanded="false">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</header>
+
+<!-- =========================================================
+     HERO SECTION
+========================================================== -->
+
+<section class="ais-hero-section">
+
+
+    <div class="ais-star-field" aria-hidden="true"></div>
+    <div class="ais-hero-grid-bg" aria-hidden="true"></div>
+    <div class="ais-hero-aurora" aria-hidden="true"></div>
+
+    <div class="ais-container">
+
+        <div class="ais-hero-content">
+
+            <div class="ais-partner-badge"
+                    data-aos="fade-up"
+                    data-aos-duration="550">
+
+                The Operating System for Gym Growth
+
+            </div>
+
+            <h1 class="ais-hero-title"
+                    data-aos="fade-up"
+                    data-aos-duration="550"
+                    data-aos-delay="100">
+
+                Run Your Gym
+                <br />
+
+                <span class="ais-title-highlight">
+        Grow Your Business
+      </span>
+
+            </h1>
+
+            <p class="ais-hero-sub"
+                    data-aos="fade-up"
+                    data-aos-duration="550"
+                    data-aos-delay="180">
+
+                Manage members, memberships, leads, payments, staff, workouts
+                and daily operations from one powerful platform built for
+                modern gyms.
+
+            </p>
+
+            <div class="ais-hero-cta"
+                    data-aos="fade-up"
+                    data-aos-duration="550"
+                    data-aos-delay="260">
+
+                <a class="btn-primary" href="/login">
+                    <i class="fas fa-bolt"></i>
+                    Get Started
+                </a>
+
+                <a class="btn-ghost" href="#features">
+                    <i class="fa-solid fa-compass"></i>
+                    Explore Gymely
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Feature Marquee -->
+
+    <div class="ais-partner-marquee"
+            data-aos="fade-up"
+            data-aos-duration="550"
+            data-aos-delay="340">
+
+        <div class="ais-partner-track">
+
+            <div class="ais-partner-group">
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-users"></i>
+                    Members
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-id-card"></i>
+                    Memberships
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Leads
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-credit-card"></i>
+                    Payments
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Analytics
+                </a>
+
+            </div>
+
+
+            <div class="ais-partner-group" aria-hidden="true">
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-users"></i>
+                    Members
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-id-card"></i>
+                    Memberships
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Leads
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-credit-card"></i>
+                    Payments
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Analytics
+                </a>
+
+            </div>
+
+
+            <div class="ais-partner-group" aria-hidden="true">
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-users"></i>
+                    Members
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-id-card"></i>
+                    Memberships
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Leads
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-credit-card"></i>
+                    Payments
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Analytics
+                </a>
+
+            </div>
+
+
+            <div class="ais-partner-group" aria-hidden="true">
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-users"></i>
+                    Members
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-id-card"></i>
+                    Memberships
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Leads
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-credit-card"></i>
+                    Payments
+                </a>
+
+                <a class="ais-partner-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Analytics
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ais-planet-horizon" aria-hidden="true"></div>
+
+
+</section>
+
+<!-- =========================================================
+     ABOUT SECTION
+========================================================== -->
+
+<section class="ais-about-section"
+        id="about"
+        data-aos="fade-up"
+        data-aos-duration="550">
+
+
+    <div class="ais-about-grid-bg" aria-hidden="true"></div>
+    <div class="ais-about-glow" aria-hidden="true"></div>
+
+    <div class="ais-container">
+
+        <div class="row ais-about-top g-4 g-xl-5 align-items-start">
+
+            <div class="col-lg-6"
+                    data-aos="fade-up"
+                    data-aos-duration="800">
+
+                <div class="ais-about-badge">
+                    About Gymely
+                </div>
+
+                <h2 class="ais-about-title">
+
+                    Everything your gym needs to
+
+                    <span class="ais-title-highlight">
+          operate and grow
+        </span>
+
+                </h2>
+
+                <div class="ais-about-stat-row">
+
+        <span class="ais-about-stat-num"
+                data-count="500"
+                data-suffix="+">
+          0+
+        </span>
+
+                    <div class="ais-about-stat-meta">
+
+          <span class="ais-about-stat-label">
+            Gyms Powered
+          </span>
+
+                        <span class="ais-about-stat-desc">
+            One connected platform for gym operations,
+            members, payments and business growth.
+          </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-delay="100">
+
+                <div class="ais-about-copy">
+
+                    <p>
+                        Gymely is built for modern gym owners who want more
+                        than basic management software. It brings the everyday
+                        operations of your gym into one connected platform.
+                    </p>
+
+                    <p>
+                        From capturing a new lead to managing memberships,
+                        collecting payments, sending reminders, managing staff
+                        and understanding your business performance, Gymely
+                        helps you run your gym with clarity and control.
+                    </p>
+
+                    <div class="ais-about-cta">
+
+                        <a href="#features"
+                                class="btn-primary btn-solid-primary">
+
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Explore Features
+
+                        </a>
+
+                        <a href="/login"
+                                class="btn-ghost">
+
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Get Started
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Why Gymely -->
+
+        <div class="ais-about-features-head"
+                data-aos="fade-up"
+                data-aos-duration="550"
+                data-aos-delay="100">
+
+    <span class="ais-about-features-tag">
+      Why Gymely
+    </span>
+
+            <h3 class="ais-about-features-title">
+                Built for gym owners who want to grow
+            </h3>
+
+        </div>
+
+
+        <div class="row ais-about-features g-4">
+
+            <div class="col-lg-3 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-duration="700">
+
+                <article class="ais-about-card">
+
+                    <div class="ais-about-card-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <span class="ais-about-card-index">
+          01
+        </span>
+
+                    <h4 class="ais-about-card-title">
+                        One Connected Platform
+                    </h4>
+
+                    <p class="ais-about-card-text">
+                        Manage members, memberships, leads, payments,
+                        staff, expenses and daily gym operations from
+                        one place.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-duration="700"
+                    data-aos-delay="80">
+
+                <article class="ais-about-card">
+
+                    <div class="ais-about-card-icon">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+
+                    <span class="ais-about-card-index">
+          02
+        </span>
+
+                    <h4 class="ais-about-card-title">
+                        Smarter Operations
+                    </h4>
+
+                    <p class="ais-about-card-text">
+                        Automate reminders, follow-ups, renewals and
+                        repetitive tasks so your team can focus on
+                        your members.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-duration="700"
+                    data-aos-delay="160">
+
+                <article class="ais-about-card">
+
+                    <div class="ais-about-card-icon">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+
+                    <span class="ais-about-card-index">
+          03
+        </span>
+
+                    <h4 class="ais-about-card-title">
+                        Built to Scale
+                    </h4>
+
+                    <p class="ais-about-card-text">
+                        Start with your gym today and scale your
+                        operations as your members, team and business
+                        continue to grow.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-duration="700"
+                    data-aos-delay="240">
+
+                <article class="ais-about-card">
+
+                    <div class="ais-about-card-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <span class="ais-about-card-index">
+          04
+        </span>
+
+                    <h4 class="ais-about-card-title">
+                        Data-Driven Growth
+                    </h4>
+
+                    <p class="ais-about-card-text">
+                        Understand revenue, memberships, leads,
+                        expenses and business performance with
+                        powerful reports.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- =========================================================
+     FEATURES / WHAT GYMELY DOES
+========================================================== -->
+
+
+<!-- =========================================================
+     GYMELY CORE FEATURES — DARK
+========================================================== -->
+<section class="bot-features gymely-core-section" id="features" aria-label="Gymely core features"
+        data-aos="fade-up" data-aos-duration="550">
+
+    <div class="bot-features_curve" aria-hidden="true"></div>
+
+    <div class="bot-container">
+        <header class="bot-features_intro" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+        <span class="bot-features_kicker">
+          <span class="bot-features_kicker-dot" aria-hidden="true"></span>
+          Complete Gym Management Platform
+        </span>
+
+            <h2 class="bot-features_title">
+                Every part of your gym,
+                <span class="bot-hero_word bot-hero_word--lime">connected</span>
+                and
+                <span class="bot-hero_word bot-hero_word--teal">controlled</span>
+            </h2>
+
+            <p class="bot-features_desc">
+                Gymely brings member management, attendance, leads, billing, communication,
+                training, staff operations and business reporting into one connected system.
+            </p>
+        </header>
+
+        <div class="bot-features_deck">
+            <div class="bot-features_spine" aria-hidden="true"></div>
+
+            <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700" data-aos-delay="70">
+                <div class="bot-features_node"><span>01</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-fingerprint" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 01</span>
+                        <h3 class="bot-features_copy-title">Biometric Integration</h3>
+                        <p class="bot-features_copy-text">Connect your gym attendance workflow with supported biometric devices.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Supports ESSL and Real Matrix biometric device models.</li>
+                            <li><i class="fa-solid fa-check"></i>Sync attendance data with member records.</li>
+                            <li><i class="fa-solid fa-check"></i>Reduce manual attendance entry and improve front-desk accuracy.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane bot-features_lane--flip" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+                <div class="bot-features_node"><span>02</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-user-shield" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 02</span>
+                        <h3 class="bot-features_copy-title">Operator Management</h3>
+                        <p class="bot-features_copy-text">Give every operator the right level of access.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Create custom operator roles and permissions.</li>
+                            <li><i class="fa-solid fa-check"></i>Control access to operational modules.</li>
+                            <li><i class="fa-solid fa-check"></i>Keep sensitive business information visible only to authorized users.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700" data-aos-delay="130">
+                <div class="bot-features_node"><span>03</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-user-plus" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 03</span>
+                        <h3 class="bot-features_copy-title">Lead Management</h3>
+                        <p class="bot-features_copy-text">Turn enquiries into structured follow-up opportunities.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Capture and organize gym leads in one place.</li>
+                            <li><i class="fa-solid fa-check"></i>Track lead status, source and follow-up activity.</li>
+                            <li><i class="fa-solid fa-check"></i>Give your team a clear pipeline from enquiry to membership.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane bot-features_lane--flip" data-aos="fade-up" data-aos-duration="700" data-aos-delay="160">
+                <div class="bot-features_node"><span>04</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-receipt" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 04</span>
+                        <h3 class="bot-features_copy-title">Expense Management</h3>
+                        <p class="bot-features_copy-text">Keep gym expenses organized and visible.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Record and categorize business expenses.</li>
+                            <li><i class="fa-solid fa-check"></i>Track spending against operational activity.</li>
+                            <li><i class="fa-solid fa-check"></i>Use expense data for clearer business reporting.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700" data-aos-delay="180">
+                <div class="bot-features_node"><span>05</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-file-import" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 05</span>
+                        <h3 class="bot-features_copy-title">Old Data Upload</h3>
+                        <p class="bot-features_copy-text">Bring your existing gym data into Gymely.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Upload historical member and business data.</li>
+                            <li><i class="fa-solid fa-check"></i>Reduce manual re-entry during migration.</li>
+                            <li><i class="fa-solid fa-check"></i>Move from your previous system with a structured transition.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane bot-features_lane--flip" data-aos="fade-up" data-aos-duration="700" data-aos-delay="40">
+                <div class="bot-features_node"><span>06</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 06</span>
+                        <h3 class="bot-features_copy-title">Reports & Analytics</h3>
+                        <p class="bot-features_copy-text">Turn gym data into useful business visibility.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Review membership, revenue and operational reports.</li>
+                            <li><i class="fa-solid fa-check"></i>Understand trends across important gym activities.</li>
+                            <li><i class="fa-solid fa-check"></i>Give owners clearer information for daily decisions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700" data-aos-delay="70">
+                <div class="bot-features_node"><span>07</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-comments" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 07</span>
+                        <h3 class="bot-features_copy-title">Member & Lead Follow-up</h3>
+                        <p class="bot-features_copy-text">Keep important conversations and follow-ups on track.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Track member and lead follow-up requirements.</li>
+                            <li><i class="fa-solid fa-check"></i>Reduce missed calls, reminders and renewal opportunities.</li>
+                            <li><i class="fa-solid fa-check"></i>Give staff a clear next action for each contact.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane bot-features_lane--flip" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+                <div class="bot-features_node"><span>08</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-bell" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 08</span>
+                        <h3 class="bot-features_copy-title">Automated Reminders</h3>
+                        <p class="bot-features_copy-text">Let Gymely handle routine communication.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Automate important membership and operational reminders.</li>
+                            <li><i class="fa-solid fa-check"></i>Reduce repetitive work for front-desk teams.</li>
+                            <li><i class="fa-solid fa-check"></i>Keep members informed at the right stage of their journey.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700" data-aos-delay="130">
+                <div class="bot-features_node"><span>09</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 09</span>
+                        <h3 class="bot-features_copy-title">Bulk SMS & Email</h3>
+                        <p class="bot-features_copy-text">Communicate with groups of members efficiently.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Send messages to selected member groups.</li>
+                            <li><i class="fa-solid fa-check"></i>Use bulk communication for announcements and reminders.</li>
+                            <li><i class="fa-solid fa-check"></i>Reduce the time required for repetitive outreach.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane bot-features_lane--flip" data-aos="fade-up" data-aos-duration="700" data-aos-delay="160">
+                <div class="bot-features_node"><span>10</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-whatsapp" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 10</span>
+                        <h3 class="bot-features_copy-title">WhatsApp Integration</h3>
+                        <p class="bot-features_copy-text">Bring member communication closer to the workflow.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Use WhatsApp for invoices, reminders and member updates.</li>
+                            <li><i class="fa-solid fa-check"></i>Keep communication connected with operational activities.</li>
+                            <li><i class="fa-solid fa-check"></i>Create a more convenient communication experience for members.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700" data-aos-delay="180">
+                <div class="bot-features_node"><span>11</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 11</span>
+                        <h3 class="bot-features_copy-title">Membership Freeze, Upgrade & Transfer</h3>
+                        <p class="bot-features_copy-text">Handle membership changes without losing history.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Freeze memberships when members need a temporary pause.</li>
+                            <li><i class="fa-solid fa-check"></i>Upgrade packages as member requirements change.</li>
+                            <li><i class="fa-solid fa-check"></i>Transfer memberships while keeping operational records organized.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane bot-features_lane--flip" data-aos="fade-up" data-aos-duration="700" data-aos-delay="40">
+                <div class="bot-features_node"><span>12</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 12</span>
+                        <h3 class="bot-features_copy-title">E-commerce & Inventory Management</h3>
+                        <p class="bot-features_copy-text">Manage products and inventory alongside memberships.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Track gym products and inventory.</li>
+                            <li><i class="fa-solid fa-check"></i>Support product sales and e-commerce workflows.</li>
+                            <li><i class="fa-solid fa-check"></i>Keep inventory activity connected with gym operations.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700" data-aos-delay="70">
+                <div class="bot-features_node"><span>13</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 13</span>
+                        <h3 class="bot-features_copy-title">Custom Invoice</h3>
+                        <p class="bot-features_copy-text">Create professional invoices that match your gym brand.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Add your gym logo to invoices.</li>
+                            <li><i class="fa-solid fa-check"></i>Support custom invoice presentation and branding.</li>
+                            <li><i class="fa-solid fa-check"></i>Use watermarking for a more controlled invoice format.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane bot-features_lane--flip" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+                <div class="bot-features_node"><span>14</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-people-group" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 14</span>
+                        <h3 class="bot-features_copy-title">Group Class Management</h3>
+                        <p class="bot-features_copy-text">Organize group classes and keep schedules structured.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Create and manage group classes.</li>
+                            <li><i class="fa-solid fa-check"></i>Keep class information accessible to staff and members.</li>
+                            <li><i class="fa-solid fa-check"></i>Coordinate class operations from the same platform.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700" data-aos-delay="130">
+                <div class="bot-features_node"><span>15</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 15</span>
+                        <h3 class="bot-features_copy-title">Workout Management</h3>
+                        <p class="bot-features_copy-text">Make workout management part of the member journey.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Create and manage member workout plans.</li>
+                            <li><i class="fa-solid fa-check"></i>Keep workout information connected with member profiles.</li>
+                            <li><i class="fa-solid fa-check"></i>Support trainers in managing ongoing workout activity.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane bot-features_lane--flip" data-aos="fade-up" data-aos-duration="700" data-aos-delay="160">
+                <div class="bot-features_node"><span>16</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-apple-whole" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 16</span>
+                        <h3 class="bot-features_copy-title">Custom Diet Chart</h3>
+                        <p class="bot-features_copy-text">Create personalized diet guidance for members.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Maintain custom diet charts for individual members.</li>
+                            <li><i class="fa-solid fa-check"></i>Keep diet information connected with member records.</li>
+                            <li><i class="fa-solid fa-check"></i>Make personalized guidance easier for trainers to manage.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700" data-aos-delay="180">
+                <div class="bot-features_node"><span>17</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-notes-medical" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 17</span>
+                        <h3 class="bot-features_copy-title">Health & Medical Profile</h3>
+                        <p class="bot-features_copy-text">Keep important member health information organized.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Maintain health and medical profile information.</li>
+                            <li><i class="fa-solid fa-check"></i>Keep relevant information accessible to authorized staff.</li>
+                            <li><i class="fa-solid fa-check"></i>Support a more complete member profile.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane bot-features_lane--flip" data-aos="fade-up" data-aos-duration="700" data-aos-delay="40">
+                <div class="bot-features_node"><span>18</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 18</span>
+                        <h3 class="bot-features_copy-title">Personal Training Tracking</h3>
+                        <p class="bot-features_copy-text">Track personal training activity and member progress.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Manage personal training relationships.</li>
+                            <li><i class="fa-solid fa-check"></i>Track training activity against members.</li>
+                            <li><i class="fa-solid fa-check"></i>Give trainers and owners clearer visibility into PT operations.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700" data-aos-delay="70">
+                <div class="bot-features_node"><span>19</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-money-check-dollar" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 19</span>
+                        <h3 class="bot-features_copy-title">Staff Salary</h3>
+                        <p class="bot-features_copy-text">Keep staff salary information organized.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Maintain staff salary records.</li>
+                            <li><i class="fa-solid fa-check"></i>Keep salary information connected with staff management.</li>
+                            <li><i class="fa-solid fa-check"></i>Support cleaner operational and financial record keeping.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane bot-features_lane--flip" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+                <div class="bot-features_node"><span>20</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-users" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 20</span>
+                        <h3 class="bot-features_copy-title">Member Experience</h3>
+                        <p class="bot-features_copy-text">Connect the complete member lifecycle in one system.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Bring membership, payments, attendance and communication together.</li>
+                            <li><i class="fa-solid fa-check"></i>Give staff a complete operational view of members.</li>
+                            <li><i class="fa-solid fa-check"></i>Create a consistent experience from joining to renewal.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="bot-features_lane" data-aos="fade-up" data-aos-duration="700" data-aos-delay="130">
+                <div class="bot-features_node"><span>21</span></div>
+                <div class="bot-features_tile">
+                    <div class="bot-features_art bot-features_art--radar" aria-hidden="true">
+                        <span class="bot-features_art-ring bot-features_art-ring--1"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--2"></span>
+                        <span class="bot-features_art-ring bot-features_art-ring--3"></span>
+                        <span class="bot-features_art-core"><i class="fa-solid fa-rocket" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="bot-features_copy">
+                        <span class="gymely-feature-kicker">GYMELY MODULE 21</span>
+                        <h3 class="bot-features_copy-title">Gym Growth Automation</h3>
+                        <p class="bot-features_copy-text">Use connected workflows to spend less time on manual administration.</p>
+                        <ul class="bot-features_tags gymely-feature-points">
+                            <li><i class="fa-solid fa-check"></i>Combine leads, follow-ups, reminders and communication.</li>
+                            <li><i class="fa-solid fa-check"></i>Keep recurring tasks structured and easier to manage.</li>
+                            <li><i class="fa-solid fa-check"></i>Give owners more time to focus on business growth.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <footer class="bot-features_foot" data-aos="fade-up" data-aos-duration="700">
+            <ul class="bot-features_foot-stats">
+                <li><strong>21+</strong><span>Business Capabilities</span></li>
+                <li><strong>1</strong><span>Connected Platform</span></li>
+                <li><strong>24/7</strong><span>Cloud Access</span></li>
+            </ul>
+            <a href="/login" class="btn-primary bot-features_foot-btn">
+                Start with Gymely <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+            </a>
+        </footer>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     PREMIUM PLATFORM OVERVIEW — WHITE
+========================================================== -->
+<section id="platform-overview" class="aig-section mlr-40 radius-25 gymely-light-section"
+        data-aos="fade-up" data-aos-duration="550">
+
+    <div class="light-bg-pattern" aria-hidden="true"></div>
+
+    <div class="container">
+        <header class="bp-light-header text-center mb-5">
+            <span class="gymely-light-kicker">THE GYMELY OPERATING SYSTEM</span>
+            <h2 class="aig-section-title text-dark">
+                From the front desk to the
+                <span class="bp-light-highlight">owner's dashboard</span>
+            </h2>
+            <p class="bp-light-muted-lead mx-auto">
+                Gymely connects the workflows that keep a gym running every day —
+                while giving owners the visibility needed to build a stronger business.
+            </p>
+        </header>
+
+        <div class="bp-light-grid">
+
+            <article class="bp-light-card bp-span-7 gymely-light-feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="bp-light-content">
+                    <span class="gymely-card-number">01 / MEMBER LIFECYCLE</span>
+                    <h3 class="bp-light-title">One complete member journey</h3>
+                    <p class="bp-light-desc">
+                        Manage the journey from lead and joining to attendance, payments,
+                        training, communication, freeze, upgrade, transfer and renewal.
+                    </p>
+                </div>
+                <ul class="gymely-light-points">
+                    <li><i class="fa-solid fa-check"></i> Member & membership management</li>
+                    <li><i class="fa-solid fa-check"></i> Attendance & biometric integration</li>
+                    <li><i class="fa-solid fa-check"></i> Follow-ups & automated reminders</li>
+                    <li><i class="fa-solid fa-check"></i> Freeze, upgrade & transfer workflows</li>
+                </ul>
+            </article>
+
+            <article class="bp-light-card bp-span-5 gymely-light-feature-card" data-aos="fade-up" data-aos-delay="160">
+                <div class="bp-light-content">
+                    <span class="gymely-card-number">02 / BUSINESS CONTROL</span>
+                    <h3 class="bp-light-title">Know what is happening</h3>
+                    <p class="bp-light-desc">
+                        Keep revenue, expenses, staff, inventory and operational data
+                        organized so owners can work from one source of truth.
+                    </p>
+                </div>
+                <ul class="gymely-light-points">
+                    <li><i class="fa-solid fa-check"></i> Expense management</li>
+                    <li><i class="fa-solid fa-check"></i> Staff salary records</li>
+                    <li><i class="fa-solid fa-check"></i> Inventory & e-commerce</li>
+                    <li><i class="fa-solid fa-check"></i> Reports & analytics</li>
+                </ul>
+            </article>
+
+            <article class="bp-light-card bp-span-4 gymely-light-feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="bp-light-content">
+                    <span class="gymely-card-number">03 / COMMUNICATION</span>
+                    <h3 class="bp-light-title">Stay connected</h3>
+                    <p class="bp-light-desc">Reach members and leads through the channels your team already uses.</p>
+                </div>
+                <ul class="gymely-light-points">
+                    <li><i class="fa-solid fa-check"></i> WhatsApp integration</li>
+                    <li><i class="fa-solid fa-check"></i> Bulk SMS & Email</li>
+                    <li><i class="fa-solid fa-check"></i> Automated reminders</li>
+                </ul>
+            </article>
+
+            <article class="bp-light-card bp-span-4 gymely-light-feature-card" data-aos="fade-up" data-aos-delay="160">
+                <div class="bp-light-content">
+                    <span class="gymely-card-number">04 / TRAINING</span>
+                    <h3 class="bp-light-title">Personalized fitness management</h3>
+                    <p class="bp-light-desc">Give trainers the tools to manage member training and personalized guidance.</p>
+                </div>
+                <ul class="gymely-light-points">
+                    <li><i class="fa-solid fa-check"></i> Workout management</li>
+                    <li><i class="fa-solid fa-check"></i> Custom diet charts</li>
+                    <li><i class="fa-solid fa-check"></i> Personal training tracking</li>
+                    <li><i class="fa-solid fa-check"></i> Health & medical profiles</li>
+                </ul>
+            </article>
+
+            <article class="bp-light-card bp-span-4 gymely-light-feature-card" data-aos="fade-up" data-aos-delay="220">
+                <div class="bp-light-content">
+                    <span class="gymely-card-number">05 / TEAM OPERATIONS</span>
+                    <h3 class="bp-light-title">Give every role the right access</h3>
+                    <p class="bp-light-desc">Keep operators, staff and trainers aligned with controlled access and clear responsibilities.</p>
+                </div>
+                <ul class="gymely-light-points">
+                    <li><i class="fa-solid fa-check"></i> Operator management</li>
+                    <li><i class="fa-solid fa-check"></i> Custom access control</li>
+                    <li><i class="fa-solid fa-check"></i> Staff salary management</li>
+                    <li><i class="fa-solid fa-check"></i> Group class management</li>
+                </ul>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     HOW IT WORKS
+========================================================== -->
+
+<section class="ais-hiw-section"
+        id="process"
+        data-aos="fade-up"
+        data-aos-duration="550">
+
+
+    <div class="ais-hiw-rails" aria-hidden="true"></div>
+    <div class="ais-hiw-orb ais-hiw-orb--left" aria-hidden="true"></div>
+    <div class="ais-hiw-orb ais-hiw-orb--right" aria-hidden="true"></div>
+
+    <div class="ais-container">
+
+        <div class="ais-hiw-layout">
+
+            <aside class="ais-hiw-aside"
+                    data-aos="fade-right"
+                    data-aos-duration="800">
+
+                <div class="ais-hiw-badge">
+                    How It Works
+                </div>
+
+                <h2 class="ais-hiw-title">
+
+                    From daily operations to
+
+                    <span class="ais-title-highlight">
+          business growth
+        </span>
+
+                </h2>
+
+                <p class="ais-hiw-lead">
+                    Set up your gym, bring your operations together,
+                    automate repetitive work and use your data to
+                    make smarter business decisions.
+                </p>
+
+                <div class="ais-hiw-metrics">
+
+                    <div class="ais-hiw-metric">
+          <span class="ais-hiw-metric_val">
+            Simple
+          </span>
+
+                        <span class="ais-hiw-metric_label">
+            Setup
+          </span>
+                    </div>
+
+                    <div class="ais-hiw-metric">
+          <span class="ais-hiw-metric_val">
+            Smart
+          </span>
+
+                        <span class="ais-hiw-metric_label">
+            Automation
+          </span>
+                    </div>
+
+                    <div class="ais-hiw-metric">
+          <span class="ais-hiw-metric_val">
+            Real-time
+          </span>
+
+                        <span class="ais-hiw-metric_label">
+            Insights
+          </span>
+                    </div>
+
+                </div>
+
+                <div class="ais-hiw-cta">
+
+                    <a href="/login"
+                            class="btn-primary btn-solid-primary">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+                        Get Started
+
+                    </a>
+
+                </div>
+
+            </aside>
+
+
+            <div class="ais-hiw-timeline"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-delay="100">
+
+                <div class="ais-hiw-timeline_spine"
+                        aria-hidden="true"></div>
+
+
+                <!-- Step 1 -->
+
+                <article class="ais-hiw-phase"
+                        data-aos="fade-up"
+                        data-aos-duration="550"
+                        data-aos-delay="140">
+
+                    <div class="ais-hiw-phase_node"
+                            aria-hidden="true">
+
+                        <i class="fa-solid fa-building"></i>
+
+                    </div>
+
+                    <div class="ais-hiw-phase_panel">
+
+          <span class="ais-hiw-phase_ghost">
+            01
+          </span>
+
+                        <div class="ais-hiw-phase_top">
+
+                            <h3 class="ais-hiw-phase_title">
+                                Setup
+                            </h3>
+
+                            <span class="ais-hiw-phase_chip">
+              Get started
+            </span>
+
+                        </div>
+
+                        <p class="ais-hiw-phase_text">
+                            Set up your gym profile, memberships,
+                            packages, staff, business settings and
+                            branding in one place.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Step 2 -->
+
+                <article class="ais-hiw-phase"
+                        data-aos="fade-up"
+                        data-aos-duration="550"
+                        data-aos-delay="220">
+
+                    <div class="ais-hiw-phase_node"
+                            aria-hidden="true">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <div class="ais-hiw-phase_panel">
+
+          <span class="ais-hiw-phase_ghost">
+            02
+          </span>
+
+                        <div class="ais-hiw-phase_top">
+
+                            <h3 class="ais-hiw-phase_title">
+                                Connect
+                            </h3>
+
+                            <span class="ais-hiw-phase_chip">
+              Bring it together
+            </span>
+
+                        </div>
+
+                        <p class="ais-hiw-phase_text">
+                            Manage members, leads, memberships,
+                            payments, staff and daily gym activities
+                            from one connected system.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Step 3 -->
+
+                <article class="ais-hiw-phase"
+                        data-aos="fade-up"
+                        data-aos-duration="550"
+                        data-aos-delay="300">
+
+                    <div class="ais-hiw-phase_node"
+                            aria-hidden="true">
+
+                        <i class="fa-solid fa-gears"></i>
+
+                    </div>
+
+                    <div class="ais-hiw-phase_panel">
+
+          <span class="ais-hiw-phase_ghost">
+            03
+          </span>
+
+                        <div class="ais-hiw-phase_top">
+
+                            <h3 class="ais-hiw-phase_title">
+                                Automate
+                            </h3>
+
+                            <span class="ais-hiw-phase_chip">
+              Work smarter
+            </span>
+
+                        </div>
+
+                        <p class="ais-hiw-phase_text">
+                            Automate reminders, follow-ups, invoices
+                            and recurring communication while reducing
+                            repetitive work for your team.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Step 4 -->
+
+                <article class="ais-hiw-phase ais-hiw-phase--last"
+                        data-aos="fade-up"
+                        data-aos-duration="550"
+                        data-aos-delay="380">
+
+                    <div class="ais-hiw-phase_node"
+                            aria-hidden="true">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <div class="ais-hiw-phase_panel">
+
+          <span class="ais-hiw-phase_ghost">
+            04
+          </span>
+
+                        <div class="ais-hiw-phase_top">
+
+                            <h3 class="ais-hiw-phase_title">
+                                Grow
+                            </h3>
+
+                            <span class="ais-hiw-phase_chip">
+              Make better decisions
+            </span>
+
+                        </div>
+
+                        <p class="ais-hiw-phase_text">
+                            Use reports, analytics and business insights
+                            to understand performance and build a stronger
+                            gym business.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- =========================================================
+     GROWTH SECTION
+========================================================== -->
+
+<section class="ais-cs-section"
+        id="growth"
+        data-aos="fade-up"
+        data-aos-duration="550">
+
+
+    <div class="ais-cs-mesh" aria-hidden="true"></div>
+    <div class="ais-cs-beam" aria-hidden="true"></div>
+
+    <div class="ais-container">
+
+        <div class="row ais-cs-header g-4 align-items-end">
+
+            <div class="col-lg-7"
+                    data-aos="fade-up"
+                    data-aos-duration="800">
+
+                <div class="ais-cs-badge">
+                    Built for Growth
+                </div>
+
+                <h2 class="ais-cs-title">
+
+                    More than management.
+
+                    <span class="ais-title-highlight">
+          Built for growth.
+        </span>
+
+                </h2>
+
+            </div>
+
+
+            <div class="col-lg-5"
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-delay="100">
+
+                <p class="ais-cs-sub">
+                    Gymely helps gym owners move beyond spreadsheets,
+                    disconnected tools and manual processes with one
+                    connected platform for the entire business.
+                </p>
+
+                <a href="/login"
+                        class="btn-ghost ais-cs-header_btn">
+
+                    <i class="fa-solid fa-arrow-right"></i>
+                    Start with Gymely
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="ais-cs-grid">
+
+            <div class="row g-4">
+
+
+                <!-- Growth Card 1 -->
+
+                <div class="col-lg-8 d-flex"
+                        data-aos="fade-up"
+                        data-aos-duration="700">
+
+                    <div class="ais-cs-card ais-cs-card--featured w-100">
+
+                        <div class="ais-cs-card_media">
+
+                            <img
+                                    src="assets/images/portfolio/portfolio-1.png"
+                                    alt="Gymely member management dashboard" />
+
+                            <span class="ais-cs-card_tag">
+              Members
+            </span>
+
+                        </div>
+
+                        <div class="ais-cs-card_body">
+
+            <span class="ais-cs-card_client">
+              Member Experience
+            </span>
+
+                            <h3 class="ais-cs-card_title">
+                                Give your team one complete view of every member
+                            </h3>
+
+                            <p class="ais-cs-card_text">
+                                Keep member profiles, memberships, payments,
+                                activity and history connected so your team
+                                always knows what is happening.
+                            </p>
+
+                            <ul class="ais-cs-card_stats">
+
+                                <li>
+                                    <strong>01</strong>
+                                    Member profiles
+                                </li>
+
+                                <li>
+                                    <strong>02</strong>
+                                    Membership lifecycle
+                                </li>
+
+                            </ul>
+
+                            <span class="ais-cs-card_link">
+              Member Management
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Growth Card 2 -->
+
+                <div class="col-lg-4 d-flex"
+                        data-aos="fade-up"
+                        data-aos-duration="700"
+                        data-aos-delay="80">
+
+                    <div class="ais-cs-card w-100">
+
+                        <div class="ais-cs-card_media">
+
+                            <img
+                                    src="assets/images/portfolio/portfolio-2.png"
+                                    alt="Gymely lead management" />
+
+                            <span class="ais-cs-card_tag">
+              Leads
+            </span>
+
+                        </div>
+
+                        <div class="ais-cs-card_body">
+
+            <span class="ais-cs-card_client">
+              Lead Conversion
+            </span>
+
+                            <h3 class="ais-cs-card_title">
+                                Turn enquiries into memberships
+                            </h3>
+
+                            <p class="ais-cs-card_text">
+                                Track prospects, follow-ups and next actions
+                                so opportunities don't get lost.
+                            </p>
+
+                            <span class="ais-cs-card_link">
+              Lead Management
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Growth Card 3 -->
+
+                <div class="col-lg-4 d-flex"
+                        data-aos="fade-up"
+                        data-aos-duration="700"
+                        data-aos-delay="60">
+
+                    <div class="ais-cs-card w-100">
+
+                        <div class="ais-cs-card_media">
+
+                            <img
+                                    src="assets/images/portfolio/portfolio-3.png"
+                                    alt="Gymely billing and payments" />
+
+                            <span class="ais-cs-card_tag">
+              Billing
+            </span>
+
+                        </div>
+
+                        <div class="ais-cs-card_body">
+
+            <span class="ais-cs-card_client">
+              Revenue
+            </span>
+
+                            <h3 class="ais-cs-card_title">
+                                Keep your gym finances organized
+                            </h3>
+
+                            <p class="ais-cs-card_text">
+                                Manage invoices, transactions, memberships
+                                and payment records in one place.
+                            </p>
+
+                            <span class="ais-cs-card_link">
+              Billing & Payments
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Growth Card 4 -->
+
+                <div class="col-lg-8 d-flex"
+                        data-aos="fade-up"
+                        data-aos-duration="700"
+                        data-aos-delay="120">
+
+                    <div class="ais-cs-card ais-cs-card--featured w-100">
+
+                        <div class="ais-cs-card_media">
+
+                            <img
+                                    src="assets/images/portfolio/portfolio-4.png"
+                                    alt="Gymely analytics dashboard" />
+
+                            <span class="ais-cs-card_tag">
+              Analytics
+            </span>
+
+                        </div>
+
+                        <div class="ais-cs-card_body">
+
+            <span class="ais-cs-card_client">
+              Business Insights
+            </span>
+
+                            <h3 class="ais-cs-card_title">
+                                Know what is happening in your gym
+                            </h3>
+
+                            <p class="ais-cs-card_text">
+                                Understand memberships, revenue, leads,
+                                expenses and operational performance through
+                                clear reports and insights.
+                            </p>
+
+                            <span class="ais-cs-card_link">
+              Business Analytics
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- =========================================================
+     WHY GYMELY / AI SECTION
+========================================================== -->
+
+<section class="ais-ts-section"
+        id="smart"
+        data-aos="fade-up"
+        data-aos-duration="550">
+
+
+    <div class="ais-ts-grid-bg" aria-hidden="true"></div>
+    <div class="ais-ts-glow" aria-hidden="true"></div>
+
+    <div class="ais-container">
+
+        <div class="ais-ts-header"
+                data-aos="fade-up"
+                data-aos-duration="550"
+                data-aos-delay="100">
+
+            <div class="ais-ts-badge">
+                Smarter Gym Operations
+            </div>
+
+            <h2 class="ais-ts-title">
+
+                Technology that works
+
+                <span class="ais-title-highlight">
+        behind your gym
+      </span>
+
+            </h2>
+
+            <p class="ais-ts-sub">
+                Gymely combines automation, integrations and AI-powered
+                tools to reduce repetitive work and help your team operate
+                more efficiently.
+            </p>
+
+        </div>
+
+
+        <div class="ais-ts-stage"
+                data-aos="fade-up"
+                data-aos-duration="650"
+                data-aos-delay="200">
+
+            <div class="ais-ts-stage_mesh"
+                    aria-hidden="true"></div>
+
+            <div class="ais-ts-stage_glow"
+                    aria-hidden="true"></div>
+
+            <div class="ais-ts-stage_inner">
+
+
+                <div class="ais-ts-picks"
+                        role="tablist"
+                        aria-label="Gymely capabilities">
+
+
+                    <button class="ais-ts-pick is-active"
+                            type="button"
+                            role="tab"
+                            aria-selected="true"
+                            data-ts-index="0"
+                            id="ais-ts-tab-0"
+                            aria-controls="ais-ts-panel-0">
+
+                        <div class="ais-ts-pick_avatar">
+                            <i class="fa-solid fa-bell"></i>
+                        </div>
+
+                        <span class="ais-ts-pick_body">
+
+            <span class="ais-ts-pick_name">
+              Automation
+            </span>
+
+            <span class="ais-ts-pick_role">
+              Less repetitive work
+            </span>
+
+          </span>
+
+                        <span class="ais-ts-pick_stat">
+            01
+          </span>
+
+                    </button>
+
+
+                    <button class="ais-ts-pick"
+                            type="button"
+                            role="tab"
+                            aria-selected="false"
+                            data-ts-index="1"
+                            id="ais-ts-tab-1"
+                            aria-controls="ais-ts-panel-1">
+
+                        <div class="ais-ts-pick_avatar">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+
+                        <span class="ais-ts-pick_body">
+
+            <span class="ais-ts-pick_name">
+              WhatsApp
+            </span>
+
+            <span class="ais-ts-pick_role">
+              Stay connected
+            </span>
+
+          </span>
+
+                        <span class="ais-ts-pick_stat">
+            02
+          </span>
+
+                    </button>
+
+
+                    <button class="ais-ts-pick"
+                            type="button"
+                            role="tab"
+                            aria-selected="false"
+                            data-ts-index="2"
+                            id="ais-ts-tab-2"
+                            aria-controls="ais-ts-panel-2">
+
+                        <div class="ais-ts-pick_avatar">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+
+                        <span class="ais-ts-pick_body">
+
+            <span class="ais-ts-pick_name">
+              AI Tools
+            </span>
+
+            <span class="ais-ts-pick_role">
+              Smarter member support
+            </span>
+
+          </span>
+
+                        <span class="ais-ts-pick_stat">
+            03
+          </span>
+
+                    </button>
+
+                </div>
+
+
+                <div class="ais-ts-showcase">
+
+
+                    <article class="ais-ts-quote is-active"
+                            role="tabpanel"
+                            id="ais-ts-panel-0"
+                            aria-labelledby="ais-ts-tab-0"
+                            data-ts-panel="0">
+
+                        <div class="ais-ts-quote_mark"
+                                aria-hidden="true">
+
+                            <i class="fa-solid fa-bolt"></i>
+
+                        </div>
+
+                        <blockquote class="ais-ts-quote_text">
+                            Automate reminders, follow-ups, renewals and
+                            repetitive communication so your team can spend
+                            more time helping members.
+                        </blockquote>
+
+                        <div class="ais-ts-quote_chips">
+
+            <span class="ais-ts-quote_chip">
+              <strong>Automate</strong>
+              Reminders
+            </span>
+
+                            <span class="ais-ts-quote_chip">
+              <strong>Reduce</strong>
+              Manual Work
+            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="ais-ts-quote"
+                            role="tabpanel"
+                            id="ais-ts-panel-1"
+                            aria-labelledby="ais-ts-tab-1"
+                            data-ts-panel="1"
+                            hidden>
+
+                        <div class="ais-ts-quote_mark"
+                                aria-hidden="true">
+
+                            <i class="fa-brands fa-whatsapp"></i>
+
+                        </div>
+
+                        <blockquote class="ais-ts-quote_text">
+                            Keep your members informed with automated
+                            communication through WhatsApp for reminders,
+                            invoices and important updates.
+                        </blockquote>
+
+                        <div class="ais-ts-quote_chips">
+
+            <span class="ais-ts-quote_chip">
+              <strong>WhatsApp</strong>
+              Communication
+            </span>
+
+                            <span class="ais-ts-quote_chip">
+              <strong>Smart</strong>
+              Reminders
+            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="ais-ts-quote"
+                            role="tabpanel"
+                            id="ais-ts-panel-2"
+                            aria-labelledby="ais-ts-tab-2"
+                            data-ts-panel="2"
+                            hidden>
+
+                        <div class="ais-ts-quote_mark"
+                                aria-hidden="true">
+
+                            <i class="fa-solid fa-brain"></i>
+
+                        </div>
+
+                        <blockquote class="ais-ts-quote_text">
+                            Use AI-powered tools to help create personalized
+                            workout and diet plans and make everyday gym
+                            operations smarter.
+                        </blockquote>
+
+                        <div class="ais-ts-quote_chips">
+
+            <span class="ais-ts-quote_chip">
+              <strong>AI</strong>
+              Workouts
+            </span>
+
+                            <span class="ais-ts-quote_chip">
+              <strong>Smart</strong>
+              Diet Plans
+            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <div class="ais-ts-showcase_foot">
+
+                        <div class="ais-ts-progress"
+                                aria-hidden="true">
+
+            <span class="ais-ts-progress_bar"
+                    style="width: 33.33%">
+            </span>
+
+                        </div>
+
+                        <div class="ais-ts-showcase_actions">
+
+                            <button class="ais-ts-arrow ais-ts-prev"
+                                    type="button"
+                                    aria-label="Previous">
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                            </button>
+
+                            <button class="ais-ts-arrow ais-ts-next"
+                                    type="button"
+                                    aria-label="Next">
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+                            <a href="/login"
+                                    class="btn-ghost ais-ts-more">
+
+                                <i class="fa-solid fa-arrow-right"></i>
+                                Get Started
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- =========================================================
+     FAQ / CONTACT CTA
+========================================================== -->
+
+<section class="ais-about-section"
+        id="faq"
+        data-aos="fade-up"
+        data-aos-duration="550">
+
+
+    <div class="ais-about-grid-bg"
+            aria-hidden="true"></div>
+
+    <div class="ais-container">
+
+        <div class="ais-about-features-head">
+
+    <span class="ais-about-features-tag">
+      FAQ
+    </span>
+
+            <h3 class="ais-about-features-title">
+                Questions gym owners ask
+            </h3>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-lg-6">
+
+                <article class="ais-about-card">
+
+                    <div class="ais-about-card-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </div>
+
+                    <h4 class="ais-about-card-title">
+                        What is Gymely?
+                    </h4>
+
+                    <p class="ais-about-card-text">
+                        Gymely is an all-in-one gym management platform
+                        designed to help gym owners manage operations,
+                        members, payments, leads, staff and business growth.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <article class="ais-about-card">
+
+                    <div class="ais-about-card-icon">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+
+                    <h4 class="ais-about-card-title">
+                        Can my team use Gymely?
+                    </h4>
+
+                    <p class="ais-about-card-text">
+                        Gymely is designed for gym owners, operators,
+                        staff and teams so everyone can work from the
+                        same connected system.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <article class="ais-about-card">
+
+                    <div class="ais-about-card-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <h4 class="ais-about-card-title">
+                        Can Gymely scale with my gym?
+                    </h4>
+
+                    <p class="ais-about-card-text">
+                        Yes. Gymely is designed around scalable cloud
+                        infrastructure so your system can grow with your
+                        members, team and business.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <article class="ais-about-card">
+
+                    <div class="ais-about-card-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                    <h4 class="ais-about-card-title">
+                        Need help getting started?
+                    </h4>
+
+                    <p class="ais-about-card-text">
+                        Our team can help you understand Gymely,
+                        configure your setup and get your gym running
+                        on the platform.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="ais-footer"
+        id="contact">
+
+
+    <div class="ais-footer-mesh"
+            aria-hidden="true"></div>
+
+    <div class="ais-footer-glow"
+            aria-hidden="true"></div>
+
+    <div class="ais-container">
+
+
+        <!-- CTA -->
+
+        <div class="ais-footer-cta"
+                data-aos="fade-up"
+                data-aos-duration="550"
+                data-aos-delay="100">
+
+            <div class="ais-footer-cta_inner">
+
+                <div class="ais-footer-cta_copy">
+
+        <span class="ais-footer-badge">
+          Start Growing
+        </span>
+
+                    <h3 class="ais-footer-cta_title">
+
+                        Ready to take your gym to the
+
+                        <span class="ais-title-highlight">
+            next level?
+          </span>
+
+                    </h3>
+
+                    <p class="ais-footer-cta_text">
+
+                        Bring your members, operations and business
+                        into one powerful platform designed for
+                        modern gym growth.
+
+                    </p>
+
+                </div>
+
+
+                <div class="ais-footer-cta_actions">
+
+                    <a href="/login"
+                            class="btn-primary">
+
+                        <i class="fa-solid fa-rocket"></i>
+                        Get Started
+
+                    </a>
+
+                    <a href="#features"
+                            class="btn-ghost">
+
+                        <i class="fa-solid fa-layer-group"></i>
+                        Explore Features
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Main -->
+
+        <div class="ais-footer-main">
+
+            <div class="row g-4 g-xl-5">
+
+
+                <!-- Brand -->
+
+                <div class="col-lg-4">
+
+                    <div class="ais-footer-brand">
+
+                        <a href="/"
+                                class="ais-footer-logo">
+
+                            <img src="assets/images/logo1.png"
+                                    alt="Gymely" />
+
+                        </a>
+
+                        <p class="ais-footer-desc">
+
+                            Gymely is the operating system for gym growth,
+                            helping gym owners manage members, operations,
+                            payments, staff and business performance from
+                            one powerful platform.
+
+                        </p>
+
+                        <a href="mailto:hello@gymely.in"
+                                class="ais-footer-email">
+
+                            <i class="fa-solid fa-envelope"
+                                    aria-hidden="true"></i>
+
+                            hello@gymely.in
+
+                        </a>
+
+
+                        <div class="ais-footer-socials">
+
+                            <a href="#"
+                                    class="ais-footer-social"
+                                    aria-label="Instagram">
+
+                                <i class="fa-brands fa-instagram"></i>
+
+                            </a>
+
+                            <a href="#"
+                                    class="ais-footer-social"
+                                    aria-label="Facebook">
+
+                                <i class="fa-brands fa-facebook-f"></i>
+
+                            </a>
+
+                            <a href="#"
+                                    class="ais-footer-social"
+                                    aria-label="LinkedIn">
+
+                                <i class="fa-brands fa-linkedin-in"></i>
+
+                            </a>
+
+                            <a href="#"
+                                    class="ais-footer-social"
+                                    aria-label="YouTube">
+
+                                <i class="fa-brands fa-youtube"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Platform -->
+
+                <div class="col-6 col-lg-2">
+
+                    <div class="ais-footer-col">
+
+                        <h6 class="ais-footer-col_title">
+                            Platform
+                        </h6>
+
+                        <ul class="ais-footer-links">
+
+                            <li>
+                                <a href="#features">
+                                    Features
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#process">
+                                    How It Works
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#growth">
+                                    Growth
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#smart">
+                                    Smart Tools
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#faq">
+                                    FAQ
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Company -->
+
+                <div class="col-6 col-lg-2">
+
+                    <div class="ais-footer-col">
+
+                        <h6 class="ais-footer-col_title">
+                            Company
+                        </h6>
+
+                        <ul class="ais-footer-links">
+
+                            <li>
+                                <a href="#about">
+                                    About Gymely
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#contact">
+                                    Contact
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/login">
+                                    Login
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/login">
+                                    Get Started
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Newsletter -->
+
+                <div class="col-lg-4">
+
+                    <div class="ais-footer-col ais-footer-col--newsletter">
+
+                        <h6 class="ais-footer-col_title">
+                            Stay Connected
+                        </h6>
+
+                        <p class="ais-footer-newsletter_text">
+
+                            Get Gymely updates, product news and
+                            practical insights for running a better gym.
+
+                        </p>
+
+                        <form class="ais-footer-form"
+                                onsubmit="event.preventDefault();"
+                                aria-label="Newsletter signup">
+
+                            <label class="visually-hidden"
+                                    for="ais-footer-email">
+                                Email address
+                            </label>
+
+                            <input
+                                    id="ais-footer-email"
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    required />
+
+                            <button type="submit"
+                                    aria-label="Subscribe">
+
+                                <i class="fa-solid fa-arrow-right"
+                                        aria-hidden="true"></i>
+
+                            </button>
+
+                        </form>
+
+                        <p class="ais-footer-newsletter_note">
+                            No spam. Unsubscribe anytime.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+
+        <div class="ais-footer-bottom">
+
+            <p class="ais-footer-copyright">
+                &copy; 2026 Gymely. All rights reserved.
+            </p>
+
+            <div class="ais-footer-legal">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms of Service
+                </a>
+
+                <a href="#">
+                    Cookie Policy
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</footer>
+
+<!-- Back to Top -->
+
+<button id="back-to-top"
+        class="back-to-top-btn"
+        aria-label="Back to Top">
+
+    <i class="fas fa-chevron-up"></i>
+
+    <svg class="progress-ring"
+            width="48"
+            height="48">
+
+        <circle
+                class="progress-ring_circle"
+                stroke="var(--primary)"
+                stroke-width="3"
+                fill="transparent"
+                r="21"
+                cx="24"
+                cy="24" />
+
+    </svg>
+
+
+</button>
+
+<!-- Scripts -->
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/js/three.min.js"></script>
+
+<script src="assets/js/gsap.min.js"></script>
+
+<script src="assets/js/swiper-bundle.min.js"></script>
+
+<script src="assets/js/aos.js"></script>
+
+<script src="assets/js/typed.umd.js"></script>
+
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
