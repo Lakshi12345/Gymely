@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from themes.aksharwebtech.com/aigenix/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Aug 2026 11:18:02 GMT -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Aigenix AI Agent - Deploy autonomous AI agents, accelerate workflows, and unlock real-time intelligence at enterprise scale." />
+  <!-- Title -->
+  <title>Aigenix - AI Agent Platform</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="../../fonts.googleapis.com/index.html" />
+  <link rel="preconnect" href="../../fonts.gstatic.com/index.html" crossorigin />
+  <link
+    href="../../fonts.googleapis.com/css28251?family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+    rel="stylesheet" />
+  <!-- CSS -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/aos.css" />
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body class="page-home">
+  <!-- Loader -->
+  <div id="ai-loader">
+    <div class="loader-matrix"></div>
+    <div class="loader-content">
+      <div class="loader-glitch" data-text="AIGENIX // ENGINE"><img src="assets/images/logo1.png" alt="Aigenix" /></div>
+      <div class="loader-status">
+        <span class="status-tag">INITIALIZING NEURAL CORE</span>
+        <div class="loader-bar-wrap">
+          <div class="loader-bar"></div>
+        </div>
+        <div class="loader-metrics">
+          <span class="metric-pct">00%</span>
+          <span class="metric-sync">SYS_SYNC_ACTIVE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="page-transition"></div>
+  <div id="scroll-progress"></div>
+  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-shell">
+        <div class="nav-container">
+          <a class="nav-logo" href="index.html">
+            <img src="assets/images/logo1.png" alt="Aigenix" />
+          </a>
+          <ul class="nav-menu">
+            <li class="menu-item">
+              <span class="nav-link">Home <i class="fas fa-chevron-down"></i></span>
+              <ul class="dropdown-panel">
+                <li><a class="dropdown-link" href="index.html">AI Agent</a></li>
+                <li><a class="dropdown-link" href="index-1.html">AI Startup</a></li>
+                <li><a class="dropdown-link" href="index-2.html">AI SaaS</a></li>
+                <li><a class="dropdown-link" href="index-3.html">AI Chatbot</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <span class="nav-link">Company <i class="fas fa-chevron-down"></i></span>
+              <ul class="dropdown-panel">
+                <li><a class="dropdown-link" href="about.html">About Us</a></li>
+                <li><a class="dropdown-link" href="team.html">Our Team</a></li>
+                <li><a class="dropdown-link" href="testimonials.html">Testimonials</a></li>
+                <li><a class="dropdown-link" href="faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <span class="nav-link">Portfolio <i class="fas fa-chevron-down"></i></span>
+              <ul class="dropdown-panel">
+                <li><a class="dropdown-link" href="portfolio.html">Portfolio</a></li>
+                <li><a class="dropdown-link" href="portfolio-details.html">Portfolio Details</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <span class="nav-link">Blog <i class="fas fa-chevron-down"></i></span>
+              <ul class="dropdown-panel">
+                <li><a class="dropdown-link" href="blog.html">Blog</a></li>
+                <li><a class="dropdown-link" href="blog-details.html">Blog Details</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <span class="nav-link">Pages <i class="fas fa-chevron-down"></i></span>
+              <ul class="dropdown-panel mega-panel">
+                <li><a class="dropdown-link" href="services.html">Services</a></li>
+                <li><a class="dropdown-link" href="service-details.html">Service Details</a></li>
+                <li><a class="dropdown-link" href="pricing.html">Pricing</a></li>
+                <li><a class="dropdown-link" href="team-details.html">Team Details</a></li>
+                <li><a class="dropdown-link" href="login.html">Login</a></li>
+                <li><a class="dropdown-link" href="register.html">Register</a></li>
+                <li><a class="dropdown-link" href="coming-soon.html">Coming Soon</a></li>
+                <li><a class="dropdown-link" href="404.html">404 Error</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <div class="nav-actions">
+            <a class="btn-ghost" href="login.html"><i class="fas fa-right-to-bracket"></i> Log in</a>
+            <a class="btn-primary nav-cta" href="register.html"><i class="fas fa-bolt"></i> Get Started</a>
+          </div>
+          <!-- Mobile menu toogle -->
+          <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero section -->
+  <section id="hero" class="mlr-40 radius-25">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-grid-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-aurora"></div>
+    <div class="container">
+      <div class="hero-container">
+        <!-- hero right side -->
+        <div class="hero-content" data-aos="fade-right" data-aos-duration="550" data-aos-delay="100">
+          <div class="hero-badge" data-aos="fade-up" data-aos-duration="550" data-aos-delay="140">
+            <span class="dot"></span>
+            Now in Public Beta - Try Free
+          </div>
+          <h1 class="hero-title" data-aos="fade-up" data-aos-duration="550" data-aos-delay="200">
+            <span class="line">AI That Drives</span>
+            <span class="line accent text-highlight-primary"><span id="typed-text"
+                data-strings='["Smarter Decisions.", "Real-Time Insights.", "Human Potential."]'>Smarter
+                Decisions.</span></span>
+          </h1>
+          <p class="hero-sub" data-aos="fade-up" data-aos-duration="550" data-aos-delay="280">
+            Aigenix transforms raw data into strategic intelligence. Deploy autonomous AI agents, accelerate workflows,
+            and unlock decisions that were never possible before.
+          </p>
+          <div class="hero-cta" data-aos="fade-up" data-aos-duration="550" data-aos-delay="360">
+            <a class="btn-primary" href="contact.html">
+              <i class="fas fa-rocket"></i> Start for Free
+            </a>
+            <a class="btn-ghost" href="contact.html">Contact Us</a>
+          </div>
+          <!-- hero statstics -->
+          <div class="hero-stats" data-aos="fade-up" data-aos-duration="550" data-aos-delay="520">
+            <div class="stat-item">
+              <div class="stat-num"><span data-count="99" data-suffix="%">0%</span></div>
+              <div class="stat-label">Uptime SLA</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num"><span data-count="12" data-suffix="x">0x</span></div>
+              <div class="stat-label">Faster Decisions</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num"><span data-count="500" data-suffix="+">0+</span></div>
+              <div class="stat-label">Enterprise Clients</div>
+            </div>
+          </div>
+        </div>
+        <!-- hero right side -->
+        <div class="hero-visual" data-aos="fade-left" data-aos-duration="650" data-aos-delay="200">
+          <div class="hero-ai-hub" id="hero-ai-hub">
+            <div class="hub-spotlight hub-spotlight-left"></div>
+            <div class="hub-spotlight hub-spotlight-right"></div>
+            <div class="hub-stage">
+              <svg class="hub-svg" viewBox="-30 -30 520 520" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="hub-line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#b8fb04" stop-opacity="0.2" />
+                    <stop offset="50%" stop-color="#b8fb04" stop-opacity="1" />
+                    <stop offset="100%" stop-color="#b8fb04" stop-opacity="0.2" />
+                  </linearGradient>
+                </defs>
+                <polygon class="hub-hex-ring" fill="none" stroke="rgba(184, 251, 4, 0.22)" stroke-width="1"
+                  stroke-dasharray="5 8" points="0,0 0,0 0,0 0,0 0,0 0,0" />
+                <g class="hub-lines"></g>
+              </svg>
+
+              <div class="hub-core">
+                <div class="hub-chip">
+                  <span class="hub-pin hub-pin-t"></span>
+                  <span class="hub-pin hub-pin-r"></span>
+                  <span class="hub-pin hub-pin-b"></span>
+                  <span class="hub-pin hub-pin-l"></span>
+                  <span class="hub-chip-text">AI</span>
+                  <span class="hub-chip-glow"></span>
+                </div>
+              </div>
+              <div class="hub-nodes">
+                <div class="hub-node" style="--angle: 0deg">
+                  <span class="hub-node-pill"><i class="fas fa-eye"></i> Smart Visuals</span>
+                </div>
+                <div class="hub-node" style="--angle: 60deg">
+                  <span class="hub-node-pill"><i class="fas fa-robot"></i> AI Automation</span>
+                </div>
+                <div class="hub-node" style="--angle: 120deg">
+                  <span class="hub-node-pill"><i class="fas fa-comments"></i> Ask Anything</span>
+                </div>
+                <div class="hub-node" style="--angle: 180deg">
+                  <span class="hub-node-pill"><i class="fas fa-chart-line"></i> Predictive Power</span>
+                </div>
+                <div class="hub-node" style="--angle: 240deg">
+                  <span class="hub-node-pill"><i class="fas fa-screwdriver-wrench"></i> Latest Tools</span>
+                </div>
+                <div class="hub-node" style="--angle: 300deg">
+                  <span class="hub-node-pill"><i class="fas fa-bolt"></i> Instant Insights</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento-Box Section-->
+  <section id="bento-premium-light" class="aig-section mlr-40 radius-25" data-aos="fade-up" data-aos-duration="550">
+    <div class="light-bg-pattern"></div>
+    <div class="container">
+      <header class="bp-light-header text-center mb-5" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+        <h2 class="aig-section-title text-dark" data-aos="fade-up" data-aos-duration="550" data-aos-delay="180">
+          Continuous Improvement & <span class="bp-light-highlight">Updates</span>
+        </h2>
+        <p class="bp-light-muted-lead mx-auto" data-aos="fade-up" data-aos-duration="550" data-aos-delay="260">
+          Deploy specialized models optimized for hyperscale intelligence processing, workflow routing, and localized
+          node automation.
+        </p>
+      </header>
+      <div class="bp-light-grid">
+        <!-- Card 1: Automated Charts -->
+        <article class="bp-light-card bp-span-7" data-aos="fade-up" data-aos-duration="550" data-aos-delay="150">
+          <div class="bp-light-content">
+            <h3 class="bp-light-title">Automated AI Charts</h3>
+            <p class="bp-light-desc">Monotonectally whiteboard proactive with leading continually niche markets rather
+              than fully tested intelligence networks.</p>
+          </div>
+          <!-- Mock Chart -->
+          <div class="bp-mock-chart">
+            <div class="bp-chart-y">
+              <span>300</span><span>200</span><span>100</span>
+            </div>
+            <div class="bp-chart-graph">
+              <div class="bp-grid-line" style="top: 20%;"></div>
+              <div class="bp-grid-line" style="top: 50%;"></div>
+              <div class="bp-grid-line" style="top: 80%;"></div>
+              <div class="bp-tooltip primary" style="top: 45%; left: 34%;">+3,460</div>
+              <div class="bp-tooltip secondary" style="top: 45%; left: 83%;">+1,200</div>
+              <svg class="bp-chart-svg" viewBox="0 0 500 150" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="chartLightGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--primary)" stop-opacity="0.3" />
+                    <stop offset="100%" stop-color="var(--primary)" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M0,150 L0,140 C40,80 100,120 140,50 C180,-20 220,120 280,100 C340,80 380,40 440,100 C480,140 500,100 500,100 L500,150 Z"
+                  fill="url(#chartLightGrad)" class="bp-path-area" />
+                <path
+                  d="M0,130 C50,110 80,140 120,90 C160,40 200,100 250,110 C300,120 340,60 380,80 C420,100 460,130 500,110"
+                  fill="none" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round" />
+                <path
+                  d="M0,140 C40,80 100,120 140,50 C180,-20 220,120 280,100 C340,80 380,40 440,100 C480,140 500,100 500,100"
+                  fill="none" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" class="bp-path-fg" />
+                <circle cx="140" cy="73" r="6" fill="#fff" stroke="var(--secondary)" stroke-width="4"
+                  class="bp-point" />
+                <circle cx="380" cy="68" r="6" fill="#fff" stroke="var(--primary)" stroke-width="4" class="bp-point" />
+              </svg>
+            </div>
+          </div>
+        </article>
+        <!-- Card 2: Smart Security -->
+        <article class="bp-light-card bp-span-5" data-aos="fade-up" data-aos-duration="550" data-aos-delay="220">
+          <div class="bp-light-content">
+            <h3 class="bp-light-title">Smart Security Integration</h3>
+            <p class="bp-light-desc">Deploy quantum cryptography protocols and isolated environments.</p>
+          </div>
+          <div class="bp-mock-security">
+            <div class="bp-sec-wrapper">
+              <!-- Left -->
+              <div class="bp-sec-col">
+                <div class="bp-float-node"><i class="fas fa-robot"></i></div>
+                <div class="bp-float-node"><i class="fas fa-rocket"></i></div>
+              </div>
+              <!-- Central -->
+              <div class="bp-sec-center">
+                <div class="bp-shield-core">
+                  <i class="fas fa-shield-halved"></i>
+                </div>
+              </div>
+              <!-- Right -->
+              <div class="bp-sec-col">
+                <div class="bp-float-node"><i class="fas fa-rotate"></i></div>
+                <div class="bp-float-node"><i class="fas fa-atom"></i></div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- Card 3: Smart Growth -->
+        <article class="bp-light-card bp-span-4 text-center d-flex flex-column" data-aos="fade-up"
+          data-aos-duration="550" data-aos-delay="290">
+          <div class="bp-light-content">
+            <h3 class="bp-light-title">Smart Growth</h3>
+            <p class="bp-light-desc">Analyze pipeline structures with proactive models.</p>
+          </div>
+          <div class="bp-mock-radial mx-auto mt-auto">
+            <div class="bp-radial-wrapper" data-progress="84">
+              <svg class="bp-radial-svg" viewBox="0 0 100 100">
+                <circle class="bp-radial-bg" cx="50" cy="50" r="38"></circle>
+                <circle class="bp-radial-fg" cx="50" cy="50" r="38"></circle>
+              </svg>
+              <div class="bp-radial-inner">
+                <span class="bp-radial-val">0%</span>
+                <span class="bp-radial-label">Efficiency</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- Card 4: Deep Insights -->
+        <article class="bp-light-card bp-span-8" data-aos="fade-up" data-aos-duration="550" data-aos-delay="360">
+          <div class="bp-split-layout">
+            <div class="bp-light-content">
+              <h3 class="bp-light-title">Deep Insights AI Automation</h3>
+              <p class="bp-light-desc">Monotonectally whiteboard proactive with leading main niche markets rather than
+                fully tested loops.</p>
+              <ul class="bp-feature-list">
+                <li><i class="fas fa-check-circle"></i> Whiteboard proactive value</li>
+                <li><i class="fas fa-check-circle"></i> Real-time context synthesizer</li>
+              </ul>
+            </div>
+            <div class="bp-pipeline-box">
+              <div class="bp-pipe-col">
+                <div class="bp-pipe-pill outline"><i class="fas fa-microchip"></i> Edge Node</div>
+                <div class="bp-pipe-pill outline"><i class="fas fa-database"></i> Core DB</div>
+              </div>
+              <div class="bp-pipe-arrow">
+                <svg width="60" height="20" viewBox="0 0 60 20">
+                  <path d="M0,10 L50,10" fill="none" stroke="var(--secondary)" stroke-width="1.5" stroke-dasharray="4 4"
+                    class="bp-dash-line" />
+                  <polygon points="50,6 58,10 50,14" fill="var(--secondary)" />
+                </svg>
+              </div>
+              <div class="bp-pipe-col">
+                <div class="bp-pipe-pill active">
+                  <div class="bp-glow-dot"></div>
+                  Deployment
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section id="partners-section" class="position-relative" data-aos="fade-up" data-aos-duration="550">
+    <div class="container position-relative z-index-2">
+      <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+        <h4 class="partners-section-title">Trusted By 2 Million+ Autonomous Teams</h4>
+      </div>
+    </div>
+    <div class="partners-ticker-wrap" data-aos="fade-up" data-aos-duration="550" data-aos-delay="180">
+      <div class="ticker-row">
+        <div class="ticker-track scroll-left">
+          <div class="ticker-group">
+            <div class="partner-card"><i class="fas fa-layer-group"></i> <span>Logoipsum</span>
+            </div>
+            <div class="partner-card"><i class="fas fa-sun"></i> <span>Logoipsum</span></div>
+            <div class="partner-card"><i class="fas fa-infinity"></i> <span>Logoipsum</span></div>
+            <div class="partner-card"><i class="fas fa-bolt"></i> <span>LOGOIPSUM</span>
+            </div>
+            <div class="partner-card"><i class="fas fa-cubes"></i> <span>LGPSIM</span></div>
+            <div class="partner-card"><i class="fas fa-shield-cat"></i> <span>Logoipsum</span></div>
+            <div class="partner-card"><i class="fas fa-arrows-to-circle"></i> <span>Logoipsum</span>
+            </div>
+          </div>
+          <div class="ticker-group">
+            <div class="partner-card"><i class="fas fa-layer-group"></i> <span>Logoipsum</span>
+            </div>
+            <div class="partner-card"><i class="fas fa-sun"></i> <span>Logoipsum</span></div>
+            <div class="partner-card"><i class="fas fa-infinity"></i> <span>Logoipsum</span></div>
+            <div class="partner-card"><i class="fas fa-bolt"></i> <span>LOGOIPSUM</span>
+            </div>
+            <div class="partner-card"><i class="fas fa-cubes"></i> <span>LGPSIM</span></div>
+            <div class="partner-card"><i class="fas fa-shield-cat"></i> <span>Logoipsum</span></div>
+            <div class="partner-card"><i class="fas fa-arrows-to-circle"></i> <span>Logoipsum</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ticker-row mt-4">
+        <div class="ticker-track scroll-right">
+          <div class="ticker-group">
+            <div class="partner-card"><i class="fas fa-hurricane"></i> <span>Logoipsum</span></div>
+            <div class="partner-card"><i class="fas fa-leaf"></i> <span>LOGOIPSUM</span></div>
+            <div class="partner-card"><i class="fas fa-chart-pie"></i> <span>LGPSIM</span></div>
+            <div class="partner-card"><i class="fas fa-meteor"></i> <span>Logoipsum</span></div>
+            <div class="partner-card"><i class="fas fa-snowflake"></i> <span>Logoipsum</span></div>
+            <div class="partner-card"><i class="fas fa-fire"></i> <span>LOGOIPSUM</span></div>
+            <div class="partner-card"><i class="fas fa-retweet"></i> <span>Logoipsum</span></div>
+          </div>
+          <div class="ticker-group">
+            <div class="partner-card"><i class="fas fa-hurricane"></i> <span>Logoipsum</span></div>
+            <div class="partner-card"><i class="fas fa-leaf"></i> <span>LOGOIPSUM</span></div>
+            <div class="partner-card"><i class="fas fa-chart-pie"></i> <span>LGPSIM</span></div>
+            <div class="partner-card"><i class="fas fa-meteor"></i> <span>Logoipsum</span></div>
+            <div class="partner-card"><i class="fas fa-snowflake"></i> <span>Logoipsum</span></div>
+            <div class="partner-card"><i class="fas fa-fire"></i> <span>LOGOIPSUM</span></div>
+            <div class="partner-card"><i class="fas fa-retweet"></i> <span>Logoipsum</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Matrix Section -->
+  <section id="features-matrix" class="aig-section mlr-40 radius-25" data-aos="fade-up" data-aos-duration="550">
+    <div class="features-grid-bg" aria-hidden="true"></div>
+    <div class="features-aurora" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header-cyber text-center" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+        <div class="hero-badge mx-auto" data-aos="fade-up" data-aos-duration="550" data-aos-delay="120">
+          <span class="dot"></span> Core Capabilities
+        </div>
+        <h2 class="aig-section-title" data-aos="fade-up" data-aos-duration="550" data-aos-delay="180">
+          Engineered for <span class="text-highlight-primary">Autonomous Control</span>
+        </h2>
+        <p class="section-muted-lead mx-auto" data-aos="fade-up" data-aos-duration="550" data-aos-delay="260">
+          Deploy specialized models optimized for hyperscale intelligence processing, workflow routing, and localized
+          node automation.
+        </p>
+      </div>
+      <div class="matrix-features-grid">
+        <!-- Feature Card 1 -->
+        <div class="matrix-card glass" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+          <div class="card-glow-effect"></div>
+          <div class="card-accent-line"></div>
+          <div class="matrix-icon-shell">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3 class="matrix-card-title">Cognitive Pipelines</h3>
+          <p class="matrix-card-desc">Stream multi-modal data structures straight through optimized context vectors with
+            localized model processing loops.</p>
+          <a href="contact.html" class="matrix-action-link">Initialize Core <i class="fas fa-arrow-right-long"></i></a>
+        </div>
+        <!-- Feature Card 2 -->
+        <div class="matrix-card glass" data-aos="fade-up" data-aos-duration="550" data-aos-delay="200">
+          <div class="card-glow-effect"></div>
+          <div class="card-accent-line"></div>
+          <div class="matrix-icon-shell">
+            <i class="fas fa-network-wired"></i>
+          </div>
+          <h3 class="matrix-card-title">Swarm Node Routing</h3>
+          <p class="matrix-card-desc">Orchestrate clusters of independent AI agents working synchronously to complete
+            complex developer tasks automatically.</p>
+          <a href="contact.html" class="matrix-action-link">View Topology <i class="fas fa-arrow-right-long"></i></a>
+        </div>
+        <!-- Feature Card 3 -->
+        <div class="matrix-card glass" data-aos="fade-up" data-aos-duration="550" data-aos-delay="300">
+          <div class="card-glow-effect"></div>
+          <div class="card-accent-line"></div>
+          <div class="matrix-icon-shell">
+            <i class="fas fa-shield-halved"></i>
+          </div>
+          <h3 class="matrix-card-title">Quantum Cryptography</h3>
+          <p class="matrix-card-desc">Secure data transformations with real-time enterprise access controls and
+            completely isolated memory runtime environments.</p>
+          <a href="contact.html" class="matrix-action-link">Inspect Shield <i class="fas fa-arrow-right-long"></i></a>
+        </div>
+      </div>
+      <!-- Actions Row -->
+      <div class="matrix-bottom-cta text-center" data-aos="fade-up" data-aos-duration="550" data-aos-delay="400">
+        <a class="btn-primary" href="contact.html">
+          <i class="fas fa-sliders"></i> Access API Terminal
+        </a>
+        <a class="btn-ghost" href="services.html">Explore Model Zoo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticker Section -->
+  <div class="cyber-ticker-ribbon">
+    <div class="ticker-ribbon-track">
+      <div class="ticker-ribbon-group">
+        <span class="ticker-item"><i class="fas fa-microchip"></i> AGENT_NODE_CONNECTED</span>
+        <span class="ticker-splitter">/</span>
+        <span class="ticker-item text-glow">ENGINEERING THE FUTURE OF AUTONOMOUS INTELLIGENCE</span>
+        <span class="ticker-splitter">/</span>
+        <span class="ticker-item"><i class="fas fa-network-wired"></i> JOIN THE QUANTUM PIPELINE SWARM</span>
+        <span class="ticker-splitter">/</span>
+        <span class="ticker-item">PROCESSING COMPUTE LATEST_METRICS AT THE EDGE</span>
+        <span class="ticker-splitter">/</span>
+      </div>
+      <div class="ticker-ribbon-group" aria-hidden="true">
+        <span class="ticker-item"><i class="fas fa-microchip"></i> AGENT_NODE_CONNECTED</span>
+        <span class="ticker-splitter">/</span>
+        <span class="ticker-item text-glow">ENGINEERING THE FUTURE OF AUTONOMOUS INTELLIGENCE</span>
+        <span class="ticker-splitter">/</span>
+        <span class="ticker-item"><i class="fas fa-network-wired"></i> JOIN THE QUANTUM PIPELINE SWARM</span>
+        <span class="ticker-splitter">/</span>
+        <span class="ticker-item">PROCESSING COMPUTE LATEST_METRICS AT THE EDGE</span>
+        <span class="ticker-splitter">/</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Section -->
+  <section id="pricing-section" class="aig-section mlr-40 radius-25" data-aos="fade-up" data-aos-duration="550">
+    <div class="dark-bg-pattern"></div>
+    <div class="pricing-bg-gradient" aria-hidden="true"></div>
+    <div class="pricing-grid-bg" aria-hidden="true"></div>
+    <div class="pricing-aurora" aria-hidden="true"></div>
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+        <div class="aig-badge" data-aos="fade-up" data-aos-duration="550" data-aos-delay="120">
+          <span class="dot"></span> Pricing Plans
+        </div>
+        <h2 class="aig-section-title" data-aos="fade-up" data-aos-duration="550" data-aos-delay="180">Select Your
+          <span class="text-highlight-primary">Compute Tier</span></h2>
+        <p class="pricing-lead mx-auto" data-aos="fade-up" data-aos-duration="550" data-aos-delay="260">
+          Scale your autonomous workflows with simple, transparent billing. Choose the infrastructure that fits your
+          compute requirements.
+        </p>
+        <!-- Billing Toggle Switch -->
+        <div class="pricing-toggle-wrap" data-aos="fade-up" data-aos-duration="550" data-aos-delay="340">
+          <span class="toggle-label active" id="billing-monthly">Monthly</span>
+          <button class="pricing-toggle" id="pricing-billing-switch" aria-label="Toggle billing duration">
+            <span class="switch-handle"></span>
+          </button>
+          <span class="toggle-label" id="billing-yearly">Yearly <span class="discount-badge">Save 20%</span></span>
+        </div>
+      </div>
+      <!-- Pricing Cards Grid -->
+      <div class="pricing-grid">
+        <!-- Card 1: Starter -->
+        <article class="pricing-card" data-aos="fade-up" data-aos-duration="550" data-aos-delay="150">
+          <div class="card-clip-wrapper">
+            <div class="card-glow-effect"></div>
+            <div class="card-accent-line"></div>
+          </div>
+          <div class="card-inner">
+            <h3 class="plan-name">Starter Node</h3>
+            <p class="plan-desc">For edge prototyping and model testing.</p>
+            <div class="plan-price">
+              <span class="currency">$</span>
+              <span class="price-val" data-monthly="49" data-yearly="39">49</span>
+              <span class="duration">/mo</span>
+            </div>
+            <ul class="plan-features">
+              <li><i class="fas fa-circle-check"></i> 10 Active Core Nodes</li>
+              <li><i class="fas fa-circle-check"></i> 50,000 Inference Calls</li>
+              <li><i class="fas fa-circle-check"></i> Shared Compute Grid</li>
+              <li><i class="fas fa-circle-check"></i> Standard API Access</li>
+            </ul>
+            <a href="pricing.html" class="btn-ghost w-100 mt-auto">Deploy Starter</a>
+          </div>
+        </article>
+        <!-- Card 2: Neural Core (Featured) -->
+        <article class="pricing-card featured" data-aos="fade-up" data-aos-duration="550" data-aos-delay="220">
+          <div class="card-clip-wrapper">
+            <div class="card-glow-effect"></div>
+            <div class="card-accent-line"></div>
+          </div>
+          <div class="featured-badge"><i class="fas fa-fire"></i> Most Popular</div>
+          <div class="card-inner">
+            <h3 class="plan-name">Neural Core</h3>
+            <p class="plan-desc">For production-ready automated agents.</p>
+            <div class="plan-price">
+              <span class="currency">$</span>
+              <span class="price-val" data-monthly="99" data-yearly="79">99</span>
+              <span class="duration">/mo</span>
+            </div>
+            <ul class="plan-features">
+              <li><i class="fas fa-circle-check"></i> 50 Active Core Nodes</li>
+              <li><i class="fas fa-circle-check"></i> 500,000 Inference Calls</li>
+              <li><i class="fas fa-circle-check"></i> Dedicated Priority Pipeline</li>
+              <li><i class="fas fa-circle-check"></i> 99.9% Compute SLA</li>
+              <li><i class="fas fa-circle-check"></i> 24/7 Technical Support</li>
+            </ul>
+            <a href="pricing.html" class="btn-primary w-100 mt-auto">Deploy Core</a>
+          </div>
+        </article>
+        <!-- Card 3: Enterprise Swarm -->
+        <article class="pricing-card" data-aos="fade-up" data-aos-duration="550" data-aos-delay="290">
+          <div class="card-clip-wrapper">
+            <div class="card-glow-effect"></div>
+            <div class="card-accent-line"></div>
+          </div>
+          <div class="card-inner">
+            <h3 class="plan-name">Enterprise Swarm</h3>
+            <p class="plan-desc">For hyperscale multi-agent grids.</p>
+            <div class="plan-price">
+              <span class="currency">$</span>
+              <span class="price-val" data-monthly="249" data-yearly="199">249</span>
+              <span class="duration">/mo</span>
+            </div>
+            <ul class="plan-features">
+              <li><i class="fas fa-circle-check"></i> Unlimited Active Nodes</li>
+              <li><i class="fas fa-circle-check"></i> Infinite Inference Calls</li>
+              <li><i class="fas fa-circle-check"></i> Custom Routing SLAs</li>
+              <li><i class="fas fa-circle-check"></i> Isolated Memory Grids</li>
+              <li><i class="fas fa-circle-check"></i> Dedicated Manager</li>
+            </ul>
+            <a href="pricing.html" class="btn-ghost w-100 mt-auto">Request Swarm</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq-section" class="aig-section mlr-40 radius-25" data-aos="fade-up" data-aos-duration="550">
+    <div class="light-bg-pattern" aria-hidden="true"></div>
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+        <div class="aig-badge dark-badge" data-aos="fade-up" data-aos-duration="550" data-aos-delay="120">
+          <span class="dot"></span> Common Questions
+        </div>
+        <h2 class="aig-section-title text-dark" data-aos="fade-up" data-aos-duration="550" data-aos-delay="180">
+          Frequently Asked <span class="bp-light-highlight">Questions</span></h2>
+        <p class="faq-lead mx-auto" data-aos="fade-up" data-aos-duration="550" data-aos-delay="260">
+          Everything you need to know about integrating and scaling with our autonomous AI nodes.
+        </p>
+      </div>
+      <!-- Accordion Grid Wrapper -->
+      <div class="row faq-grid z-index-2 position-relative">
+        <!-- Left Column -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="faq-accordion-col">
+            <div class="faq-item" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+              <button class="faq-question" aria-expanded="true">
+                <span>How does the Swarm Node Routing work?</span>
+                <span class="faq-icon-wrap">
+                  <i class="fas fa-plus icon-plus"></i>
+                  <i class="fas fa-minus icon-minus"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Our routing protocol orchestrates clusters of independent AI agents working synchronously. It
+                    automatically balances compute loads across available edge nodes to ensure zero latency during
+                    high-demand developer tasks.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-duration="550" data-aos-delay="200">
+              <button class="faq-question" aria-expanded="false">
+                <span>Is my data secure in the Cognitive Pipeline?</span>
+                <span class="faq-icon-wrap">
+                  <i class="fas fa-plus icon-plus"></i>
+                  <i class="fas fa-minus icon-minus"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Absolutely. We deploy quantum cryptography protocols and completely isolated memory runtime
+                    environments. Your data transformations are secured with real-time enterprise access controls and
+                    never used to train global models.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-duration="550" data-aos-delay="250">
+              <button class="faq-question" aria-expanded="false">
+                <span>What latency can I expect from Swarm inferences?</span>
+                <span class="faq-icon-wrap">
+                  <i class="fas fa-plus icon-plus"></i>
+                  <i class="fas fa-minus icon-minus"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Swarm Node clusters average 12ms to 35ms inference latency depending on localized node
+                    availability. Standard fallback mechanisms route requests instantly to nearest active clusters to
+                    maintain consistent performance.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-duration="550" data-aos-delay="300">
+              <button class="faq-question" aria-expanded="false">
+                <span>Do you support auto-scaling during traffic spikes?</span>
+                <span class="faq-icon-wrap">
+                  <i class="fas fa-plus icon-plus"></i>
+                  <i class="fas fa-minus icon-minus"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Yes, our Swarm orchestrator automatically provisions additional dedicated edge nodes during traffic
+                    spikes. You can configure custom threshold rules and budget caps directly inside your developer
+                    terminal.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right Column -->
+        <div class="col-lg-6">
+          <div class="faq-accordion-col">
+            <div class="faq-item" data-aos="fade-up" data-aos-duration="550" data-aos-delay="350">
+              <button class="faq-question" aria-expanded="false">
+                <span>Can I integrate existing models into the platform?</span>
+                <span class="faq-icon-wrap">
+                  <i class="fas fa-plus icon-plus"></i>
+                  <i class="fas fa-minus icon-minus"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Yes. The platform provides a unified API Terminal that allows you to bring your own custom neural
+                    weights and integrate seamlessly with our edge node matrix. We support standard ONNX and PyTorch
+                    formats.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-duration="550" data-aos-delay="400">
+              <button class="faq-question" aria-expanded="false">
+                <span>What happens if I exceed my inference limits?</span>
+                <span class="faq-icon-wrap">
+                  <i class="fas fa-plus icon-plus"></i>
+                  <i class="fas fa-minus icon-minus"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>If you hit your tier's limit, requests will simply be queued with a slight processing delay rather
+                    than being dropped. You can toggle auto-scaling in your dashboard to seamlessly upgrade bandwidth
+                    during traffic spikes.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-duration="550" data-aos-delay="450">
+              <button class="faq-question" aria-expanded="false">
+                <span>How does developer compute billing operate?</span>
+                <span class="faq-icon-wrap">
+                  <i class="fas fa-plus icon-plus"></i>
+                  <i class="fas fa-minus icon-minus"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Billing is computed strictly based on active node runtime and token usage. There are no fixed
+                    contracts, and our dashboard displays real-time micro-billing updates so you always stay in budget.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-duration="550" data-aos-delay="500">
+              <button class="faq-question" aria-expanded="false">
+                <span>Can I migrate weights from AWS or HuggingFace?</span>
+                <span class="faq-icon-wrap">
+                  <i class="fas fa-plus icon-plus"></i>
+                  <i class="fas fa-minus icon-minus"></i>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Yes, Aigenix features dedicated connectors for HuggingFace model hubs and AWS S3 buckets. You can
+                    mirror model weights and spin up edge nodes with zero-configuration deployments.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="cyber-footer" class="mlr-40 radius-25">
+    <div class="footer-neon-line" aria-hidden="true"></div>
+    <div class="footer-matrix-bg" aria-hidden="true"></div>
+    <div class="footer-glow-aurora" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand" data-aos="fade-up" data-aos-duration="550" data-aos-delay="100">
+          <a class="nav-logo" href="index.html">
+            <img src="assets/images/logo1.png" alt="Aigenix" />
+          </a>
+          <p class="footer-desc">Next-generation autonomous AI node matrix infrastructure. Processing and scaling
+            intelligence at the edge of thought.</p>
+          <div class="footer-status-pills">
+            <span class="f-pill"><span class="f-dot animate-pulse"></span> ALL SYSTEMS OPERATIONAL</span>
+            <span class="f-pill code-version">v1.0</span>
+          </div>
+        </div>
+        <!-- Links -->
+        <div class="footer-col" data-aos="fade-up" data-aos-duration="550" data-aos-delay="150">
+          <h6 class="footer-col-title">Core Engine</h6>
+          <ul class="footer-links">
+            <li><a class="footer-link" href="index.html">AI Agent</a></li>
+            <li><a class="footer-link" href="index-1.html">AI Startup</a></li>
+            <li><a class="footer-link" href="index-2.html">AI SaaS</a></li>
+            <li><a class="footer-link" href="index-3.html">AI Chatbot</a></li>
+          </ul>
+        </div>
+        <!-- Links -->
+        <div class="footer-col" data-aos="fade-up" data-aos-duration="550" data-aos-delay="200">
+          <h6 class="footer-col-title">Node Intelligence</h6>
+          <ul class="footer-links">
+            <li><a class="footer-link" href="services.html">Services</a></li>
+            <li><a class="footer-link" href="about.html">About Us</a></li>
+            <li><a class="footer-link" href="blog.html">Blog</a></li>
+            <li><a class="footer-link" href="faq.html">FAQ</a></li>
+            <li><a class="footer-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter-col" data-aos="fade-up" data-aos-duration="550" data-aos-delay="250">
+          <h6 class="footer-col-title">Core Synchronization</h6>
+          <p class="newsletter-desc">Subscribe to direct intelligence updates straight from our core servers.</p>
+          <form class="footer-terminal-form" onsubmit="event.preventDefault();">
+            <div class="terminal-input-wrap">
+              <span class="terminal-prompt">&gt;</span>
+              <input type="email" placeholder="ENTER_EMAIL_ADDR..." required aria-label="Newsletter input" />
+              <button type="submit" class="terminal-submit-btn" aria-label="Submit email">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </form>
+          <div class="footer-socials">
+            <a class="social-btn" href="javascript:void(0)" target="_blank" rel="noopener noreferrer"
+              aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a class="social-btn" href="javascript:void(0)" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="social-btn" href="javascript:void(0)" target="_blank" rel="noopener noreferrer"
+              aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a class="social-btn" href="javascript:void(0)" target="_blank" rel="noopener noreferrer"
+              aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <!--- Copyright -->
+      <div class="footer-bottom" data-aos="fade-up" data-aos-duration="550" data-aos-delay="300">
+        <span class="copyright-text">&copy; 2026 AIGENIX INC. SYSTEM CHASSIS IS DESIGNED WITH SECURE AI
+          INFRASTRUCTURE.</span>
+        <div class="footer-bottom-links">
+          <a class="footer-bottom-link" href="privacy.html">PRIVACY_CORE</a>
+          <a class="footer-bottom-link" href="terms.html">TERMS_OF_SERVICE</a>
+          <a class="footer-bottom-link" href="cookies.html">COOKIE_STORAGE</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Back to Top">
+    <i class="fas fa-chevron-up"></i>
+    <svg class="progress-ring" width="48" height="48">
+      <circle class="progress-ring_circle" stroke="var(--primary)" stroke-width="3" fill="transparent" r="21" cx="24"
+        cy="24" />
+    </svg>
+  </button>
+
+  <!--- Scripts -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/three.min.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script src="assets/js/typed.umd.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+
+<!-- Mirrored from themes.aksharwebtech.com/aigenix/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Aug 2026 11:18:50 GMT -->
+</html>
